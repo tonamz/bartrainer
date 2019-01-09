@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qjd-1T-Vh4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="1Cy-jp-kmn">
+            <objects>
+                <viewController id="BYc-eo-pxr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Nt-hg-6DE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="p2-1" translatesAutoresizingMaskIntoConstraints="NO" id="vge-YA-ZRu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dpR-Ta-f5q"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="tb2" selectedImage="tb2-1" id="4FG-gF-TkO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pu0-o0-S77" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740" y="304"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mxJ-oA-6vb">
+            <objects>
+                <viewController id="yYD-lo-JEg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zs3-aO-GvK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone 8 Copy 5" translatesAutoresizingMaskIntoConstraints="NO" id="D6g-je-xJC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5h4-zm-Zn1"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="tb3" selectedImage="tb3-1" id="e1d-Mv-5Ea"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0g-7h-Qhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740" y="991"/>
+        </scene>
+        <!--Exercise View Controller-->
+        <scene sceneID="eAu-oR-cEX">
+            <objects>
+                <viewController id="3pZ-uB-C8v" customClass="ExerciseViewController" customModule="bartrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hWn-i6-plG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="p1-1" translatesAutoresizingMaskIntoConstraints="NO" id="qiX-bg-AnO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Z7-qQ-GXn">
+                                <rect key="frame" x="242" y="91" width="62" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97255557775497437" green="0.9725373387336731" blue="0.97254973649978638" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Squat">
+                                    <color key="titleColor" red="0.87761789560000003" green="0.40123474599999998" blue="0.35682800409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="squatButton:" destination="3pZ-uB-C8v" eventType="touchUpInside" id="KLU-AV-R9c"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="2J2-r4-Cdb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HfF-L4-2Uv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="tb1" selectedImage="tb1-1" id="M6v-Ig-Hve">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
+                        <color key="badgeColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="exerciseTabbat" destination="M6v-Ig-Hve" id="5ET-oA-lgL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btd-iV-oo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740" y="-360"/>
+        </scene>
+        <!--Fitness View Controller-->
+        <scene sceneID="vtF-jq-uuG">
+            <objects>
+                <viewController id="369-cZ-NME" customClass="FitnessViewController" customModule="bartrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ou3-gJ-eEz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone 8 Copy 38-1" translatesAutoresizingMaskIntoConstraints="NO" id="ucV-Yu-pta">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o74-Lt-LNb">
+                                <rect key="frame" x="48" y="166" width="281" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="54"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaJ-N5-eLI">
+                                <rect key="frame" x="124" y="389" width="126" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Get Coupon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="getCoupon:" destination="369-cZ-NME" eventType="touchUpInside" id="vzW-kB-bLL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7x3-GV-csl"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="tb4" selectedImage="tb4-1" id="291-a3-GpK"/>
+                    <connections>
+                        <outlet property="randomCode" destination="o74-Lt-LNb" id="7ff-Ld-zSr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lne-dQ-zlo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740" y="1674.5127436281859"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="faN-ix-W3X">
+            <objects>
+                <viewController id="NtJ-JL-xcl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5bd-LB-YiV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone 8 Copy 22" translatesAutoresizingMaskIntoConstraints="NO" id="Xmt-hl-FuF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1vj-TT-vNL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="tb5" selectedImage="tb5-1" id="bQm-z8-UbQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E2p-6u-cug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-740" y="2524"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="TWD-3U-6lk">
+            <objects>
+                <tabBarController id="Qjd-1T-Vh4" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9cM-dh-1R6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.87761789560000003" green="0.40123474599999998" blue="0.35682800409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3pZ-uB-C8v" kind="relationship" relationship="viewControllers" id="jyq-7g-XF6"/>
+                        <segue destination="BYc-eo-pxr" kind="relationship" relationship="viewControllers" id="srr-ei-Sqs"/>
+                        <segue destination="yYD-lo-JEg" kind="relationship" relationship="viewControllers" id="a2q-1F-Hfl"/>
+                        <segue destination="369-cZ-NME" kind="relationship" relationship="viewControllers" id="lZs-GT-kMm"/>
+                        <segue destination="NtJ-JL-xcl" kind="relationship" relationship="viewControllers" id="UtD-gb-oBU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSE-dV-YFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2762" y="635"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bartrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4fx-Od-yiF" userLabel="VideoPreview">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8P4-oB-R4j" userLabel="Poseview" customClass="PoseView" customModule="bartrainer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="10" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13j-6A-5jI" userLabel="TryLabel">
+                                        <rect key="frame" x="151" y="254" width="72" height="139"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="120"/>
+                                        <color key="textColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ4-W8-cEs">
+                                        <rect key="frame" x="302" y="596" width="61" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Stop">
+                                            <color key="titleColor" red="0.87761789560000003" green="0.40123474599999998" blue="0.35682800409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="squatButton:" destination="3pZ-uB-C8v" eventType="touchUpInside" id="WRu-hD-E8d"/>
+                                            <segue destination="Qjd-1T-Vh4" kind="show" id="Kng-Di-oIj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="JZJ-Y5-TUr"/>
+                    <connections>
+                        <outlet property="poseView" destination="8P4-oB-R4j" id="xnf-AW-9h9"/>
+                        <outlet property="tryLabel" destination="13j-6A-5jI" id="xgB-SW-Req"/>
+                        <outlet property="videoPreview" destination="4fx-Od-yiF" id="jdu-4Y-Yuj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="62" y="-360"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iPhone 8 Copy 22" width="375" height="667"/>
+        <image name="iPhone 8 Copy 38-1" width="375" height="667"/>
+        <image name="iPhone 8 Copy 5" width="375" height="667"/>
+        <image name="p1-1" width="375" height="667"/>
+        <image name="p2-1" width="375" height="667"/>
+        <image name="tb1" width="38" height="34"/>
+        <image name="tb1-1" width="34.5" height="30.5"/>
+        <image name="tb2" width="34.5" height="34"/>
+        <image name="tb2-1" width="35.5" height="34.5"/>
+        <image name="tb3" width="37" height="34"/>
+        <image name="tb3-1" width="35" height="31"/>
+        <image name="tb4" width="37.5" height="34"/>
+        <image name="tb4-1" width="37" height="31"/>
+        <image name="tb5" width="26.5" height="34"/>
+        <image name="tb5-1" width="26" height="34"/>
+    </resources>
+</document>
