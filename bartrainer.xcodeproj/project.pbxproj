@@ -11,6 +11,9 @@
 		E1A6DE7421C55AAB006CB2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A6DE7321C55AAB006CB2F3 /* Assets.xcassets */; };
 		E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DE7B21C570B7006CB2F3 /* ExerciseViewController.swift */; };
 		E1A6DE7E21C57B7D006CB2F3 /* FitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DE7D21C57B7D006CB2F3 /* FitnessViewController.swift */; };
+		E1ACDEA721E6DFC8005AF36D /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACDEA621E6DFC8005AF36D /* ChallengeViewController.swift */; };
+		E1ACDEA921E6E01F005AF36D /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACDEA821E6E01F005AF36D /* HomeModel.swift */; };
+		E1ACDEAB21E6E0D3005AF36D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1ACDEAA21E6E0D3005AF36D /* Location.swift */; };
 		E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */; };
 		E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */; };
 		E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DC050021BEAC1E00A2A4F9 /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 		E1A6DE7321C55AAB006CB2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1A6DE7B21C570B7006CB2F3 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		E1A6DE7D21C57B7D006CB2F3 /* FitnessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewController.swift; sourceTree = "<group>"; };
+		E1ACDEA621E6DFC8005AF36D /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		E1ACDEA821E6E01F005AF36D /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		E1ACDEAA21E6E0D3005AF36D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E1DC04F921BEAC1D00A2A4F9 /* bartrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bartrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,10 +80,13 @@
 				E1DC050F21BEAD2F00A2A4F9 /* PoseView.swift */,
 				E1A6DE7D21C57B7D006CB2F3 /* FitnessViewController.swift */,
 				E1A6DE7B21C570B7006CB2F3 /* ExerciseViewController.swift */,
+				E1ACDEA621E6DFC8005AF36D /* ChallengeViewController.swift */,
 				E1DC050021BEAC1E00A2A4F9 /* Main.storyboard */,
 				E1A6DE7321C55AAB006CB2F3 /* Assets.xcassets */,
 				E1DC050521BEAC1F00A2A4F9 /* LaunchScreen.storyboard */,
 				E1DC050821BEAC1F00A2A4F9 /* Info.plist */,
+				E1ACDEA821E6E01F005AF36D /* HomeModel.swift */,
+				E1ACDEAA21E6E0D3005AF36D /* Location.swift */,
 			);
 			path = bartrainer;
 			sourceTree = "<group>";
@@ -154,12 +163,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1DC051321BEB02F00A2A4F9 /* VideoCapture.swift in Sources */,
+				E1ACDEAB21E6E0D3005AF36D /* Location.swift in Sources */,
+				E1ACDEA721E6DFC8005AF36D /* ChallengeViewController.swift in Sources */,
 				E1A6DE7E21C57B7D006CB2F3 /* FitnessViewController.swift in Sources */,
 				E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */,
 				E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */,
 				E1DC051421BEB04200A2A4F9 /* Measure.swift in Sources */,
 				E1A45F2521C2B9A600DF2F13 /* model_cpm.mlmodel in Sources */,
 				E1DC051221BEB01A00A2A4F9 /* PoseView.swift in Sources */,
+				E1ACDEA921E6E01F005AF36D /* HomeModel.swift in Sources */,
 				E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
