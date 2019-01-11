@@ -11,6 +11,4 @@ import Foundation
 struct Location{
     var name = ""
     var number = ""
-    
-    
 }

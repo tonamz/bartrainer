@@ -17,10 +17,35 @@
                     <view key="view" contentMode="scaleToFill" id="0Nt-hg-6DE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fMw-da-O13">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BasicCell" id="QZa-a5-ARR">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZa-a5-ARR" id="PpX-Pa-rIB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fMw-da-O13" firstAttribute="leading" secondItem="dpR-Ta-f5q" secondAttribute="leading" id="PO7-0V-HWd"/>
+                            <constraint firstItem="dpR-Ta-f5q" firstAttribute="bottom" secondItem="fMw-da-O13" secondAttribute="bottom" id="Rth-jn-Dla"/>
+                            <constraint firstItem="fMw-da-O13" firstAttribute="top" secondItem="dpR-Ta-f5q" secondAttribute="top" id="b3A-Hr-tut"/>
+                            <constraint firstItem="dpR-Ta-f5q" firstAttribute="trailing" secondItem="fMw-da-O13" secondAttribute="trailing" id="fYB-XS-ccs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dpR-Ta-f5q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tb2" selectedImage="tb2-1" id="4FG-gF-TkO"/>
+                    <connections>
+                        <outlet property="tableView" destination="fMw-da-O13" id="UWv-Zz-tzf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pu0-o0-S77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

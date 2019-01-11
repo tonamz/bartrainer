@@ -17,7 +17,7 @@ class HomeModel: NSObject {
     
     func getItems(){
         //hit the web service url
-        let serviceUrl = "https://localhost/server.php"
+        let serviceUrl = "http://beleave.club/server/server.php"
         //download json data
         let url = URL(string: serviceUrl)
         if let url = url {
