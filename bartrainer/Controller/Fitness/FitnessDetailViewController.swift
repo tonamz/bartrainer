@@ -7,13 +7,65 @@
 //
 
 import UIKit
+import Alamofire
 
 class FitnessDetailViewController: UIViewController {
+    
+
+    @IBOutlet weak var fitnessLabel: UILabel!
+    @IBOutlet weak var branchLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var fitnessImageView: UIImageView!
+     @IBOutlet weak var getcodeBT: UIButton!
+    
+    
+    var selectedfitness: Fitness?
+    var FitnessDetail: [Fitness] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+              getcodeBT.layer.cornerRadius = 10
 
-        // Do any additional setup after loading the view.
+        title = selectedfitness!.name_brand
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+        //        self.exercisListTableView.backgroundColor = UIColor(white: 1, alpha: 0)
+        
+
+        Alamofire.request("http://tssnp.com/ws_bartrainer/fitness.php").responseData { response in
+            if let data = response.result.value {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    
+                    self.FitnessDetail = try decoder.decode([Fitness].self, from: data)
+                    
+                    
+                } catch {
+                    print(error.localizedDescription)
+                }
+            } else {
+                print("error")
+            }
+        }
+        
+        
+        fitnessLabel.text = selectedfitness!.name_brand
+        branchLabel.text = selectedfitness!.name_branch
+        detailLabel.text = selectedfitness!.detail
+        
+        
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "fitnessCode" {
+            let vc = segue.destination as! FitnessGetCodeViewController
+            vc.fitnessName = selectedfitness!.name_brand
+            vc.fitnessBranch = selectedfitness!.name_branch
+        
+            
+        }
     }
     
 

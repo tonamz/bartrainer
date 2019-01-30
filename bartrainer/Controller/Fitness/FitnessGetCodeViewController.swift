@@ -11,13 +11,17 @@ import UIKit
 
 
 
-class FitnessViewController: UIViewController {
-
+class FitnessGetCodeViewController: UIViewController {
+    
+    var fitnessName: String = ""
+    var fitnessBranch: String = ""
+    var code: String = ""
+    
     @IBOutlet weak var randomCode: UILabel!
     
     
     @IBAction func getCoupon(_ sender: UIButton) {
-        let code = randomString(length: 5)
+        code = randomString(length: 5)
         randomCode.text = code
         sendEmail()
  
@@ -32,7 +36,10 @@ class FitnessViewController: UIViewController {
     func sendEmail(){
         let mailgun = MailgunAPI(apiKey: "efcafbfeee1abb8d0b2427afeea0c515-2d27312c-5fad6eff", clientDomain: "tssnp.com")
         
-        mailgun.sendEmail(to: "denthongchai_m@silpakorn.edu", from: "Excited User <postmaster@tssnp.com>", subject: "This is a test", bodyHTML: "<b>test<b>") { mailgunResult in
+        mailgun.sendEmail(to: "denthongchai_m@silpakorn.edu",
+                          from: "Bartrainer <postmaster@tssnp.com>",
+                          subject: "\(fitnessName) at \(fitnessBranch)",
+        bodyHTML: "<b>\(fitnessName) at \(fitnessBranch)<b><br><b>You have customer redeem coupon<b><br><b>Code is : \(code) <b> ") { mailgunResult in
             
             if mailgunResult.success{
                 print("Email was sent")
@@ -46,7 +53,9 @@ class FitnessViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     
+                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg-code.png")!)
+        print("aaaaaaaa:\(fitnessBranch)")
 
         // Do any additional setup after loading the view.
     }

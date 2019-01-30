@@ -1,0 +1,6 @@
+framework module Pods_bartrainer {
+  umbrella header "Pods-bartrainer-umbrella.h"
+
+  export *
+  module * { export * }
+}

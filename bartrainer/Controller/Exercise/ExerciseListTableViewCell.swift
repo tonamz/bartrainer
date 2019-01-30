@@ -9,10 +9,29 @@
 import UIKit
 
 class ExerciseListTableViewCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var bgView: UITableView!
+//    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var exerciseLabel: UILabel!
+    @IBOutlet weak var repsLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        bgView.layer.cornerRadius = 10
+        
+        self.bgView.layer.cornerRadius = 10
+        self.bgView.layer.borderWidth = 2
+        self.bgView.layer.borderColor = UIColor.clear.cgColor
+        self.contentView.layer.masksToBounds = true
+//        self.layer.shadowColor = UIColor.lightGray.cgColor
+//        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        self.layer.shadowRadius = 8
+//        self.layer.shadowOpacity = 0.5
+        self.layer.masksToBounds = false
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.bgView.layer.cornerRadius).cgPath
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

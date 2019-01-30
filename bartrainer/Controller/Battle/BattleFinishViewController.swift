@@ -9,22 +9,31 @@
 import UIKit
 
 class BattleFinishViewController: UIViewController {
+    @IBAction func confirmBTAction(_ sender: Any) {
+        self.dismiss(animated: false, completion: {});
+        self.navigationController?.popViewController(animated: false);
 
+        
+    }
+    
+    var scoreCal = 0
+
+    @IBOutlet weak var confirmBT: UIButton!
+    @IBOutlet weak var scoreText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+        scoreText.layer.cornerRadius = 100
+        scoreText.text = "\(scoreCal)"
+        confirmBT.layer.cornerRadius = 10
+        
+        
+        
 
+        print(scoreCal)
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

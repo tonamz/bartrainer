@@ -17,6 +17,7 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var exerciseCollection: UICollectionView!
         var images = ["Arms","Legs","Abs","Butt"]
     
+    @IBOutlet var gifImage: UIImageView!
     
     var categoryGroup: [Category] = []
     var selectedCategoryGroup: Category?
@@ -25,11 +26,12 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         self.exerciseCollection.backgroundColor = UIColor(white: 1, alpha: 0)
+        self.gifImage.loadGif(name: "hightkneeGIF")
         
         self.exerciseCollection.dataSource = self
         self.exerciseCollection.delegate = self
         
-        Alamofire.request("http://beleave.club/ws_bartrainer/category.php").responseData { response in
+        Alamofire.request("http://tssnp.com/ws_bartrainer/category.php").responseData { response in
             if let data = response.result.value {
                 
                 do {
@@ -72,6 +74,8 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCategoryGroup = categoryGroup[indexPath.row]
         performSegue(withIdentifier: "ExList", sender: self)
+        
+        
     }
     
     

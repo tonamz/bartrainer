@@ -21,6 +21,7 @@ class PoseView: UIView {
         
       
     }
+
     
     func setUpOutputComponent() {
         view_14 = Constant.colors.map { color in
@@ -44,7 +45,7 @@ class PoseView: UIView {
             if index == 2 || index == 8 { x += 28 }
             else { x += 14 }
             let v = UIView(frame: CGRect(x: x, y: y + 10, width: 4, height: 4))
-            v.backgroundColor = color
+//            v.backgroundColor = color
             
             self.addSubview(v)
             return

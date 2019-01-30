@@ -7,24 +7,80 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
-class BattleListViewController: UIViewController {
+class BattleListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        @IBOutlet weak var exerciseCollection: UICollectionView!
+        
+        var ExerciseList: [Exercise] = []
+        var selectedExercise: Exercise?
+        
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            title = "Battle"
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+            self.exerciseCollection.backgroundColor = UIColor(white: 1, alpha: 0)
+            
+            
+            
+            self.exerciseCollection.dataSource = self
+            self.exerciseCollection.delegate = self
+            
+            
+            Alamofire.request("http://tssnp.com/ws_bartrainer/exercise.php").responseData { response in
+                if let data = response.result.value {
+                    
+                    do {
+                        let decoder = JSONDecoder()
+                        
+                        self.ExerciseList = try decoder.decode([Exercise].self, from: data)
+                        
+                        self.exerciseCollection.reloadData()
+                        
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                } else {
+                    print("error")
+                }
+            }
+            
+        }
     
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "toBattle" {
+                let vc = segue.destination as! BattleExerciseViewController
+                vc.selectedExercise = selectedExercise
+                
+            }
+        }
+        
 
-    /*
-    // MARK: - Navigation
+        
+         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return ExerciseList.count
+        }
+        
+         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exercise_collection", for: indexPath) as! BattleListCollectionViewCell
+            let model = ExerciseList[indexPath.row]
+            cell.headerLabel.text = model.name
+            
+            return cell
+        }
+    
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            selectedExercise = ExerciseList[indexPath.row]
+            performSegue(withIdentifier: "toBattle", sender: self)
+            
+            
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

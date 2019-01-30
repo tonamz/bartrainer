@@ -6,4 +6,18 @@
 //  Copyright © 2562 Methira Denthongchai. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+struct Fitness: Codable {
+    var id_fitness: String
+    var id_brand: String
+    var id_branch: String
+    var name_brand: String
+    var name_branch: String
+    var detail: String
+    var map: String
+    var exercise: String
+    
+}
+

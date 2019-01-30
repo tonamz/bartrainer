@@ -138,7 +138,8 @@ class ViewController: UIViewController, VideoCaptureDelegate {
             
             // convert heatmap to [keypoint]
             let n_kpoints = convert(heatmap: heatmap)
-            let scoreSquat: Int = self.moveCalculate.addKeypoints(keypoints: n_kpoints)
+            let scoreSquat: Int = self.moveCalculate.addKeypoints(keypoints: n_kpoints,nameEx: "aaa")
+//            let scoreSquat: Int = self.moveCalculate.calSquat()
 
      
             
@@ -322,77 +323,216 @@ struct Constant {
 class  movePoint{
    
     typealias BodyPoint = ViewController.BodyPoint
-    var scoreSquat = 0
-    let countPoint: Int = 30
+    var score = 0
+    var scoreCal = 0
+    let countPoint: Int = 20
     var keypointsArray: [[BodyPoint?]] = []
-    func addKeypoints(keypoints: [BodyPoint?])-> Int {
+    
+    var timerr:Timer!
+    var countdown:Int = 10
+    
+    func addKeypoints(keypoints: [BodyPoint?],nameEx: String)-> Int {
         keypointsArray.append(keypoints)
         if keypointsArray.count > countPoint {
             keypointsArray.remove(at: 0)
-        }
-        if keypointsArray.count > 28 {
-            let scoreSquatCal = calSquat()
-            scoreSquat = scoreSquat + scoreSquatCal
-//            print(scoreSquat)
-            return scoreSquat
+          
             
-        }else { return 0 }
+        }
+//        print("aaa")
+//        if keypointsArray.count > 28 {
+//
+//            if (nameEx == "Squat"){
+//                scoreCal = calSquat()
+//                score = score + scoreCal
+//
+//
+//            }
+//            if (nameEx == "aaa"){
+//                scoreCal = calaaa()
+//                score = score + scoreCal
+//
+//            }
+//            return score
+//
+//
+//        }else { return 0 }
+//
+//
+//
+//    }
+        
+        return 0
+        
     }
+    
 
+    
+    func calPointX(_ mark: Int,_ point1: Int,_ point2: Int) -> CGFloat {
+        let p1: CGFloat = (keypointsArray[point1][mark]?.point.x ?? 0)
+        let p2: CGFloat = (keypointsArray[point2][mark]?.point.x ?? 0)
+        let pointcal = CGFloat(p1-p2)
+        return pointcal
+    }
+    func calPointY(_ mark: Int,_ point1: Int,_ point2: Int) -> CGFloat {
+        let p1: CGFloat = (keypointsArray[point1][mark]?.point.y ?? 0)
+        let p2: CGFloat = (keypointsArray[point2][mark]?.point.y ?? 0)
+        let pointcal = CGFloat(p1-p2)
+        return pointcal
+    }
+    
     func calSquat()-> Int{
-        let h1: CGFloat = (keypointsArray[1][1]?.point.y ?? 0)
-        let h2: CGFloat = (keypointsArray[25][1]?.point.y ?? 0)
-        let p1: CGFloat = (keypointsArray[1][1]?.point.y ?? 0)
-        let p11: CGFloat = (keypointsArray[25][1]?.point.y ?? 0)
-        let p5: CGFloat = (keypointsArray[1][5]?.point.y ?? 0)
-        let p55: CGFloat = (keypointsArray[25][5]?.point.y ?? 0)
-        let p112: CGFloat = (keypointsArray[1][11]?.point.y ?? 0)
-        let p1111: CGFloat = (keypointsArray[25][11]?.point.y ?? 0)
-        let pFoot1: CGFloat = (keypointsArray[1][13]?.point.x ?? 0)
-        let pFoot2: CGFloat = (keypointsArray[25][13]?.point.x ?? 0)
-        
-        let headCal = h1-h2
-        let pFootCal = pFoot1-pFoot2
-        let point1 = p1-p11
-        let point2 = p5 - p55
-        let point3 = p112 - p1111
-        let sumPoint = point1+point2+point3
-        
-//        print("\(String(format: "%.3f",point1)), \(String(format: "%.3f",point2)), \(String(format: "%.3f",point3))")
-  
-                if (point1>0.120&&point1<0.220&&point2>0.120&&point2<0.220&&point3>0.00&&point3<0.120&&pFootCal<=0&&headCal<=0){
-                                                print(headCal)
-                                                print(pFootCal)
-                                                print(sumPoint)
-//                                                print("aaaa")
-                    keypointsArray.removeAll()
+        if keypointsArray.count > 18 {
+                let headX = calPointX(1,8,18)
+                let headY = calPointY(1,8,18)
+                let shoulder = calPointY(5,8,18)
+                let leg = calPointY(11,8,18)
+                let foot = calPointX(13,8,18)
 
-                    return 1
+//          print("\(String(format: "%.3f",headX)), \(String(format: "%.3f",headY)), \(String(format: "%.3f",shoulder)), \(String(format: "%.3f",leg)), \(String(format: "%.3f",foot))")
+        if (headY>0.120&&headY<0.220&&shoulder>0.120&&shoulder<0.220&&leg>0.00&&leg<0.120&&foot<=0&&headX>=0&&headX<=0.5){
+        print("Yeahhhhhhhhhh")
+            keypointsArray.removeAll()
 
-                }else {return 0}
-//                    if (sumPoint>0.400&&sumPoint<0.500&&pFootCal<=0&&headCal<=0){
-//                            print(headCal)
-//                            print(pFootCal)
-//                            print(sumPoint)
-//                        print("aaaa")
-//                            keypointsArray.removeAll()
-//
-//                            return 1
-//
-//                    }else {return 0}
+        return 1
+//            return 1
+        }else {return 0}
+            
+        }
         
-                
+        return 0
     
-     
     }
     
 
     
+    func calLunge()-> Int{
+        if keypointsArray.count > 18 {
+            let headY = calPointY(1,1,18)
+            let headX = calPointY(1,1,18)
+            let RkneeY = calPointY(12,1,18)
+            let LkneeY = calPointY(9,1,18)
+            
+            print("\(String(format: "%.3f",headX))")
+            if (headY < 0.60 && headY > -0.60  && RkneeY < 0.00 && RkneeY > -0.100 && LkneeY < -0.100 && LkneeY > -0.300 && headX == 0 ){
+                print("Yeahhhhhhhhhh")
+                keypointsArray.removeAll()
+                
+                return 1
+                //            return 1
+            }else {return 0}
+            
+        }
+        
+        return 0
+    }
+    
+    func calHightknee()-> Int{
+        if keypointsArray.count > 5 {
+
+            let headX = calPointY(1,1,5)
+            let RkneeY = calPointY(12,1,5)
+            let RfootY = calPointY(13,1,5)
+            let LkneeY = calPointY(9,1,5)
+            let LfootY = calPointY(10,1,5)
+            
+            print("\(String(format: "%.3f",headX)),\(String(format: "%.3f",RkneeY)),\(String(format: "%.3f",RfootY)),\(String(format: "%.3f",LkneeY)),\(String(format: "%.3f",LfootY))")
+            if (RkneeY > 0.150 && RkneeY < 0.300
+                && RfootY > 0.050 && RfootY < 0.200
+                && LkneeY == 0
+//                && LkneeY > -0.060
+                && LfootY  == 0
+//                && LfootY > -0.060
+                && headX < 0.050 && headX > -0.050){
+                
+                print("RRRRR")
+                keypointsArray.removeAll()
+
+                return 1
+                //            return 1
+            }else  if (RkneeY < 0.060 && RkneeY  > -0.060  && RfootY  < 0.060  && RfootY  > -0.060 && LkneeY > 0.040 && LkneeY < 0.260  && LfootY  > 0.040 && LfootY < 0.260  && headX < 0.050 && headX > -0.050 ){
+                print("LLL")
+                keypointsArray.removeAll()
+                
+                return 1
+                //            return 1
+            }else {return 0}
+            
+        }
+        
+        return 0
+    }
+    
+    func calLegraiseSide()-> Int{
+        if keypointsArray.count > 15 {
+            
+//            let headX = calPointY(1,10,15)
+            let LfootX = calPointX(13,10,15)
+            let LfootY = calPointY(13,10,15)
+            let RfootX = calPointX(10,10,15)
+            let RfootY = calPointY(10,10,15)
+            
+            print("\(String(format: "%.3f",LfootX)),\(String(format: "%.3f",LfootY)),\(String(format: "%.3f",RfootX)),\(String(format: "%.3f",RfootY))")
+            if (RfootX > 0.200 && RfootX < 0.300 && RfootY > -0.200 && RfootY < -0.100
+              && LfootX  == 0 && LfootY  == 0
+                ){
+
+                print("RRRRR")
+                keypointsArray.removeAll()
+
+                return 1
+                //            return 1
+            }else  if (LfootX < -0.000 && LfootX > -0.200 && LfootY < 0.250 && LfootY > 0.040
+               && RfootX  == 0 && RfootY  == 0
+                ){
+                
+                print("LLLLLL")
+                keypointsArray.removeAll()
+                
+                return 1
+                //            return 1
+            }else  {return 0}
+        }
+        
+        return 0
+    }
+    
+    func calLegSwing()-> Int{
+        if keypointsArray.count > 15 {
+            
+            //            let headX = calPointY(1,10,15)
+            let LfootX = calPointX(13,10,15)
+            let LfootY = calPointY(13,10,15)
+            let RfootX = calPointX(10,10,15)
+            let RfootY = calPointY(10,10,15)
+            
+            print("\(String(format: "%.3f",LfootX)),\(String(format: "%.3f",LfootY)),\(String(format: "%.3f",RfootX)),\(String(format: "%.3f",RfootY))")
+            if (RfootX < -0.150 && RfootX > -0.300
+                && LfootX  == 0 && LfootY  == 0
+                ){
+
+                print("RRRRR")
+                keypointsArray.removeAll()
+
+                return 1
+                //            return 1
+            }else if (LfootX < -0.100 && LfootX > -0.250
+//               && LfootY > 0.050 && LfootY < 0.150
+                && RfootX  == 0 && RfootY  == 0
+                ){
+                
+                print("LLLL")
+                keypointsArray.removeAll()
+                
+                return 1
+                //            return 1
+            }else  {return 0}
+        }
+        
+        return 0
+    }
     
     
-    
-    
-    
+
     
 
 }
@@ -403,6 +543,10 @@ extension Double {
 
         return point1;
     }
+
+}
+
+class  tryaaa: movePoint {
 
 }
 

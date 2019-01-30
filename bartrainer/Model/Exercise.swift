@@ -6,4 +6,14 @@
 //  Copyright © 2562 Methira Denthongchai. All rights reserved.
 //
 
-import Foundation
+
+import UIKit
+
+struct Exercise: Codable {
+    var id_exercise: String
+    var name: String
+    var category: String
+    var cal: String
+
+}
+

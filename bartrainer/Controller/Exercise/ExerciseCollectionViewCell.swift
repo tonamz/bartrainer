@@ -30,11 +30,6 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.5
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.bgView.layer.cornerRadius).cgPath
-       
-        
-        
-
-
         
     }
 

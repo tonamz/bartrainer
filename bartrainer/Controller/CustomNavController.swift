@@ -18,6 +18,7 @@ class CustomNavController: UINavigationController {
         self.navigationBar.shadowImage = UIImage()
         
         
+        
     }
     
 
