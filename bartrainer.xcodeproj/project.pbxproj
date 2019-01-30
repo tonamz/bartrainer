@@ -42,6 +42,9 @@
 		E1FEF5E321FCE29700492BE4 /* hightkneeGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */; };
 		E1FEF5EA21FCEA3C00492BE4 /* legraiseGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */; };
 		E1FEF5EB21FCEA3C00492BE4 /* legswingGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */; };
+		E1FEF5ED2201A27900492BE4 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5EC2201A27900492BE4 /* ChallengeDetailViewController.swift */; };
+		E1FEF5EF2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5EE2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift */; };
+		E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5F12201CC8D00492BE4 /* Challenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hightkneeGIF.gif; sourceTree = "<group>"; };
 		E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = legraiseGIF.gif; sourceTree = "<group>"; };
 		E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = legswingGIF.gif; sourceTree = "<group>"; };
+		E1FEF5EC2201A27900492BE4 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
+		E1FEF5EE2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1FEF5F12201CC8D00492BE4 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,8 @@
 		E10DF3C421F0D0010021CE85 /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				E1FEF5EC2201A27900492BE4 /* ChallengeDetailViewController.swift */,
+				E1FEF5EE2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				E16CA91421F10ABB00D4CEA6 /* Exercise.swift */,
 				E1FEF5C821F98A1F00492BE4 /* User.swift */,
 				E1FEF5CC21FB163600492BE4 /* Fitness.swift */,
+				E1FEF5F12201CC8D00492BE4 /* Challenge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,11 +223,7 @@
 		E1DC04FB21BEAC1D00A2A4F9 /* bartrainer */ = {
 			isa = PBXGroup;
 			children = (
-				E1FEF5D621FCC3EC00492BE4 /* Swift+GIF.swift */,
-				E1FEF5DC21FCCC1700492BE4 /* squatGIF.gif */,
-				E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */,
-				E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */,
-				E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */,
+				E1FEF5F02201CC4300492BE4 /* GIF */,
 				E10DF3C621F0E3510021CE85 /* Model */,
 				E1111A1B21EEE5E8000D1167 /* Controller */,
 				E1111A1A21EEE5AD000D1167 /* poseview */,
@@ -237,6 +242,18 @@
 				E1FEF5C621F8F7D300492BE4 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E1FEF5F02201CC4300492BE4 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				E1FEF5D621FCC3EC00492BE4 /* Swift+GIF.swift */,
+				E1FEF5DC21FCCC1700492BE4 /* squatGIF.gif */,
+				E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */,
+				E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */,
+				E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */,
+			);
+			path = GIF;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,9 +411,11 @@
 				E1FEF5C921F98A1F00492BE4 /* User.swift in Sources */,
 				E1FEF5CD21FB163600492BE4 /* Fitness.swift in Sources */,
 				E1F76D8221F3650000D236A9 /* CustomView.swift in Sources */,
+				E1FEF5ED2201A27900492BE4 /* ChallengeDetailViewController.swift in Sources */,
 				E16CA91721F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift in Sources */,
 				E1A6DE7E21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift in Sources */,
 				E1111A1D21EF2110000D1167 /* CustomNavController.swift in Sources */,
+				E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */,
 				E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */,
 				E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */,
 				E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */,
@@ -404,6 +423,7 @@
 				E1FEF5CF21FB196600492BE4 /* FitnessTableViewCell.swift in Sources */,
 				E1A45F2521C2B9A600DF2F13 /* model_cpm.mlmodel in Sources */,
 				E1FEF5D721FCC3EC00492BE4 /* Swift+GIF.swift in Sources */,
+				E1FEF5EF2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift in Sources */,
 				E1DC051221BEB01A00A2A4F9 /* PoseView.swift in Sources */,
 				E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */,
 			);
