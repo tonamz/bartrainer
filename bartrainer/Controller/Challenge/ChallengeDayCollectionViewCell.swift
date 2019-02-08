@@ -1,5 +1,5 @@
 //
-//  ChallengeDetailCollectionViewCell.swift
+//  ChallengeDayCollectionViewCell.swift
 //  bartrainer
 //
 //  Created by Methira Denthongchai on 30/1/2562 BE.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChallengeDetailCollectionViewCell: UICollectionViewCell {
+class ChallengeDayCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var headerLabel: UILabel!

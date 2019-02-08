@@ -46,7 +46,7 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Challenge_detail" {
-            let vc = segue.destination as! ChallengeDetailViewController
+            let vc = segue.destination as! ChallengeDayViewController
             vc.selectedChallengeGroup = selectedChallengeGroup
             
         }
