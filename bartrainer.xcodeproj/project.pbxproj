@@ -25,6 +25,7 @@
 		E1DC051221BEB01A00A2A4F9 /* PoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC050F21BEAD2F00A2A4F9 /* PoseView.swift */; };
 		E1DC051321BEB02F00A2A4F9 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC050E21BEAD1100A2A4F9 /* VideoCapture.swift */; };
 		E1DC051421BEB04200A2A4F9 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC051021BEAD5F00A2A4F9 /* Measure.swift */; };
+		E1EA2460220DF56400A1B079 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA245F220DF56400A1B079 /* ChallengeDetailViewController.swift */; };
 		E1F76D8021F3608E00D236A9 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76D7F21F3608E00D236A9 /* BattleViewController.swift */; };
 		E1F76D8221F3650000D236A9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76D8121F3650000D236A9 /* CustomView.swift */; };
 		E1F76D8621F3760300D236A9 /* BattleListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76D8521F3760300D236A9 /* BattleListCollectionViewCell.swift */; };
@@ -43,8 +44,8 @@
 		E1FEF5E321FCE29700492BE4 /* hightkneeGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */; };
 		E1FEF5EA21FCEA3C00492BE4 /* legraiseGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */; };
 		E1FEF5EB21FCEA3C00492BE4 /* legswingGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */; };
-		E1FEF5ED2201A27900492BE4 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5EC2201A27900492BE4 /* ChallengeDetailViewController.swift */; };
-		E1FEF5EF2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5EE2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift */; };
+		E1FEF5ED2201A27900492BE4 /* ChallengeDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5EC2201A27900492BE4 /* ChallengeDayViewController.swift */; };
+		E1FEF5EF2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5EE2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift */; };
 		E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5F12201CC8D00492BE4 /* Challenge.swift */; };
 		E1FEF5F42201ED3B00492BE4 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5F32201ED3B00492BE4 /* ChallengeViewController.swift */; };
 		E1FEF5F62201FB8E00492BE4 /* ChallengeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5F52201FB8E00492BE4 /* ChallengeCollectionViewCell.swift */; };
@@ -73,6 +74,7 @@
 		E1DC050E21BEAD1100A2A4F9 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		E1DC050F21BEAD2F00A2A4F9 /* PoseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseView.swift; sourceTree = "<group>"; };
 		E1DC051021BEAD5F00A2A4F9 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		E1EA245F220DF56400A1B079 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
 		E1F76D7F21F3608E00D236A9 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		E1F76D8121F3650000D236A9 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		E1F76D8521F3760300D236A9 /* BattleListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleListCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -91,8 +93,8 @@
 		E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hightkneeGIF.gif; sourceTree = "<group>"; };
 		E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = legraiseGIF.gif; sourceTree = "<group>"; };
 		E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = legswingGIF.gif; sourceTree = "<group>"; };
-		E1FEF5EC2201A27900492BE4 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
-		E1FEF5EE2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1FEF5EC2201A27900492BE4 /* ChallengeDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDayViewController.swift; sourceTree = "<group>"; };
+		E1FEF5EE2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1FEF5F12201CC8D00492BE4 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		E1FEF5F32201ED3B00492BE4 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		E1FEF5F52201FB8E00492BE4 /* ChallengeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -155,8 +157,9 @@
 			children = (
 				E1FEF5F32201ED3B00492BE4 /* ChallengeViewController.swift */,
 				E1FEF5F52201FB8E00492BE4 /* ChallengeCollectionViewCell.swift */,
-				E1FEF5EC2201A27900492BE4 /* ChallengeDetailViewController.swift */,
-				E1FEF5EE2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift */,
+				E1FEF5EC2201A27900492BE4 /* ChallengeDayViewController.swift */,
+				E1FEF5EE2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift */,
+				E1EA245F220DF56400A1B079 /* ChallengeDetailViewController.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -422,12 +425,13 @@
 				E1FEF5C921F98A1F00492BE4 /* User.swift in Sources */,
 				E1FEF5CD21FB163600492BE4 /* Fitness.swift in Sources */,
 				E1F76D8221F3650000D236A9 /* CustomView.swift in Sources */,
-				E1FEF5ED2201A27900492BE4 /* ChallengeDetailViewController.swift in Sources */,
+				E1FEF5ED2201A27900492BE4 /* ChallengeDayViewController.swift in Sources */,
 				E16CA91721F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift in Sources */,
 				E1FEF5F62201FB8E00492BE4 /* ChallengeCollectionViewCell.swift in Sources */,
 				E1A6DE7E21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift in Sources */,
 				E1111A1D21EF2110000D1167 /* CustomNavController.swift in Sources */,
 				E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */,
+				E1EA2460220DF56400A1B079 /* ChallengeDetailViewController.swift in Sources */,
 				E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */,
 				E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */,
 				E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */,
@@ -435,7 +439,7 @@
 				E1FEF5CF21FB196600492BE4 /* FitnessTableViewCell.swift in Sources */,
 				E1A45F2521C2B9A600DF2F13 /* model_cpm.mlmodel in Sources */,
 				E1FEF5D721FCC3EC00492BE4 /* Swift+GIF.swift in Sources */,
-				E1FEF5EF2201CB2000492BE4 /* ChallengeDetailCollectionViewCell.swift in Sources */,
+				E1FEF5EF2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift in Sources */,
 				E1DC051221BEB01A00A2A4F9 /* PoseView.swift in Sources */,
 				E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */,
 			);
