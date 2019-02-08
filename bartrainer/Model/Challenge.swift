@@ -17,6 +17,7 @@ struct Challenge: Codable {
    var day: String
    var reps: String
    var set: String
+
     
 }
 
