@@ -14,7 +14,7 @@ class ChallengeDetailViewController: UIViewController , UICollectionViewDataSour
     @IBOutlet weak var challengeDetailCollection: UICollectionView!
     
     var challengeGroup: [Challenge] = []
-    var selectedChallengeGroup: Challenge?
+    var selectedChallengeGroup: ChallengeName?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class ChallengeDetailViewController: UIViewController , UICollectionViewDataSour
         self.challengeDetailCollection.dataSource = self
         self.challengeDetailCollection.delegate = self
         
-        Alamofire.request("http://tssnp.com/ws_bartrainer/challenge.php").responseData { response in
+        Alamofire.request("http://tssnp.com/ws_bartrainer/challenge.php?id_ex=\(selectedChallengeGroup!.id_exercise)").responseData { response in
             if let data = response.result.value {
                 
                 do {

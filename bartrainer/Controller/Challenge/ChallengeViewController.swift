@@ -44,7 +44,13 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
         
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Challenge_detail" {
+            let vc = segue.destination as! ChallengeDetailViewController
+            vc.selectedChallengeGroup = selectedChallengeGroup
+            
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return challengeGroup.count
@@ -56,6 +62,13 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
         cell.headerLabel.text = model.name
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedChallengeGroup = challengeGroup[indexPath.row]
+        performSegue(withIdentifier: "Challenge_detail", sender: self)
+        
+        
     }
 
 }
