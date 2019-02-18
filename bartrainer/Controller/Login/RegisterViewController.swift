@@ -23,7 +23,12 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButton(_ sender: Any) {
         
-        sendRegister(username: usernameField.text!, password: passwordField.text!, email: emailField.text!)
+        if  (passwordField.text! == passwordconfirmField.text!){
+                   sendRegister(username: usernameField.text!, password: passwordField.text!, email: emailField.text!)
+        }else{
+               Alert.showAlert(vc: self, title: "Error", message: "รหัสไม่ถูกต้อง", action: nil)
+        }
+ 
     }
     
     func sendRegister(username: String, password: String, email: String) {
@@ -38,27 +43,27 @@ class RegisterViewController: UIViewController {
                 let decoder = JSONDecoder()
                 
                 do {
-//                    let result = try decoder.decode(APIResponse.self, from: data)
-//                    
-//                    print(result)
-//                    
-//                    if result.message == "success" {
-////                        Alert.showAlert(vc: self, title: "ลงทะเบียนสำเร็จ", message: nil, action: {
-////                            self.navigationController?.popViewController(animated: true)
-////                        })
-//                    } else {
-//                        if result.error == "23000" {
-////                            Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสบัตรประชนมีในระบบแล้ว", action: nil)
-//                        } else {
-////                            Alert.showAlert(vc: self, title: "Error", message: "server ผิดพลาด", action: nil)
-//                        }
-//                    }
+                    let result = try decoder.decode(APIresponse.self, from: data)
+
+                    print(result)
+
+                    if result.message == "success" {
+                        Alert.showAlert(vc: self, title: "ลงทะเบียนสำเร็จ", message: nil, action: {
+//                            self.navigationController?.popViewController(animated: true)
+                        })
+                    } else {
+                        if result.error == "23000" {
+                            Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสบัตรประชนมีในระบบแล้ว", action: nil)
+                        } else {
+                            Alert.showAlert(vc: self, title: "Error", message: "server ผิดพลาด", action: nil)
+                        }
+                    }
                     
                 } catch {
-//                    Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)
+                    Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)
                 }
             } else {
-//                Alert.showAlert(vc: self, title: "Error", message: "กรุณาลองใหม่อีกครั้ง", action: nil)
+                Alert.showAlert(vc: self, title: "Error", message: "กรุณาลองใหม่อีกครั้ง", action: nil)
             }
         }
     }
