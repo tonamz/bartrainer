@@ -211,7 +211,6 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                 
                 if selectedExercise!.name == "Squat"{
                         timerCount = self.moveCalculate.calSquat()
-           
                 }else if selectedExercise!.name == "Lunges"{
                       timerCount = self.moveCalculate.calLunge()
 

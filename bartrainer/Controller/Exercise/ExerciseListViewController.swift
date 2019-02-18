@@ -48,11 +48,18 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                 print("error")
             }
         }
-
         
-      
+   
 
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Workout" {
+            let vc = segue.destination as! WorkoutViewController
+            vc.selectedCategoryGroup = selectedCategoryGroup
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,6 +69,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseListTableViewCell", for: indexPath) as! ExerciseListTableViewCell
+        
         let model = ExerciseList[indexPath.row]
         cell.iconImageView.image = UIImage(named: "Arms")
         cell.exerciseLabel.text = model.name

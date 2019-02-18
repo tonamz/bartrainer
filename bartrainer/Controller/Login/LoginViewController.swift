@@ -36,12 +36,14 @@ class LoginViewController: UIViewController , FBSDKLoginButtonDelegate{
             
 
             //if the user is already logged in
-            if FBSDKAccessToken.current() != nil{
-                getFBUserData()
-                toRootview()
-  
-
-            }
+            
+            
+//            if FBSDKAccessToken.current() != nil{
+//                getFBUserData()
+//                toRootview()
+//
+//
+//            }
             
          
         
@@ -56,15 +58,9 @@ class LoginViewController: UIViewController , FBSDKLoginButtonDelegate{
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         toRootview()
-      
-    
-        
     }
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
         toRootview()
-
-        
-        
         return true
     }
     
