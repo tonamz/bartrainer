@@ -2,136 +2,78 @@
 //  LoginViewController.swift
 //  bartrainer
 //
-//  Created by Methira Denthongchai on 24/1/2562 BE.
+//  Created by Methira Denthongchai on 18/2/2562 BE.
 //  Copyright © 2562 Methira Denthongchai. All rights reserved.
 //
 
 import UIKit
-
-import FacebookLogin
-import FBSDKLoginKit
 import Alamofire
 
-class LoginViewController: UIViewController , FBSDKLoginButtonDelegate{
-    
-//
-//    let loginButton: FBSDKLoginButton = {
-//        let button = FBSDKLoginButton()
-//        button.readPermissions = ["email"]
-//        return button
-//    }()
-    
-        var dict : [String : AnyObject]!
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            //creating button
-            let loginButton = LoginButton(readPermissions: [ .publicProfile , .email, .userFriends])
-            
-            //adding it to view
-              view.addSubview(loginButton)
-            loginButton.center = view.center
-            loginButton.delegate = self as? LoginButtonDelegate
-            
+class LoginViewController: UIViewController {
 
-            //if the user is already logged in
-            
-            
-//            if FBSDKAccessToken.current() != nil{
-//                getFBUserData()
-//                toRootview()
-//
-//
-//            }
-            
-         
-        
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        do {
+            try User.load()
+
+            if User.currentUser != nil {
+                print(User.currentUser?.id_user)
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            }
+        } catch {
+            print(error)
         }
-
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        print("complete login")
-        getFBUserData()
-        toRootview()
-      
-    }
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        toRootview()
-    }
-    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
-        toRootview()
-        return true
     }
     
-    
-        //when login button clicked
-//    @objc func loginButtonClicked() {
-//        let loginManager = LoginManager()
-//
-//        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController : self) { loginResult in
-//            switch loginResult {
-//            case .failed(let error):
-//                print(error)
-//            case .cancelled:
-//                print("User cancelled login")
-//            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-//              self.getFBUserData()
-//
-//
-//
-//
-//            }
-//        }
-//    }
-    
+    @IBAction func loginButton(_ sender: Any) {
+        if usernameField.text == "" {
+            Alert.showAlert(vc: self, title: "กรุณากรอก", message: nil, action: nil)
+            return
+        }
         
-        //function is fetching the user data
-        func getFBUserData(){
-            if((FBSDKAccessToken.current()) != nil){
-                FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-                    if (error == nil){
-                        self.dict = result as? [String : AnyObject]
-                        self.loginWithfacebook(result: result! as AnyObject)
-                        print("aaaaaaaaaaa")
-//                        print(result!)
-//                        print(self.dict)
-                        
-//                        if let email = (result as AnyObject)["email"]! as? String{
-//                            print("emaillll:\(email)")
-//                                                }
-
+        if passwordField.text == "" {
+            Alert.showAlert(vc: self, title: "กรุณากรอก", message: nil, action: nil)
+            return
+        }
+        
+    
+        login(username: usernameField.text!, password: passwordField.text!)
+    }
+    
+    func login(username: String, password: String) {
+        let param: Parameters = ["username": username,
+                                 "password": password]
+        
+        Alamofire.request("http://tssnp.com/ws_bartrainer/login.php", method: .post, parameters: param, encoding: URLEncoding.default, headers: nil).responseData { response in
+            if let data = response.result.value {
+                let decoder = JSONDecoder()
+                
+                do {
+                    let user = try decoder.decode([User].self, from: data).first
+                    
+                    if let user = user {
+                        User.currentUser = user
+                        try User.save()
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+                        UIApplication.shared.keyWindow?.rootViewController = vc
+                    } else {
+                        Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสผ่านไม่ถูกต้อง", action: nil)
                     }
-                })
+                } catch {
+                    Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)
+                    print("hahaha")
+                }
+            } else {
+                Alert.showAlert(vc: self, title: "Error", message: "กรุณาลองใหม่อีกครั้ง", action: nil)
             }
         }
-//
-    func toRootview() {
-        
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeController =  mainStoryboard.instantiateViewController(withIdentifier: "tabbar") as! UITabBarController
-        appDelegate?.window?.rootViewController = homeController
     }
-    func loginWithfacebook(result: AnyObject){
-        let email = (result as AnyObject)["email"]! as? String
-        let id = (result as AnyObject)["id"]! as? String
-        let name = (result as AnyObject)["name"]! as? String
-        let picture = (result as AnyObject)["picture"]! as? NSDictionary, data = picture?["data"] as? NSDictionary, url = data?["url"] as? String
-        
-        print("\(String(describing: email)),\(String(describing: id)),\(String(describing: name)),\(String(describing: picture))")
-        
-//        let param: Parameters = ["email": email,
-//                                 "id": id,
-//                                 "name": name,
-//                                 "picture": picture
-//                            ]
-//  
-
-        }
     
-        
-   
-        
+    @IBAction func loginWithFacebook(_ sender: Any) {
     }
+    
 
+}

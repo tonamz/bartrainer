@@ -13,17 +13,18 @@ struct User: Codable {
     public static var currentUser: User?
 
     var id_user: String
-    var name: String
-    var weight: String
-    var height: String
-    var weight_goal: String
+    var username: String
+    var weight: Int
+    var height: Int
+    var weight_goal: Int
     var exercise_goal: String
     var gender: String
-    var friend: String
+    var friend: Int
     var created_at: String
     var id_facebook: String
     var img_profile: String
-    var email: String
+    var password: String
+        var email: String
     
     static func save() throws {
         if let currentUser = User.currentUser {

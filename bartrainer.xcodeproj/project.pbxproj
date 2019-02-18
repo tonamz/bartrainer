@@ -16,6 +16,7 @@
 		E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */; };
 		E12A8EDF221A988B00A00321 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EDE221A988B00A00321 /* Alert.swift */; };
 		E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE0221AFD4200A00321 /* APIresponse.swift */; };
+		E12A8EE3221B09BE00A00321 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE2221B09BE00A00321 /* LoginViewController.swift */; };
 		E152C0BE220D912000DF906F /* Challenge_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152C0BD220D912000DF906F /* Challenge_name.swift */; };
 		E16CA91121F0F95400D4CEA6 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */; };
 		E16CA91521F10ABB00D4CEA6 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91421F10ABB00D4CEA6 /* Exercise.swift */; };
@@ -38,7 +39,7 @@
 		E1F76D8821F3840E00D236A9 /* BattleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76D8721F3840E00D236A9 /* BattleListViewController.swift */; };
 		E1FEF5C221F77CB200492BE4 /* BattleExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5C121F77CB200492BE4 /* BattleExerciseViewController.swift */; };
 		E1FEF5C421F8C29F00492BE4 /* BattleFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5C321F8C29F00492BE4 /* BattleFinishViewController.swift */; };
-		E1FEF5C721F8F7D300492BE4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5C621F8F7D300492BE4 /* LoginViewController.swift */; };
+		E1FEF5C721F8F7D300492BE4 /* LoginOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5C621F8F7D300492BE4 /* LoginOldViewController.swift */; };
 		E1FEF5C921F98A1F00492BE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5C821F98A1F00492BE4 /* User.swift */; };
 		E1FEF5CB21FB13C800492BE4 /* FitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5CA21FB13C800492BE4 /* FitnessViewController.swift */; };
 		E1FEF5CD21FB163600492BE4 /* Fitness.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5CC21FB163600492BE4 /* Fitness.swift */; };
@@ -69,6 +70,7 @@
 		E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		E12A8EDE221A988B00A00321 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E12A8EE0221AFD4200A00321 /* APIresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIresponse.swift; sourceTree = "<group>"; };
+		E12A8EE2221B09BE00A00321 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E152C0BD220D912000DF906F /* Challenge_name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge_name.swift; sourceTree = "<group>"; };
 		E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		E16CA91421F10ABB00D4CEA6 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -93,7 +95,7 @@
 		E1F76D8721F3840E00D236A9 /* BattleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleListViewController.swift; sourceTree = "<group>"; };
 		E1FEF5C121F77CB200492BE4 /* BattleExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleExerciseViewController.swift; sourceTree = "<group>"; };
 		E1FEF5C321F8C29F00492BE4 /* BattleFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleFinishViewController.swift; sourceTree = "<group>"; };
-		E1FEF5C621F8F7D300492BE4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E1FEF5C621F8F7D300492BE4 /* LoginOldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOldViewController.swift; sourceTree = "<group>"; };
 		E1FEF5C821F98A1F00492BE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E1FEF5CA21FB13C800492BE4 /* FitnessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewController.swift; sourceTree = "<group>"; };
 		E1FEF5CC21FB163600492BE4 /* Fitness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fitness.swift; sourceTree = "<group>"; };
@@ -268,8 +270,9 @@
 		E1FEF5C521F8F7B000492BE4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E1FEF5C621F8F7D300492BE4 /* LoginViewController.swift */,
+				E1FEF5C621F8F7D300492BE4 /* LoginOldViewController.swift */,
 				E1AC805D22199E6500644FAC /* RegisterViewController.swift */,
+				E12A8EE2221B09BE00A00321 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -428,8 +431,9 @@
 			files = (
 				E152C0BE220D912000DF906F /* Challenge_name.swift in Sources */,
 				E1FEF5D121FB225400492BE4 /* FitnessDetailViewController.swift in Sources */,
+				E12A8EE3221B09BE00A00321 /* LoginViewController.swift in Sources */,
 				E102DC5822132D9C00FC3A7E /* WorkoutViewController.swift in Sources */,
-				E1FEF5C721F8F7D300492BE4 /* LoginViewController.swift in Sources */,
+				E1FEF5C721F8F7D300492BE4 /* LoginOldViewController.swift in Sources */,
 				E1FEF5C221F77CB200492BE4 /* BattleExerciseViewController.swift in Sources */,
 				E102DC5C2217214700FC3A7E /* ChallengeWorkoutViewController.swift in Sources */,
 				E16CA91121F0F95400D4CEA6 /* ExerciseListViewController.swift in Sources */,

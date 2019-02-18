@@ -35,9 +35,12 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
         
         private var moveCalculate: movePoint = movePoint()
         var scoreCal = 0
+      var id_ex:Int = 0
     
         var selectedExercise: Exercise?
         var ExerciseList: [Exercise] = []
+    
+  
 
     
         
@@ -97,6 +100,8 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                   gifExercise.loadGif(name: " ")
             }
             
+            id_ex = Int((selectedExercise?.id_exercise)!) ?? 5
+            
          
             visionModel = try? VNCoreMLModel(for: EstimationModel().model)
             setUpCamera()
@@ -131,7 +136,8 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
             timerr.invalidate()
             timer.text = "0"
             performSegue(withIdentifier: "battle_done", sender: self)
-                     self.videoCapture.stop()
+            battleScore(id_user: 1,id_exercise: id_ex ,name_exercise: selectedExercise?.name ?? "Null" ,reps: scoreCal,cal: 10)
+            self.videoCapture.stop()
             
 
         }else if countdown <= 5 {
@@ -222,10 +228,7 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                     timerCount = self.moveCalculate.calLegSwing()
                 }
                 
-                
-            
-             
-                
+  
     
                 DispatchQueue.main.sync {
                     
@@ -248,12 +251,6 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                         self.tryLabel.text = "\(scoreCal)"
                     }
 
-
-                    
-                  
-
-                    
-                    
                     
                     // end of measure
                     self.👨‍🔧.🎬🤚()
@@ -323,6 +320,48 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                 self.predictUsingVision(pixelBuffer: pixelBuffer)
             }
         }
+    
+    
+    func battleScore(id_user: Int,id_exercise: Int,name_exercise: String,reps: Int,cal: Int) {
+        
+        let param: Parameters = [
+                                 "id_user": id_user,
+                                 "id_exercise": id_exercise,
+                                 "name_exercise": name_exercise,
+                                 "reps": reps,
+                                 "cal": cal
+            
+        
+        ]
+        
+        Alamofire.request("http://tssnp.com/ws_bartrainer/battle.php", method: .post, parameters: param, encoding: URLEncoding.default, headers: nil).responseData { response in
+            if let data = response.result.value {
+                let decoder = JSONDecoder()
+                
+                do {
+                    let result = try decoder.decode(APIresponse.self, from: data)
+                    
+                    print(result)
+                    
+                    if result.message == "success" {
+                  
+                    } else {
+                        if result.error == "23000" {
+                            Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสบัตรประชนมีในระบบแล้ว", action: nil)
+                        } else {
+                            Alert.showAlert(vc: self, title: "Error", message: "server ผิดพลาด", action: nil)
+                        }
+                    }
+                    
+                } catch {
+                    Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)
+                }
+            } else {
+                Alert.showAlert(vc: self, title: "Error", message: "กรุณาลองใหม่อีกครั้ง", action: nil)
+            }
+        }
+    }
+
         
         
     }
@@ -336,37 +375,3 @@ class  battleEX: movePoint {
     }
     
 }
-//
-//class timer{
-//    
-//    var countdownTimer: Timer!
-//    var totalTime = 5
-//    
-//    func startTimer() {
-//        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-//    }
-//    
-//    func updateTime() {
-////        timerLabel.text = "\(timeFormatted(totalTime))"
-//        
-//        if totalTime != 0 {
-//            totalTime -= 1
-//        } else {
-//            endTimer()
-//        }
-//    }
-//    
-//    func endTimer() {
-//        countdownTimer.invalidate()
-//    }
-//    
-//    func timeFormatted(_ totalSeconds: Int) -> String {
-//        let seconds: Int = totalSeconds % 60
-//        let minutes: Int = (totalSeconds / 60) % 60
-//        //     let hours: Int = totalSeconds / 3600
-//        return String(format: "%02d:%02d", minutes, seconds)
-//    }
-//
-//}
-//    
-//
