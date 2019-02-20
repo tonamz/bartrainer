@@ -14,6 +14,8 @@
 		E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10DF3C721F0E39A0021CE85 /* Category.swift */; };
 		E1111A1D21EF2110000D1167 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A1C21EF2110000D1167 /* CustomNavController.swift */; };
 		E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */; };
+		E112AF9F221C4C8300AB3340 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112AF9E221C4C8300AB3340 /* Battle.swift */; };
+		E112AFA1221C5ADA00AB3340 /* BattleGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112AFA0221C5ADA00AB3340 /* BattleGroupTableViewCell.swift */; };
 		E12A8EDF221A988B00A00321 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EDE221A988B00A00321 /* Alert.swift */; };
 		E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE0221AFD4200A00321 /* APIresponse.swift */; };
 		E12A8EE3221B09BE00A00321 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE2221B09BE00A00321 /* LoginViewController.swift */; };
@@ -68,6 +70,8 @@
 		E10DF3C721F0E39A0021CE85 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E1111A1C21EF2110000D1167 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
+		E112AF9E221C4C8300AB3340 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
+		E112AFA0221C5ADA00AB3340 /* BattleGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleGroupTableViewCell.swift; sourceTree = "<group>"; };
 		E12A8EDE221A988B00A00321 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E12A8EE0221AFD4200A00321 /* APIresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIresponse.swift; sourceTree = "<group>"; };
 		E12A8EE2221B09BE00A00321 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				E1F76D8721F3840E00D236A9 /* BattleListViewController.swift */,
 				E1FEF5C121F77CB200492BE4 /* BattleExerciseViewController.swift */,
 				E1FEF5C321F8C29F00492BE4 /* BattleFinishViewController.swift */,
+				E112AFA0221C5ADA00AB3340 /* BattleGroupTableViewCell.swift */,
 			);
 			path = Battle;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				E152C0BD220D912000DF906F /* Challenge_name.swift */,
 				E12A8EDE221A988B00A00321 /* Alert.swift */,
 				E12A8EE0221AFD4200A00321 /* APIresponse.swift */,
+				E112AF9E221C4C8300AB3340 /* Battle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				E1A6DE7E21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift in Sources */,
 				E1111A1D21EF2110000D1167 /* CustomNavController.swift in Sources */,
 				E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */,
+				E112AF9F221C4C8300AB3340 /* Battle.swift in Sources */,
 				E1EA2460220DF56400A1B079 /* ChallengeDetailViewController.swift in Sources */,
 				E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */,
 				E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */,
@@ -468,6 +475,7 @@
 				E1FEF5D721FCC3EC00492BE4 /* Swift+GIF.swift in Sources */,
 				E1FEF5EF2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift in Sources */,
 				E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */,
+				E112AFA1221C5ADA00AB3340 /* BattleGroupTableViewCell.swift in Sources */,
 				E1DC051221BEB01A00A2A4F9 /* PoseView.swift in Sources */,
 				E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */,
 			);

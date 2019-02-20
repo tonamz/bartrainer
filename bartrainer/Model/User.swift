@@ -12,7 +12,7 @@ struct User: Codable {
     
     public static var currentUser: User?
 
-    var id_user: String
+    var id_user: Int
     var username: String
     var weight: Int
     var height: Int
@@ -20,16 +20,15 @@ struct User: Codable {
     var exercise_goal: String
     var gender: String
     var friend: Int
-    var created_at: String
+
     var id_facebook: String
     var img_profile: String
     var password: String
-        var email: String
+    var email: String
     
     static func save() throws {
         if let currentUser = User.currentUser {
             let encoder = JSONEncoder()
-            
             let userJSON = try encoder.encode(currentUser)
             
             UserDefaults.standard.set(userJSON, forKey: "CURRENT_USER")

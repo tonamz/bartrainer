@@ -15,7 +15,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     
 
     
-    @IBOutlet weak var exercisListTableView: UITableView!
+    @IBOutlet weak var exerciseListTableView: UITableView!
     
     var selectedCategoryGroup: Category?
     var ExerciseList: [Exercise] = []
@@ -27,8 +27,8 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
 //        self.exercisListTableView.backgroundColor = UIColor(white: 1, alpha: 0)
         
         
-        self.exercisListTableView.dataSource = self
-        self.exercisListTableView.delegate = self
+        self.exerciseListTableView.dataSource = self
+        self.exerciseListTableView.delegate = self
         
         Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_category.php?group_id=\(selectedCategoryGroup!.id)").responseData { response in
             if let data = response.result.value {
@@ -39,7 +39,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                     self.ExerciseList = try decoder.decode([Exercise].self, from: data)
                     
                     
-                    self.exercisListTableView.reloadData()
+                    self.exerciseListTableView.reloadData()
                     
                 } catch {
                     print(error.localizedDescription)
