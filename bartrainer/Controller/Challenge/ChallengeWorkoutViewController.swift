@@ -36,9 +36,15 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
     
     private var moveCalculate: movePoint = movePoint()
     var scoreCal = 0
+
     
-    var selectedExercise: Exercise?
-    var ExerciseList: [Exercise] = []
+    var challengeGroup: [Challenge] = []
+    var selectedChallengeGroup: ChallengeName?
+    var selectedChallenge: Challenge?
+    
+    var id_ex:Int = 0
+    var id_ch:Int = 0
+    var reps:Int = 0
     
     
     
@@ -84,36 +90,38 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-        if selectedExercise!.name == "Squat"{
+        if selectedChallenge!.id_exercise == "1"{
             gifExercise.loadGif(name: "squatGIF")
-        }else if selectedExercise!.name == "Lunges"{
+        }else if selectedChallenge!.id_exercise == "2"{
             gifExercise.loadGif(name: " ")
-        }else if selectedExercise!.name == "Hight knee"{
+        }else if selectedChallenge!.id_exercise == "3"{
             gifExercise.loadGif(name: "hightkneeGIF")
-        }else if selectedExercise!.name == "Side Leg raise"{
+        }else if selectedChallenge!.id_exercise == "4"{
             gifExercise.loadGif(name: "legraiseGIF")
-        }else if selectedExercise!.name == "Leg swing"{
+        }else if selectedChallenge!.id_exercise == "5"{
             gifExercise.loadGif(name: "legswingGIF")
         }else{
             gifExercise.loadGif(name: " ")
         }
         
+        id_ex = Int((selectedChallenge?.id_exercise)!) ?? 5
+        id_ch = Int((selectedChallengeGroup?.id)!) ?? 5
+        reps = Int((selectedChallenge?.reps)!) ?? 5
         
         visionModel = try? VNCoreMLModel(for: EstimationModel().model)
         setUpCamera()
         poseView.setUpOutputComponent()
         //            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-        self.title = selectedExercise!.name
+        self.title = selectedChallengeGroup!.name
         
         
-        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise.php").responseData { response in
+        Alamofire.request("http://tssnp.com/ws_bartrainer/challenge_detail.php?id_challenge=\(selectedChallenge!.id)").responseData { response in
             if let data = response.result.value {
                 
                 do {
                     let decoder = JSONDecoder()
                     
-                    self.ExerciseList = try decoder.decode([Exercise].self, from: data)
-                    
+                    self.challengeGroup = try decoder.decode([Challenge].self, from: data)
                     
                 } catch {
                     print(error.localizedDescription)
@@ -131,7 +139,10 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
         if countdown == 0 {
             timerr.invalidate()
             timer.text = "0"
-            performSegue(withIdentifier: "battle_done", sender: self)
+//            performSegue(withIdentifier: "battle_done", sender: self)
+            challengeWorkout(id_challenge: id_ch ,id_user: 1,id_exercise: id_ex,reps: scoreCal,cal: 10)
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+            UIApplication.shared.keyWindow?.rootViewController = vc
             self.videoCapture.stop()
             
             
@@ -148,6 +159,7 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
     func countdownStop(){
         timerr.invalidate()
         countdown = 10
+
         
     }
     
@@ -207,19 +219,19 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
             
             // convert heatmap to [keypoint]
             let n_kpoints = convert(heatmap: heatmap)
-            _ = moveCalculate.addKeypoints(keypoints: n_kpoints,nameEx: selectedExercise!.name)
+            _ = moveCalculate.addKeypoints(keypoints: n_kpoints,nameEx: selectedChallengeGroup!.name)
             var timerCount: Int = 0
             
-            if selectedExercise!.name == "Squat"{
+            if selectedChallenge!.id_exercise == "1"{
                 timerCount = self.moveCalculate.calSquat()
-            }else if selectedExercise!.name == "Lunges"{
+            }else if selectedChallenge!.id_exercise == "2"{
                 timerCount = self.moveCalculate.calLunge()
                 
-            }else if selectedExercise!.name == "Hight knee"{
+            }else if selectedChallenge!.id_exercise == "3"{
                 timerCount = self.moveCalculate.calHightknee()
-            }else if selectedExercise!.name == "Side Leg raise"{
+            }else if selectedChallenge!.id_exercise == "4"{
                 timerCount = self.moveCalculate.calLegraiseSide()
-            }else if selectedExercise!.name == "Leg swing"{
+            }else if selectedChallenge!.id_exercise == "5"{
                 timerCount = self.moveCalculate.calLegSwing()
             }
             
@@ -242,6 +254,14 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
                     }
                     scoreCal += timerCount
                 }
+                if scoreCal == reps {
+                    challengeWorkout(id_challenge: id_ch ,id_user: 1,id_exercise: id_ex,reps: scoreCal,cal: 10)
+                    countdownStop()
+                    self.videoCapture.stop()
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+                    UIApplication.shared.keyWindow?.rootViewController = vc
+                }
+               
                 
                 self.poseView.bodyPoints = n_kpoints
                 
@@ -260,6 +280,46 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
                 self.👨‍🔧.🎬🤚()
                 
                 
+            }
+        }
+    }
+    
+    func challengeWorkout(id_challenge: Int,id_user: Int,id_exercise: Int,reps: Int,cal: Int) {
+        
+        let param: Parameters = [
+            "id_challenge": id_challenge,
+            "id_user": id_user,
+            "id_exercise": id_exercise,
+            "reps": reps,
+            "cal": cal
+            
+            
+        ]
+        
+        Alamofire.request("http://tssnp.com/ws_bartrainer/challengeWorkout.php", method: .post, parameters: param, encoding: URLEncoding.default, headers: nil).responseData { response in
+            if let data = response.result.value {
+                let decoder = JSONDecoder()
+                
+                do {
+                    let result = try decoder.decode(APIresponse.self, from: data)
+                    
+                    print(result)
+                    
+                    if result.message == "success" {
+                        
+                    } else {
+                        if result.error == "23000" {
+                            Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสบัตรประชนมีในระบบแล้ว", action: nil)
+                        } else {
+                            Alert.showAlert(vc: self, title: "Error", message: "server ผิดพลาด", action: nil)
+                        }
+                    }
+                    
+                } catch {
+                    Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)
+                }
+            } else {
+                Alert.showAlert(vc: self, title: "Error", message: "กรุณาลองใหม่อีกครั้ง", action: nil)
             }
         }
     }
