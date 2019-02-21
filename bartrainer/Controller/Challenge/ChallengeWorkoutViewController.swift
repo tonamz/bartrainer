@@ -139,11 +139,11 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
         if countdown == 0 {
             timerr.invalidate()
             timer.text = "0"
-//            performSegue(withIdentifier: "battle_done", sender: self)
             challengeWorkout(id_challenge: id_ch ,id_user: 1,id_exercise: id_ex,reps: scoreCal,cal: 10)
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
-            UIApplication.shared.keyWindow?.rootViewController = vc
+//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+//            UIApplication.shared.keyWindow?.rootViewController = vc
             self.videoCapture.stop()
+               performSegue(withIdentifier: "workoutFinish", sender: self)
             
             
         }else if countdown <= 5 {
@@ -164,8 +164,10 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "battle_done" {
-            let vc = segue.destination as! BattleFinishViewController
+        if segue.identifier == "workoutFinish" {
+            let vc = segue.destination as! ChallengeFinishViewController
+            vc.selectedChallengeGroup = selectedChallengeGroup
+            vc.selectedChallenge = selectedChallenge
             vc.scoreCal = scoreCal
             
         }
@@ -257,24 +259,23 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
                 if scoreCal == reps {
                     challengeWorkout(id_challenge: id_ch ,id_user: 1,id_exercise: id_ex,reps: scoreCal,cal: 10)
                     countdownStop()
+                    performSegue(withIdentifier: "workoutFinish", sender: self)
                     self.videoCapture.stop()
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
-                    UIApplication.shared.keyWindow?.rootViewController = vc
+          
+//                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+//                    UIApplication.shared.keyWindow?.rootViewController = vc
                 }
                
                 
                 self.poseView.bodyPoints = n_kpoints
                 
                 if scoreCal != 0 {
-                    self.tryLabel.text = "\(scoreCal)"
+                    self.tryLabel.text = "\(scoreCal) \r\n/ \(reps) "
+                }else {
+                    self.tryLabel.text = " 0 / \(reps) "
                 }
                 
-                
-                
-                
-                
-                
-                
+            
                 
                 // end of measure
                 self.👨‍🔧.🎬🤚()

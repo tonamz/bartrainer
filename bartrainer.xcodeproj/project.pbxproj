@@ -11,6 +11,7 @@
 		E102DC5822132D9C00FC3A7E /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E102DC5722132D9C00FC3A7E /* WorkoutViewController.swift */; };
 		E102DC5A2214202800FC3A7E /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E102DC592214202800FC3A7E /* WorkoutsViewController.swift */; };
 		E102DC5C2217214700FC3A7E /* ChallengeWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E102DC5B2217214700FC3A7E /* ChallengeWorkoutViewController.swift */; };
+		E1040DC5221E948500818A2F /* ChallengeFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1040DC4221E948500818A2F /* ChallengeFinishViewController.swift */; };
 		E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10DF3C721F0E39A0021CE85 /* Category.swift */; };
 		E1111A1D21EF2110000D1167 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A1C21EF2110000D1167 /* CustomNavController.swift */; };
 		E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */; };
@@ -67,6 +68,7 @@
 		E102DC5722132D9C00FC3A7E /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		E102DC592214202800FC3A7E /* WorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
 		E102DC5B2217214700FC3A7E /* ChallengeWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeWorkoutViewController.swift; sourceTree = "<group>"; };
+		E1040DC4221E948500818A2F /* ChallengeFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeFinishViewController.swift; sourceTree = "<group>"; };
 		E10DF3C721F0E39A0021CE85 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E1111A1C21EF2110000D1167 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				E1FEF5EE2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift */,
 				E1EA245F220DF56400A1B079 /* ChallengeDetailViewController.swift */,
 				E102DC5B2217214700FC3A7E /* ChallengeWorkoutViewController.swift */,
+				E1040DC4221E948500818A2F /* ChallengeFinishViewController.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				E1EA2460220DF56400A1B079 /* ChallengeDetailViewController.swift in Sources */,
 				E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */,
 				E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */,
+				E1040DC5221E948500818A2F /* ChallengeFinishViewController.swift in Sources */,
 				E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */,
 				E1DC051421BEB04200A2A4F9 /* Measure.swift in Sources */,
 				E1FEF5CF21FB196600492BE4 /* FitnessTableViewCell.swift in Sources */,
