@@ -138,7 +138,7 @@ class ViewController: UIViewController, VideoCaptureDelegate {
             
             // convert heatmap to [keypoint]
             let n_kpoints = convert(heatmap: heatmap)
-            let scoreSquat: Int = self.moveCalculate.addKeypoints(keypoints: n_kpoints,nameEx: "aaa")
+            let scoreSquat: Int = self.moveCalculate.addKeypoints(keypoints: n_kpoints)
 //            let scoreSquat: Int = self.moveCalculate.calSquat()
 
      
@@ -331,7 +331,7 @@ class  movePoint{
     var timerr:Timer!
     var countdown:Int = 10
     
-    func addKeypoints(keypoints: [BodyPoint?],nameEx: String)-> Int {
+    func addKeypoints(keypoints: [BodyPoint?])-> Int {
         keypointsArray.append(keypoints)
         if keypointsArray.count > countPoint {
             keypointsArray.remove(at: 0)
@@ -363,6 +363,24 @@ class  movePoint{
         
         return 0
         
+    }
+    
+    func callExercise(idEx: Int) -> Int {
+        
+        var score: Int = 0
+        if(idEx==1){
+            score = calSquat()
+        }else   if(idEx==2){
+            score = calLunge()
+        }else   if(idEx==3){
+            score = calHightknee()
+        }else   if(idEx==4){
+            score = calLegraiseSide()
+        }else   if(idEx==5){
+            score = calLegraiseSide()
+        }
+        
+        return score
     }
     
 

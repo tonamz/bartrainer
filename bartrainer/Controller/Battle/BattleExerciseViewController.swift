@@ -212,7 +212,7 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                 
                 // convert heatmap to [keypoint]
                 let n_kpoints = convert(heatmap: heatmap)
-                _ = moveCalculate.addKeypoints(keypoints: n_kpoints,nameEx: selectedExercise!.name)
+                _ = moveCalculate.addKeypoints(keypoints: n_kpoints)
                 var timerCount: Int = 0
                 
                 if selectedExercise!.name == "Squat"{

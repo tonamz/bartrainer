@@ -221,7 +221,7 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
             
             // convert heatmap to [keypoint]
             let n_kpoints = convert(heatmap: heatmap)
-            _ = moveCalculate.addKeypoints(keypoints: n_kpoints,nameEx: selectedChallengeGroup!.name)
+            _ = moveCalculate.addKeypoints(keypoints: n_kpoints)
             var timerCount: Int = 0
             
             if selectedChallenge!.id_exercise == "1"{

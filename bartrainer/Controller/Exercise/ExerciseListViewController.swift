@@ -16,12 +16,16 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
 
     
     @IBOutlet weak var exerciseListTableView: UITableView!
+     @IBOutlet weak var buttonOutlet: UIButton!
+    
     
     var selectedCategoryGroup: Category?
     var ExerciseList: [Exercise] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buttonOutlet.layer.cornerRadius = 10
         title = selectedCategoryGroup!.name
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
 //        self.exercisListTableView.backgroundColor = UIColor(white: 1, alpha: 0)
@@ -37,8 +41,6 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                     let decoder = JSONDecoder()
                     
                     self.ExerciseList = try decoder.decode([Exercise].self, from: data)
-                    
-                    
                     self.exerciseListTableView.reloadData()
                     
                 } catch {
@@ -48,15 +50,11 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                 print("error")
             }
         }
-        
-   
-
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Workout" {
-            let vc = segue.destination as! WorkoutViewController
+            let vc = segue.destination as! WorkoutsViewController
             vc.selectedCategoryGroup = selectedCategoryGroup
             
         }

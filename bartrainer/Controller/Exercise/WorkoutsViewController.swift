@@ -19,6 +19,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     public typealias BodyPoint = (point: CGPoint, confidence: Double)
     public typealias DetectObjectsCompletion = ([BodyPoint?]?, Error?) -> Void
     
+    @IBOutlet weak var nameExercise: UILabel!
     // MARK: - UI 프로퍼티
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var poseView: PoseView!
@@ -31,12 +32,15 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
     var timerr:Timer!
     var countdown:Int = 10
+    var index:Int = 0
     
     
     private var tableData: [BodyPoint?] = []
     
     private var moveCalculate: movePoint = movePoint()
     var scoreCal = 0
+    var exerciseloop: Int = 0
+ 
     
     var selectedCategoryGroup: Category?
     var ExerciseList: [Exercise] = []
@@ -75,19 +79,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-//        if selectedExercise!.name == "Squat"{
-//            gifExercise.loadGif(name: "squatGIF")
-//        }else if selectedExercise!.name == "Lunges"{
-//            gifExercise.loadGif(name: " ")
-//        }else if selectedExercise!.name == "Hight knee"{
-//            gifExercise.loadGif(name: "hightkneeGIF")
-//        }else if selectedExercise!.name == "Side Leg raise"{
-//            gifExercise.loadGif(name: "legraiseGIF")
-//        }else if selectedExercise!.name == "Leg swing"{
-//            gifExercise.loadGif(name: "legswingGIF")
-//        }else{
-//            gifExercise.loadGif(name: " ")
-//        }
+
         
         
         visionModel = try? VNCoreMLModel(for: EstimationModel().model)
@@ -199,39 +191,60 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             
             // convert heatmap to [keypoint]
             let n_kpoints = convert(heatmap: heatmap)
-//            _ = moveCalculate.addKeypoints(keypoints: n_kpoints,nameEx: selectedExercise!.name)
-//            var timerCount: Int = 0
+            _ = moveCalculate.addKeypoints(keypoints: n_kpoints)
+            var timerCount: Int = 0
+            
+            let indexPath = NSIndexPath(row: exerciseloop, section: 0)
+            let model = ExerciseList[indexPath.row]
+            timerCount = moveCalculate.callExercise(idEx: Int(model.id_exercise) ?? 1)
+            
+            
+//            while index<ExerciseList.count {
+//                let indexPath = NSIndexPath(row: index, section: 0)
+//                let model = ExerciseList[indexPath.row]
+//                timerCount = moveCalculate.callExercise(idEx: Int(model.id_exercise) ?? 1)
+////                index+=1
 //
-//            if selectedExercise!.name == "Squat"{
-//                timerCount = self.moveCalculate.calSquat()
-//            }else if selectedExercise!.name == "Lunges"{
-//                timerCount = self.moveCalculate.calLunge()
-//
-//            }else if selectedExercise!.name == "Hight knee"{
-//                timerCount = self.moveCalculate.calHightknee()
-//            }else if selectedExercise!.name == "Side Leg raise"{
-//                timerCount = self.moveCalculate.calLegraiseSide()
-//            }else if selectedExercise!.name == "Leg swing"{
-//                timerCount = self.moveCalculate.calLegSwing()
 //            }
-            
-            
-            
-            
-            
-            
+
             DispatchQueue.main.sync {
-       
                 
+             
+                
+                nameExercise.text = model.name
+                
+                if timerCount == 1 {
+                    if timerr != nil{
+                        countdownStop()
+                        countdownStart()
+                    
+                    }else {
+                        countdownStart()
+                    }
+                    scoreCal += timerCount
+                }
+               
+                    self.tryLabel.text = "\(scoreCal)"
+                
+                if scoreCal == 2 {
+
+                    countdownStop()
+                    if(exerciseloop<ExerciseList.count){
+                        exerciseloop+=1
+                        scoreCal=0
+                    }
+                
+
+                }
                 self.poseView.bodyPoints = n_kpoints
                 
-                if scoreCal != 0 {
-                    self.tryLabel.text = "\(scoreCal)"
-                }
+              
             
                 // end of measure
                 self.👨‍🔧.🎬🤚()
                 
+                
+         
                 
             }
         }
@@ -299,12 +312,5 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     }
     
     
-}
-
-class workout{
-
-    
-    
-
 }
 
