@@ -12,14 +12,14 @@ struct User: Codable {
     
     public static var currentUser: User?
 
-    var id_user: Int
+    var id_user: String
     var username: String
-    var weight: Int
-    var height: Int
-    var weight_goal: Int
+    var weight: String
+    var height: String
+    var weight_goal: String
     var exercise_goal: String
     var gender: String
-    var friend: Int
+    var friend: String
 
     var id_facebook: String
     var img_profile: String

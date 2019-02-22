@@ -56,9 +56,11 @@ class LoginViewController: UIViewController {
                     
                     if let user = user {
                         User.currentUser = user
+                           print("loginn") 
                         try User.save()
                         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
                         UIApplication.shared.keyWindow?.rootViewController = vc
+                       
                     } else {
                         Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสผ่านไม่ถูกต้อง", action: nil)
                     }

@@ -338,28 +338,6 @@ class  movePoint{
           
             
         }
-//        print("aaa")
-//        if keypointsArray.count > 28 {
-//
-//            if (nameEx == "Squat"){
-//                scoreCal = calSquat()
-//                score = score + scoreCal
-//
-//
-//            }
-//            if (nameEx == "aaa"){
-//                scoreCal = calaaa()
-//                score = score + scoreCal
-//
-//            }
-//            return score
-//
-//
-//        }else { return 0 }
-//
-//
-//
-//    }
         
         return 0
         
@@ -430,19 +408,34 @@ class  movePoint{
             let RkneeY = calPointY(12,1,18)
             let LkneeY = calPointY(9,1,18)
             
-            print("\(String(format: "%.3f",headX))")
-            if (headY < 0.60 && headY > -0.60  && RkneeY < 0.00 && RkneeY > -0.100 && LkneeY < -0.100 && LkneeY > -0.300 && headX == 0 ){
-                print("Yeahhhhhhhhhh")
+            
+            print("\(String(format: "%.3f",LkneeY)) , \(String(format: "%.3f",RkneeY))")
+            if (headY < 0.60 && headY > -0.60
+                && RkneeY < 0.00 && RkneeY > -0.100
+                && LkneeY < -0.100 && LkneeY > -0.300
+                && headX == 0 ){
+                
+                print("LLLL")
                 keypointsArray.removeAll()
                 
                 return 1
-                //            return 1
-            }else {return 0}
+          
+            } else if (headY < 0.60 && headY > -0.60
+                && LkneeY < 0.00 && LkneeY > -0.100
+                && RkneeY < -0.100 && RkneeY > -0.300
+                && headX == 0 ){
+                
+                print("RRR")
+                keypointsArray.removeAll()
+                
+                return 1}else {return 0}
             
         }
         
         return 0
     }
+    
+    
     
     func calHightknee()-> Int{
         if keypointsArray.count > 5 {
@@ -454,26 +447,30 @@ class  movePoint{
             let LfootY = calPointY(10,1,5)
             
             print("\(String(format: "%.3f",headX)),\(String(format: "%.3f",RkneeY)),\(String(format: "%.3f",RfootY)),\(String(format: "%.3f",LkneeY)),\(String(format: "%.3f",LfootY))")
-            if (RkneeY > 0.150 && RkneeY < 0.300
-                && RfootY > 0.050 && RfootY < 0.200
-                && LkneeY == 0
-//                && LkneeY > -0.060
-                && LfootY  == 0
-//                && LfootY > -0.060
-                && headX < 0.050 && headX > -0.050){
+            if (LkneeY > 0 && LkneeY  < 0.200
+                && LfootY > 0  && LfootY < 0.100
+                && RkneeY > -0.060 && RkneeY < 0.060
+                && RfootY > -0.060 && RfootY < 0.060
+                && headX == 0){
                 
-                print("RRRRR")
+                print("LLL")
                 keypointsArray.removeAll()
 
                 return 1
                 //            return 1
-            }else  if (RkneeY < 0.060 && RkneeY  > -0.060  && RfootY  < 0.060  && RfootY  > -0.060 && LkneeY > 0.040 && LkneeY < 0.260  && LfootY  > 0.040 && LfootY < 0.260  && headX < 0.050 && headX > -0.050 ){
-                print("LLL")
+            }
+            else  if (RkneeY > 0 && RkneeY  < 0.200
+                && RfootY > 0  && RfootY < 0.100
+                && LkneeY > -0.060 && LkneeY < 0.060
+                && LfootY  > -0.060 && LfootY < 0.060
+                && headX == 0 ){
+                print("RRR")
                 keypointsArray.removeAll()
-                
+
                 return 1
                 //            return 1
-            }else {return 0}
+            }
+            else {return 0}
             
         }
         
@@ -490,8 +487,8 @@ class  movePoint{
             let RfootY = calPointY(10,10,15)
             
             print("\(String(format: "%.3f",LfootX)),\(String(format: "%.3f",LfootY)),\(String(format: "%.3f",RfootX)),\(String(format: "%.3f",RfootY))")
-            if (RfootX > 0.200 && RfootX < 0.300 && RfootY > -0.200 && RfootY < -0.100
-              && LfootX  == 0 && LfootY  == 0
+            if (RfootX < -0.000 && RfootX > -0.250 && RfootY > -0.250 && RfootY < -0.040
+                && LfootX  == 0 && LfootY  == 0
                 ){
 
                 print("RRRRR")
@@ -499,7 +496,7 @@ class  movePoint{
 
                 return 1
                 //            return 1
-            }else  if (LfootX < -0.000 && LfootX > -0.200 && LfootY < 0.250 && LfootY > 0.040
+            }else  if (LfootX < -0.000 && LfootX > -0.250 && LfootY > -0.250 && LfootY < -0.040
                && RfootX  == 0 && RfootY  == 0
                 ){
                 

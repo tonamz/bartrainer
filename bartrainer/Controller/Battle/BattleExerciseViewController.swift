@@ -150,7 +150,7 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
             timerr.invalidate()
             timer.text = "0"
             performSegue(withIdentifier: "battle_done", sender: self)
-            battleScore(id_user: 1,id_exercise: id_ex ,name_exercise: selectedExercise?.name ?? "Null" ,reps: scoreCal,cal: 10)
+//            battleScore(id_user: 1,id_exercise: id_ex ,name_exercise: selectedExercise?.name ?? "Null" ,reps: scoreCal,cal: 10)
             CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
             self.videoCapture.stop()
             
@@ -262,10 +262,10 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                     
                     if timerCount == 1 {
                         if timerr != nil{
-                                countdownStop()
-                                countdownStart()
+//                                countdownStop()
+//                                countdownStart()
                         }else {
-                            countdownStart()
+//                            countdownStart()
                         }
                             scoreCal += timerCount
                     }
