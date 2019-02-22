@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.8.0)
+  - Alamofire (4.8.1)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
   - Bolts (1.9.0):
@@ -17,14 +17,14 @@ PODS:
     - FacebookCore (~> 0.5)
     - FBSDKCoreKit (~> 4.37)
     - FBSDKLoginKit (~> 4.37)
-  - FBSDKCoreKit (4.38.1):
+  - FBSDKCoreKit (4.40.0):
     - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.38.1):
+  - FBSDKLoginKit (4.40.0):
     - FBSDKCoreKit
   - Mailgun-In-Swift (1.0.0):
     - Alamofire
     - ObjectMapper
-  - ObjectMapper (3.4.1)
+  - ObjectMapper (3.4.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8)
@@ -49,17 +49,17 @@ SPEC REPOS:
     - ObjectMapper
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   CountdownView: 0f0f5cb346ca5d99342703c834d89598ca1893bd
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
   FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
-  FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
-  FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
+  FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
+  FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   Mailgun-In-Swift: 9a969ec1bbb19d00dc518fedf0c0493f968463f2
-  ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
 
-PODFILE CHECKSUM: 9720c2e906c8980efc16ebdff41ce268c2b26891
+PODFILE CHECKSUM: 4a9d9e897227fdf8e3c431e318d56a587d5328b1
 
 COCOAPODS: 1.5.3

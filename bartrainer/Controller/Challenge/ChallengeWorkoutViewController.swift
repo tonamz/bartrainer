@@ -12,6 +12,7 @@ import Vision
 import CoreMedia
 import Alamofire
 import AlamofireImage
+import CountdownView
 
 
 class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
@@ -45,6 +46,12 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
     var id_ex:Int = 0
     var id_ch:Int = 0
     var reps:Int = 0
+    
+    //timer
+    var spin = true
+    var autohide = false
+    var appearingAnimation = CountdownView.Animation.zoomIn
+    var disappearingAnimation = CountdownView.Animation.zoomOut
     
     
     
@@ -89,6 +96,13 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //timer
+        CountdownView.shared.backgroundViewColor = UIColor.red.withAlphaComponent(0.3)
+        CountdownView.shared.spinnerStartColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
+        CountdownView.shared.spinnerEndColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
+        
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         if selectedChallenge!.id_exercise == "1"{
             gifExercise.loadGif(name: "squatGIF")
@@ -142,21 +156,26 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
             challengeWorkout(id_challenge: id_ch ,id_user: 1,id_exercise: id_ex,reps: scoreCal,cal: 10)
 //            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
 //            UIApplication.shared.keyWindow?.rootViewController = vc
+              CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
             self.videoCapture.stop()
                performSegue(withIdentifier: "workoutFinish", sender: self)
             
             
         }else if countdown <= 5 {
             timer.text = "\(countdown)"
+            CountdownView.show(countdownFrom: Double(countdown), spin: spin, animation: appearingAnimation, autoHide: autohide,
+                               completion: nil)
         }else  {
             timer.text = " "
         }
     }
     func  countdownStart() {
         timerr = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownAction), userInfo: nil, repeats: true)
+      
     }
     
     func countdownStop(){
+          CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
         timerr.invalidate()
         countdown = 10
 
