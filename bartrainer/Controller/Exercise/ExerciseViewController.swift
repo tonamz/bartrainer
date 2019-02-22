@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 import Alamofire
 import AlamofireImage
 
@@ -30,6 +31,8 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         
         self.exerciseCollection.dataSource = self
         self.exerciseCollection.delegate = self
+        
+    
         
         Alamofire.request("http://tssnp.com/ws_bartrainer/category.php").responseData { response in
             if let data = response.result.value {

@@ -20,6 +20,7 @@
 		E12A8EDF221A988B00A00321 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EDE221A988B00A00321 /* Alert.swift */; };
 		E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE0221AFD4200A00321 /* APIresponse.swift */; };
 		E12A8EE3221B09BE00A00321 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE2221B09BE00A00321 /* LoginViewController.swift */; };
+		E14DDDD8221FD31B008E7F5E /* ExerciseFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */; };
 		E152C0BE220D912000DF906F /* Challenge_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152C0BD220D912000DF906F /* Challenge_name.swift */; };
 		E16CA91121F0F95400D4CEA6 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */; };
 		E16CA91521F10ABB00D4CEA6 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91421F10ABB00D4CEA6 /* Exercise.swift */; };
@@ -77,6 +78,7 @@
 		E12A8EDE221A988B00A00321 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E12A8EE0221AFD4200A00321 /* APIresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIresponse.swift; sourceTree = "<group>"; };
 		E12A8EE2221B09BE00A00321 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFinishViewController.swift; sourceTree = "<group>"; };
 		E152C0BD220D912000DF906F /* Challenge_name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge_name.swift; sourceTree = "<group>"; };
 		E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		E16CA91421F10ABB00D4CEA6 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				E16CA91621F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift */,
 				E102DC5722132D9C00FC3A7E /* WorkoutViewController.swift */,
 				E102DC592214202800FC3A7E /* WorkoutsViewController.swift */,
+				E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */,
 				E112AFA1221C5ADA00AB3340 /* BattleGroupTableViewCell.swift in Sources */,
 				E1DC051221BEB01A00A2A4F9 /* PoseView.swift in Sources */,
+				E14DDDD8221FD31B008E7F5E /* ExerciseFinishViewController.swift in Sources */,
 				E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,9 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
     @IBOutlet weak var BattleGroupTableView: UITableView!
     
     var BattleGroup: [Battle] = []
+    var user: [User] = []
+    var imageUser: [String] = ["userWee","userJune","userPun"]
+    var id_user:Int = 0
     
     @IBAction func startBattleBT(_ sender: Any) {
     }
@@ -45,9 +48,26 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
                 print("error")
             }
         }
+        Alamofire.request("http://tssnp.com/ws_bartrainer/user.php").responseData { response in
+            if let data = response.result.value {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    
+                    self.user = try decoder.decode([User].self, from: data)
+                    
+                    
+                } catch {
+                    print(error.localizedDescription)
+                }
+            } else {
+                print("error")
+            }
+        }
  
    
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return BattleGroup.count
@@ -58,7 +78,9 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "BattleGroupTableViewCell", for: indexPath) as! BattleGroupTableViewCell
         
         let model = BattleGroup[indexPath.row]
-        cell.profileImageView.image = UIImage(named: "userWee")
+        id_user = Int(model.id_user) ?? 5
+        print("\(imageUser[id_user])")
+        cell.profileImageView.image = UIImage(named: "\(imageUser[id_user])")
         cell.nameUser.text = "\(model.id_user)"
         cell.nameEX.text = "\(model.name_exercise)"
        cell.scoreBattle.text = "\(model.reps)"

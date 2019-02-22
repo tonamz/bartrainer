@@ -31,8 +31,10 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     @IBOutlet weak var timer: UILabel!
     
     var timerr:Timer!
-    var countdown:Int = 10
+    var countdown:Int = 5
     var index:Int = 0
+    
+    var id_ex:Int = 0
     
     
     private var tableData: [BodyPoint?] = []
@@ -40,6 +42,8 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     private var moveCalculate: movePoint = movePoint()
     var scoreCal = 0
     var exerciseloop: Int = 0
+    
+    var scoreExercise:[Int] = []
  
     
     var selectedCategoryGroup: Category?
@@ -110,14 +114,14 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         
         
     }
-    @objc func countdownAction(){
+    @objc func countdownAction(numCount: Int){
         countdown -= 1
         
         if countdown == 0 {
             timerr.invalidate()
             timer.text = "0"
-            self.videoCapture.stop()
-            
+            self.tryLabel.text = "0"
+//            self.videoCapture.stop()
             
         }else if countdown <= 5 {
             timer.text = "\(countdown)"
@@ -136,7 +140,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "battle_done" {
+        if segue.identifier == "exerciseFinish" {
             let vc = segue.destination as! BattleFinishViewController
             vc.scoreCal = scoreCal
             
@@ -197,6 +201,9 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             let indexPath = NSIndexPath(row: exerciseloop, section: 0)
             let model = ExerciseList[indexPath.row]
             timerCount = moveCalculate.callExercise(idEx: Int(model.id_exercise) ?? 1)
+            id_ex = Int((model.id_exercise)) ?? 5
+            
+          
             
             
 //            while index<ExerciseList.count {
@@ -223,15 +230,29 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                     }
                     scoreCal += timerCount
                 }
-               
-                    self.tryLabel.text = "\(scoreCal)"
+                if scoreCal != 0{
+                       self.tryLabel.text = "\(scoreCal)"
+                }
+                
                 
                 if scoreCal == 2 {
 
                     countdownStop()
                     if(exerciseloop<ExerciseList.count){
+                        countdownStart()
+                        
                         exerciseloop+=1
+
+                        exerciseWorkout(id_user: 1, id_exercise: id_ex, category: selectedCategoryGroup?.name ?? "aa", level: 1, reps: scoreCal, cal: 10)
                         scoreCal=0
+                        if(exerciseloop == ExerciseList.count){
+                               performSegue(withIdentifier: "exerciseFinish", sender: self)
+                        }
+                    
+                     
+                    }
+                    if(exerciseloop == ExerciseList.count){
+                        self.videoCapture.stop()
                     }
                 
 
@@ -248,7 +269,53 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                 
             }
         }
+        
+    
     }
+    
+    
+    func exerciseWorkout( id_user: Int, id_exercise: Int, category: String, level: Int, reps: Int, cal: Int) {
+        
+        let param: Parameters = [
+            "id_user": id_user,
+            "id_exercise": id_exercise,
+            "category": category,
+             "level": level,
+            "reps": reps,
+            "cal": cal
+            
+            
+        ]
+        
+        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_workout.php", method: .post, parameters: param, encoding: URLEncoding.default, headers: nil).responseData { response in
+            if let data = response.result.value {
+                let decoder = JSONDecoder()
+                
+                do {
+                    let result = try decoder.decode(APIresponse.self, from: data)
+                    
+                    print(result)
+                    
+                    if result.message == "success" {
+                        
+                    } else {
+                        if result.error == "23000" {
+                            Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสบัตรประชนมีในระบบแล้ว", action: nil)
+                        } else {
+                            Alert.showAlert(vc: self, title: "Error", message: "server ผิดพลาด", action: nil)
+                        }
+                    }
+                    
+                } catch {
+                    Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)
+                }
+            } else {
+                Alert.showAlert(vc: self, title: "Error", message: "กรุณาลองใหม่อีกครั้ง", action: nil)
+            }
+        }
+    }
+    
+
     
     
     
@@ -311,6 +378,8 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         }
     }
     
-    
 }
+
+
+
 
