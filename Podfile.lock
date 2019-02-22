@@ -8,6 +8,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - CountdownView (0.1.2)
   - FacebookCore (0.5.0):
     - Bolts (~> 1.9)
     - FBSDKCoreKit (~> 4.37)
@@ -28,6 +29,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.8)
   - AlamofireImage (~> 3.5)
+  - CountdownView
   - FacebookCore
   - FacebookLogin
   - FBSDKLoginKit
@@ -38,6 +40,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Bolts
+    - CountdownView
     - FacebookCore
     - FacebookLogin
     - FBSDKCoreKit
@@ -49,6 +52,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CountdownView: 0f0f5cb346ca5d99342703c834d89598ca1893bd
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
   FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
   FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
@@ -56,6 +60,6 @@ SPEC CHECKSUMS:
   Mailgun-In-Swift: 9a969ec1bbb19d00dc518fedf0c0493f968463f2
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
 
-PODFILE CHECKSUM: 2576ae488207be035ebd33b02700a6ca5cbd66b3
+PODFILE CHECKSUM: 9720c2e906c8980efc16ebdff41ce268c2b26891
 
 COCOAPODS: 1.5.3

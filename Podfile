@@ -12,6 +12,7 @@ pod 'FBSDKLoginKit'
 pod 'FacebookLogin'
 pod 'FacebookCore'
 pod 'Mailgun-In-Swift'
+pod 'CountdownView'
 pod 'Carthage'
 
 
