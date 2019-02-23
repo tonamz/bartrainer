@@ -359,9 +359,13 @@ class  movePoint{
             score = calBicepCurls()
         }else   if(idEx==13 || idEx==9 ){
             score = calPlank()
+        }else   if(idEx==16){
+            score = calThruster()
         }else   if(idEx==17){
             score = calJumpingJack()
         }
+        
+       
       
       
         
@@ -642,9 +646,8 @@ class  movePoint{
         
              return 0
     }
-    
     func calJumpingJack() -> Int {
-
+        
         
         if keypointsArray.count > 10{
             let RfootX = calPointX(13,1,10)
@@ -654,10 +657,10 @@ class  movePoint{
             let HeadY = calPointY(0,1,10)
             
             
-                 print("\(String(format: "%.3f",RfootX)),\(String(format: "%.3f",LfootX)),\(String(format: "%.3f",LhandY)),\(String(format: "%.3f",RhandY)),\(String(format: "%.3f",HeadY))")
+            print("\(String(format: "%.3f",RfootX)),\(String(format: "%.3f",LfootX)),\(String(format: "%.3f",LhandY)),\(String(format: "%.3f",RhandY)),\(String(format: "%.3f",HeadY))")
             
             
-            if (HeadY > -0.600 &&  HeadY < 0 && RfootX < 0.600 && RfootX > 0 && RhandY > -0.600 && RhandY < 0 && LfootX < 0.600 && LfootX > 0 && LhandY > -0.600 && LhandY < 0  ){
+            if (HeadY > -0.600 &&  HeadY <= 0 && RfootX < 0.600 && RfootX >= 0 && RhandY > -0.600 && RhandY <= 0 && LfootX <= 0.600 && LfootX >= 0 && LhandY > -0.600 && LhandY <= 0  ){
                 
                 print("JUMPNG!!!!!!")
                 keypointsArray.removeAll()
@@ -667,6 +670,40 @@ class  movePoint{
             else{ return 0 }
             
         }
+        
+        
+        return 0
+    }
+    
+    func calThruster() -> Int {
+
+        
+        if keypointsArray.count > 18 {
+            let headX = calPointX(0,1,11)
+            let headY = calPointY(0,1,11)
+            let shoulder = calPointY(5,1,11)
+            let leg = calPointY(11,1,11)
+            let foot = calPointX(13,1,11)
+            let LhandY = calPointY(7,11,18)
+            let RhandY = calPointY(4,11,18)
+            
+            print("\(String(format: "%.3f",LhandY)),\(String(format: "%.3f",RhandY))")
+            
+            if (headY>0.120&&headY<0.220&&shoulder>0.120&&shoulder<0.220&&leg>0.00&&leg<0.120&&foot<=0&&headX>=0&&headX<=0.5){
+                
+                if (LhandY > 0.100 && LhandY < 0.400){
+                    print("Yeahhhhhhhhhh")
+                    keypointsArray.removeAll()
+                    
+                    return 1
+                }
+                else { return 0}
+                //            return 1
+            }else {return 0}
+            
+        }
+        
+
 
         
         return 0
