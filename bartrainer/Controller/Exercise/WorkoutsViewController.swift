@@ -12,6 +12,7 @@ import Vision
 import CoreMedia
 import Alamofire
 import AlamofireImage
+import CountdownView
 
 
 class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
@@ -35,6 +36,13 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     var index:Int = 0
     
     var id_ex:Int = 0
+    var loadGIF:Int = 0
+    
+    //timer
+    var spin = true
+    var autohide = false
+    var appearingAnimation = CountdownView.Animation.zoomIn
+    var disappearingAnimation = CountdownView.Animation.zoomOut
     
     
     private var tableData: [BodyPoint?] = []
@@ -84,12 +92,17 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
 
-        
+        //timer
+        CountdownView.shared.backgroundViewColor = UIColor.red.withAlphaComponent(0.3)
+        CountdownView.shared.spinnerStartColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
+        CountdownView.shared.spinnerEndColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
         
         visionModel = try? VNCoreMLModel(for: EstimationModel().model)
         setUpCamera()
         poseView.setUpOutputComponent()
         //            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+        
+ 
     
         
         
@@ -114,28 +127,34 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         
         
     }
-    @objc func countdownAction(numCount: Int){
+    @objc func countdownAction(){
         countdown -= 1
         
         if countdown == 0 {
             timerr.invalidate()
             timer.text = "0"
             self.tryLabel.text = "0"
+             CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
 //            self.videoCapture.stop()
+             self.videoCapture.start()
+ 
             
         }else if countdown <= 5 {
             timer.text = "\(countdown)"
+            CountdownView.show(countdownFrom: Double(countdown), spin: spin, animation: appearingAnimation, autoHide: autohide,
+                               completion: nil)
         }else  {
             timer.text = " "
         }
     }
     func  countdownStart() {
         timerr = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownAction), userInfo: nil, repeats: true)
+          self.videoCapture.stop()
     }
     
     func countdownStop(){
         timerr.invalidate()
-        countdown = 10
+        countdown = 5
         
     }
     
@@ -205,6 +224,9 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             timerCount = moveCalculate.callExercise(idEx: Int(model.id_exercise) ?? 1)
             id_ex = Int((model.id_exercise)) ?? 5
             
+    
+
+            
           
             
             
@@ -218,18 +240,40 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
 
             DispatchQueue.main.sync {
                 
+                if (loadGIF == 0){
+                    if model.name == "Squat"{
+                        gifExercise.loadGif(name: "squatGIF")
+                        
+                    }else if model.name == "Lunges"{
+                        gifExercise.loadGif(name: " ")
+                    }else if model.name == "Hight knee"{
+                        gifExercise.loadGif(name: "hightkneeGIF")
+                    }else if model.name == "Side Leg raise"{
+                        gifExercise.loadGif(name: "legraiseGIF")
+                    }else if model.name == "Leg swing"{
+                        gifExercise.loadGif(name: "legswingGIF")
+                    }else if model.name == "Shoulder press"{
+                        gifExercise.loadGif(name: "ShoulderPressGIF")
+                    }else{
+                        gifExercise.loadGif(name: " ")
+                    }
+                    
+                    loadGIF += 1
+                }
              
                 
                 nameExercise.text = model.name
                 
                 if timerCount == 1 {
-                    if timerr != nil{
-                        countdownStop()
-                        countdownStart()
+//                    if timerr != nil{
+//                        countdownStop()
+//                        countdownStart()
+//
+//                    }else {
+//                        countdownStart()
+//                    }
                     
-                    }else {
-                        countdownStart()
-                    }
+              
                     scoreCal += timerCount
                 }
                 if scoreCal != 0{
@@ -237,41 +281,41 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                 }
                 
                 
-                if scoreCal == 2 {
-
-                    countdownStop()
+                if scoreCal == 5 {
+              
+                    if (countdown == 0){
+                        countdown = 5
+                    }
+                    countdownStart()
                     if(exerciseloop<ExerciseList.count){
-                        countdownStop()
-                        countdownStart()
+                      
+
                         exerciseloop+=1
-                        exerciseWorkout(id_user: 1, id_exercise: id_ex, category: selectedCategoryGroup?.name ?? "aa", level: 1, reps: scoreCal, cal: 10)
+                       
                         scoreCal=0
                         if(exerciseloop == ExerciseList.count){
-                               performSegue(withIdentifier: "WorkoutFinish", sender: self)
+                            
+//                                countdownStop()
+//                               performSegue(withIdentifier: "WorkoutFinish", sender: self)
+//                                self.videoCapture.stop()
                         }
                     
                      
                     }
                     if(exerciseloop == ExerciseList.count){
+                         exerciseWorkout(id_user: 1, id_exercise: id_ex, category: selectedCategoryGroup?.name ?? "aa", level: 1, reps: scoreCal, cal: 10)
+                        loadGIF = 0
+                        countdownStop()
+                        performSegue(withIdentifier: "WorkoutFinish", sender: self)
                         self.videoCapture.stop()
+                        
+              
                     }
                 
 
                 }
                 
-//                if model.name == "Squat"{
-//                    gifExercise.loadGif(name: "squatGIF")
-//                }else if model.name == "Lunges"{
-//                    gifExercise.loadGif(name: " ")
-//                }else if model.name == "Hight knee"{
-//                    gifExercise.loadGif(name: "hightkneeGIF")
-//                }else if model.name == "Side Leg raise"{
-//                    gifExercise.loadGif(name: "legraiseGIF")
-//                }else if model.name == "Leg swing"{
-//                    gifExercise.loadGif(name: "legswingGIF")
-//                }else{
-//                    gifExercise.loadGif(name: " ")
-//                }
+       
                 
                 self.poseView.bodyPoints = n_kpoints
                 

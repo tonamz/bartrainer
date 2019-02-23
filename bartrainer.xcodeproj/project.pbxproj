@@ -33,6 +33,7 @@
 		E1AC805E22199E6500644FAC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC805D22199E6500644FAC /* RegisterViewController.swift */; };
 		E1AFA67D2221363F003C81E0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AFA67C2221363F003C81E0 /* HealthKit.framework */; };
 		E1C3676022218AF3001574D9 /* FitnessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */; };
+		E1C367622221B0D8001574D9 /* ShoulderPressGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */; };
 		E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */; };
 		E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */; };
 		E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DC050021BEAC1E00A2A4F9 /* Main.storyboard */; };
@@ -99,6 +100,7 @@
 		E1AFA67B2221363F003C81E0 /* bartrainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bartrainer.entitlements; sourceTree = "<group>"; };
 		E1AFA67C2221363F003C81E0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessRegisterViewController.swift; sourceTree = "<group>"; };
+		E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ShoulderPressGIF.gif; path = ../../../../../Downloads/ShoulderPressGIF.gif; sourceTree = "<group>"; };
 		E1DC04F921BEAC1D00A2A4F9 /* bartrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bartrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */,
 				E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */,
 				E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */,
+				E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */,
 			);
 			path = GIF;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				E1FEF5EA21FCEA3C00492BE4 /* legraiseGIF.gif in Resources */,
 				E1DC050721BEAC1F00A2A4F9 /* LaunchScreen.storyboard in Resources */,
 				E1FEF5DB21FCC90700492BE4 /* Assets.xcassets in Resources */,
+				E1C367622221B0D8001574D9 /* ShoulderPressGIF.gif in Resources */,
 				E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */,
 				E1F99CD82221296700725E76 /* background.mp3 in Resources */,
 				E1FEF5EB21FCEA3C00492BE4 /* legswingGIF.gif in Resources */,

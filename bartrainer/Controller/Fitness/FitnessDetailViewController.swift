@@ -17,6 +17,7 @@ class FitnessDetailViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var fitnessImageView: UIImageView!
      @IBOutlet weak var getcodeBT: UIButton!
+    @IBOutlet weak var regisfitnessBT: UIButton!
     
     
     var selectedfitness: Fitness?
@@ -26,6 +27,7 @@ class FitnessDetailViewController: UIViewController {
         super.viewDidLoad()
         
               getcodeBT.layer.cornerRadius = 10
+        regisfitnessBT.layer.cornerRadius = 10
 
         title = selectedfitness!.name_brand
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)

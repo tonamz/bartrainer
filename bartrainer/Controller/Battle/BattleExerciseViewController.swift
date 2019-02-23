@@ -110,6 +110,8 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                     gifExercise.loadGif(name: "legraiseGIF")
             }else if selectedExercise!.name == "Leg swing"{
                     gifExercise.loadGif(name: "legswingGIF")
+            }else if selectedExercise!.name == "Shoulder press"{
+                gifExercise.loadGif(name: "ShoulderPressGIF")
             }else{
                   gifExercise.loadGif(name: " ")
             }
@@ -250,10 +252,10 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                     
                     if timerCount == 1 {
                         if timerr != nil{
-//                                countdownStop()
-//                                countdownStart()
+                                countdownStop()
+                                countdownStart()
                         }else {
-//                            countdownStart()
+                            countdownStart()
                         }
                             scoreCal += timerCount
                     }else if timerCount == 5{

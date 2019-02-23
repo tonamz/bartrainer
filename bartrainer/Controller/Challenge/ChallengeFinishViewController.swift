@@ -16,12 +16,14 @@ class ChallengeFinishViewController: UIViewController {
     @IBOutlet weak var ChallengeDay: UILabel!
     @IBOutlet weak var ChallengeRep: UILabel!
     @IBOutlet weak var ChallengeFinish: UILabel!
+     @IBOutlet weak var completeLabel: UILabel!
     @IBOutlet weak var detailView: UIView!
     var challengeGroup: [Challenge] = []
     var selectedChallengeGroup: ChallengeName?
     var selectedChallenge: Challenge?
     
     var scoreCal = 0
+    var reps: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +46,17 @@ class ChallengeFinishViewController: UIViewController {
             }
         }
         
+        reps = Int(selectedChallenge!.reps) ?? 1
+        
         ChallengeName.text = selectedChallengeGroup?.name
         ChallengeDay.text = "Day \(selectedChallenge?.day ?? "aa")"
         ChallengeRep.text = "\(scoreCal) / \(selectedChallenge?.reps ?? "aa")"
+        
+        if(scoreCal < reps){
+            completeLabel.text = "Try Again"
+        }else{
+             completeLabel.text = "Complete"
+        }
         
     }
     
