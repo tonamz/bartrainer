@@ -32,6 +32,7 @@
 		E1AA8008222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA8007222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift */; };
 		E1AC805E22199E6500644FAC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC805D22199E6500644FAC /* RegisterViewController.swift */; };
 		E1AFA67D2221363F003C81E0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AFA67C2221363F003C81E0 /* HealthKit.framework */; };
+		E1C3676022218AF3001574D9 /* FitnessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */; };
 		E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */; };
 		E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */; };
 		E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DC050021BEAC1E00A2A4F9 /* Main.storyboard */; };
@@ -97,6 +98,7 @@
 		E1AC805D22199E6500644FAC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E1AFA67B2221363F003C81E0 /* bartrainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bartrainer.entitlements; sourceTree = "<group>"; };
 		E1AFA67C2221363F003C81E0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessRegisterViewController.swift; sourceTree = "<group>"; };
 		E1DC04F921BEAC1D00A2A4F9 /* bartrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bartrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				E1FEF5CA21FB13C800492BE4 /* FitnessViewController.swift */,
 				E1FEF5CE21FB196600492BE4 /* FitnessTableViewCell.swift */,
 				E1FEF5D021FB225400492BE4 /* FitnessDetailViewController.swift */,
+				E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				E102DC5A2214202800FC3A7E /* WorkoutsViewController.swift in Sources */,
 				E1F76D8821F3840E00D236A9 /* BattleListViewController.swift in Sources */,
 				E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */,
+				E1C3676022218AF3001574D9 /* FitnessRegisterViewController.swift in Sources */,
 				E1FEF5C421F8C29F00492BE4 /* BattleFinishViewController.swift in Sources */,
 				E1F76D8021F3608E00D236A9 /* BattleViewController.swift in Sources */,
 				E1FEF5CB21FB13C800492BE4 /* FitnessViewController.swift in Sources */,
