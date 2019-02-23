@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ExerciseCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var bgView: UIView!

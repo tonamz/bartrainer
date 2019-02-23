@@ -139,10 +139,12 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         
     }
     
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "exerciseFinish" {
-            let vc = segue.destination as! BattleFinishViewController
-            vc.scoreCal = scoreCal
+        if segue.identifier == "WorkoutFinish" {
+            let vc = segue.destination as! ExerciseFinishViewController
+            vc.selectedCategoryGroup = selectedCategoryGroup
             
         }
     }
@@ -239,14 +241,13 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
 
                     countdownStop()
                     if(exerciseloop<ExerciseList.count){
+                        countdownStop()
                         countdownStart()
-                        
                         exerciseloop+=1
-
                         exerciseWorkout(id_user: 1, id_exercise: id_ex, category: selectedCategoryGroup?.name ?? "aa", level: 1, reps: scoreCal, cal: 10)
                         scoreCal=0
                         if(exerciseloop == ExerciseList.count){
-                               performSegue(withIdentifier: "exerciseFinish", sender: self)
+                               performSegue(withIdentifier: "WorkoutFinish", sender: self)
                         }
                     
                      
@@ -257,6 +258,21 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                 
 
                 }
+                
+//                if model.name == "Squat"{
+//                    gifExercise.loadGif(name: "squatGIF")
+//                }else if model.name == "Lunges"{
+//                    gifExercise.loadGif(name: " ")
+//                }else if model.name == "Hight knee"{
+//                    gifExercise.loadGif(name: "hightkneeGIF")
+//                }else if model.name == "Side Leg raise"{
+//                    gifExercise.loadGif(name: "legraiseGIF")
+//                }else if model.name == "Leg swing"{
+//                    gifExercise.loadGif(name: "legswingGIF")
+//                }else{
+//                    gifExercise.loadGif(name: " ")
+//                }
+                
                 self.poseView.bodyPoints = n_kpoints
                 
               

@@ -297,26 +297,23 @@ struct Constant {
         (11, 12), // lhip-lknee
         (12, 13), // lknee-lankle
     ]
-    static let jointLineColor: UIColor = UIColor(displayP3Red: 87.0/255.0,
-                                                 green: 255.0/255.0,
-                                                 blue: 211.0/255.0,
-                                                 alpha: 0.5)
+    static let jointLineColor: UIColor = UIColor.orange
     
     static let colors: [UIColor] = [
-        .red,
-        .green,
-        .blue,
-        .cyan,
-        .yellow,
-        .magenta,
         .orange,
-        .purple,
-        .brown,
-        .black,
-        .darkGray,
-        .lightGray,
-        .white,
-        .gray,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
+        .orange,
         ]
 }
 
@@ -356,7 +353,16 @@ class  movePoint{
             score = calLegraiseSide()
         }else   if(idEx==5){
             score = calLegraiseSide()
+        } else   if(idEx==6 ){
+            score = calShoulderPress()
+        }else   if(idEx==7 ){
+            score = calBicepCurls()
+        }else   if(idEx==13 || idEx==9 ){
+            score = calPlank()
         }
+       
+       
+        
         
         return score
     }
@@ -545,6 +551,98 @@ class  movePoint{
         
         return 0
     }
+    
+    func calShoulderPress() -> Int {
+        
+        if keypointsArray.count > 5 {
+            let LhandY = calPointY(7,1,5)
+            let RhandY = calPointY(4,1,5)
+            let HeadX = calPointX(13,1,5)
+            
+            print("\(String(format: "%.3f",HeadX)),\(String(format: "%.3f",LhandY)),\(String(format: "%.3f",RhandY))")
+            
+            
+            
+                        if (HeadX == 0 && RhandY > -0.300 && RhandY < -0.150 && LhandY == 0 ){
+                            print("LLL")
+                            keypointsArray.removeAll()
+                            return 1
+                            
+                        } else if (HeadX == 0 && LhandY > -0.300 && LhandY < -0.150 && RhandY == 0 ){
+                            
+                            print("RRR")
+                            keypointsArray.removeAll()
+                            return 1
+                            
+                        } 
+                        else{ return 0 }
+        }
+        
+        
+        return 0
+    }
+    func calBicepCurls() -> Int {
+        if keypointsArray.count > 5 {
+            let LsokY = calPointY(6,1,5)
+            let LhandY = calPointY(7,1,5)
+            let RsokY = calPointY(3,1,5)
+            let RhandY = calPointY(4,1,5)
+            let HeadX = calPointX(13,1,5)
+            
+            print("\(String(format: "%.3f",HeadX)),\(String(format: "%.3f",LhandY)),\(String(format: "%.3f",LsokY)),\(String(format: "%.3f",RhandY)),\(String(format: "%.3f",RsokY))")
+            
+            
+            
+            if (HeadX == 0 && RhandY < 0.300 && RhandY > 0.050 && RsokY < 0.400 && RsokY > 0.100  ){
+                print("LLL")
+                keypointsArray.removeAll()
+                return 1
+                
+            } else if (HeadX == 0 && LhandY < 0.300 && LhandY > 0.050 && LsokY < 0.400 && LsokY > 0.100  ){
+                
+                print("RRR")
+                keypointsArray.removeAll()
+                return 1
+                
+            }
+            else{ return 0 }
+        }
+        
+        return 0
+    }
+    
+    func calPlank()->Int{
+        if keypointsArray.count > 2 {
+            let HeadX = calPointX(13,1,2)
+            let LshoulderY = calPointY(5,1,2)
+            let RshoulderY = calPointY(2,1,2)
+            let LhandY = calPointY(7,1,2)
+            let RhandY = calPointY(4,1,2)
+            
+                print("\(String(format: "%.3f",HeadX)),\(String(format: "%.3f",LshoulderY)),\(String(format: "%.3f",RshoulderY)),\(String(format: "%.3f",LhandY)),\(String(format: "%.3f",RhandY))")
+          
+            
+//            if (HeadX < 0.60 && HeadX > -0.060
+//                && LshoulderY < 0.60 && LshoulderY > -0.060
+//                && RshoulderY < 0.60 && RshoulderY > -0.060
+//                && LhandY < 0.60 && LhandY > -0.060
+//                && RhandY < 0.60 && RhandY > -0.060
+//                ){
+//                
+//                print("RRRRR")
+//                keypointsArray.removeAll()
+//                
+//                return 1
+//                
+//            }else{ return 5 }
+            
+        }
+        
+        
+             return 0
+    }
+    
+
     
     
 

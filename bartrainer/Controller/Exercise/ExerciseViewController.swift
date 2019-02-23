@@ -7,13 +7,18 @@
 //
 
 import UIKit
-import AVKit
 import Alamofire
 import AlamofireImage
+import AVFoundation
+import AVKit
 
 class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+ 
+//    var audioPlayer = AVAudioPlayer()
     
+    var audioPlayer: AVPlayer?
+    var sound: URL?
 
     @IBOutlet weak var exerciseCollection: UICollectionView!
         var images = ["Arms","Legs","Abs","Butt"]
@@ -34,6 +39,13 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         
     
         
+                sound = URL(string: "http://tssnp.com/ws_bartrainer/sounds/backgroud.mp3")
+                let soundItem = AVPlayerItem(url: sound!)
+                audioPlayer = AVPlayer(playerItem: soundItem)
+                audioPlayer?.play()
+       
+
+        
         Alamofire.request("http://tssnp.com/ws_bartrainer/category.php").responseData { response in
             if let data = response.result.value {
                 
@@ -51,8 +63,14 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
                 print("error")
             }
         }
+        
+        
+
+
+  
 
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ExList" {
             let vc = segue.destination as! ExerciseListViewController
@@ -70,6 +88,7 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
             let model = categoryGroup[indexPath.row]
         cell.iconImageView.image = UIImage(named: model.name)
           cell.headerLabel.text = model.name
+        
         
         return cell
     }

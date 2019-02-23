@@ -7,24 +7,94 @@
 //
 
 import UIKit
+import Alamofire
 
-class ExerciseFinishViewController: UIViewController {
+class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate{
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
+    var selectedCategoryGroup: Category?
+    var exerciseworkout: [ExerciseWorkout] = []
+        var ExerciseList: [Exercise] = []
     
 
-    /*
-    // MARK: - Navigation
+    
+     @IBOutlet weak var categoryName: UILabel!
+         @IBOutlet weak var buttonOutlet: UIButton!
+    
+    @IBOutlet weak var exerciseFinishTableView: UITableView!
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+    
+        super.viewDidLoad()
+                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+        
+        categoryName.text = selectedCategoryGroup?.name
+             buttonOutlet.layer.cornerRadius = 10
+        
+        self.exerciseFinishTableView.dataSource = self
+        self.exerciseFinishTableView.delegate = self
+
+        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_workout_user.php?id_user=1").responseData { response in
+            if let data = response.result.value {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    
+                    self.exerciseworkout = try decoder.decode([ExerciseWorkout].self, from: data)
+
+         
+                } catch {
+                    print(error.localizedDescription)
+                }
+            } else {
+                print("error")
+            }
+        }
+        
+        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_category.php?group_id=\(selectedCategoryGroup!.id)").responseData { response in
+            if let data = response.result.value {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    
+                    self.ExerciseList = try decoder.decode([Exercise].self, from: data)
+                   self.exerciseFinishTableView.reloadData()
+                    
+                } catch {
+                    print(error.localizedDescription)
+                }
+            } else {
+                print("error")
+            }
+        }
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ExerciseList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseFinishTableViewCell", for: indexPath) as! ExerciseFinishTableViewCell
+        let model = ExerciseList[indexPath.row]
+        
+         cell.exerciseLabel.text = model.name
+            var i = 0
+        while ( i < exerciseworkout.count ) {
+            let indexPath = NSIndexPath(row: i, section: 0)
+           let model2 = exerciseworkout[indexPath.row]
+            if(model2.id_exercise == model.id_exercise){
+                   cell.repsLabel.text = model2.reps
+            }
+         
+            
+            
+            i+=1
+        }
+        
+        
+        return cell
+    }
+    
+    
 
 }

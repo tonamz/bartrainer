@@ -243,18 +243,20 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
             _ = moveCalculate.addKeypoints(keypoints: n_kpoints)
             var timerCount: Int = 0
             
-            if selectedChallenge!.id_exercise == "1"{
-                timerCount = self.moveCalculate.calSquat()
-            }else if selectedChallenge!.id_exercise == "2"{
-                timerCount = self.moveCalculate.calLunge()
-                
-            }else if selectedChallenge!.id_exercise == "3"{
-                timerCount = self.moveCalculate.calHightknee()
-            }else if selectedChallenge!.id_exercise == "4"{
-                timerCount = self.moveCalculate.calLegraiseSide()
-            }else if selectedChallenge!.id_exercise == "5"{
-                timerCount = self.moveCalculate.calLegSwing()
-            }
+            timerCount = moveCalculate.callExercise(idEx: Int(selectedChallenge!.id_exercise) ?? 1)
+            
+//            if selectedChallenge!.id_exercise == "1"{
+//                timerCount = self.moveCalculate.calSquat()
+//            }else if selectedChallenge!.id_exercise == "2"{
+//                timerCount = self.moveCalculate.calLunge()
+//                
+//            }else if selectedChallenge!.id_exercise == "3"{
+//                timerCount = self.moveCalculate.calHightknee()
+//            }else if selectedChallenge!.id_exercise == "4"{
+//                timerCount = self.moveCalculate.calLegraiseSide()
+//            }else if selectedChallenge!.id_exercise == "5"{
+//                timerCount = self.moveCalculate.calLegSwing()
+//            }
             
             
             

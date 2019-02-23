@@ -240,20 +240,8 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                 _ = moveCalculate.addKeypoints(keypoints: n_kpoints)
                 var timerCount: Int = 0
                 
-                if selectedExercise!.name == "Squat"{
-                        timerCount = self.moveCalculate.calSquat()
-                }else if selectedExercise!.name == "Lunges"{
-                      timerCount = self.moveCalculate.calLunge()
+                 timerCount = moveCalculate.callExercise(idEx: Int(selectedExercise!.id_exercise) ?? 1)
 
-                }else if selectedExercise!.name == "Hight knee"{
-                    timerCount = self.moveCalculate.calHightknee()
-                }else if selectedExercise!.name == "Side Leg raise"{
-                    timerCount = self.moveCalculate.calLegraiseSide()
-                }else if selectedExercise!.name == "Leg swing"{
-                    timerCount = self.moveCalculate.calLegSwing()
-                }
-                
-  
     
                 DispatchQueue.main.sync {
                     
@@ -268,7 +256,11 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
 //                            countdownStart()
                         }
                             scoreCal += timerCount
+                    }else if timerCount == 5{
+                            performSegue(withIdentifier: "battle_done", sender: self)
                     }
+                    
+                
 
                     self.poseView.bodyPoints = n_kpoints
                 
