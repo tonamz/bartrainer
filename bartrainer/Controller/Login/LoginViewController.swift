@@ -17,7 +17,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         do {
             try User.load()
-
             if User.currentUser != nil {
                 print(User.currentUser?.id_user)
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
@@ -62,7 +61,7 @@ class LoginViewController: UIViewController {
                         UIApplication.shared.keyWindow?.rootViewController = vc
                        
                     } else {
-                        Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสผ่านไม่ถูกต้อง", action: nil)
+                        Alert.showAlert(vc: self, title: "Error", message: "username หรือ รหัสผ่านไม่ถูกต้อง", action: nil)
                     }
                 } catch {
                     Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)

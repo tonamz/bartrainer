@@ -42,7 +42,7 @@ class ChallengeDetailViewController: UIViewController {
         
         ChallengeName.text = selectedChallengeGroup?.name
         ChallengeDay.text = selectedChallenge?.day
-        ChallengeRep.text = selectedChallenge?.reps
+        ChallengeRep.text = "Reps : \(selectedChallenge?.reps ?? "aa" )"
         
     }
     

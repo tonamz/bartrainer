@@ -25,6 +25,7 @@ PODS:
     - Alamofire
     - ObjectMapper
   - ObjectMapper (3.4.2)
+  - TextFieldEffects (1.5.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - FacebookLogin
   - FBSDKLoginKit
   - Mailgun-In-Swift
+  - TextFieldEffects
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -47,6 +49,7 @@ SPEC REPOS:
     - FBSDKLoginKit
     - Mailgun-In-Swift
     - ObjectMapper
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -59,7 +62,8 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   Mailgun-In-Swift: 9a969ec1bbb19d00dc518fedf0c0493f968463f2
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: 4a9d9e897227fdf8e3c431e318d56a587d5328b1
+PODFILE CHECKSUM: 5e1e95d0a2a6dd3da68cae9c4f075c6af16fde11
 
 COCOAPODS: 1.5.3

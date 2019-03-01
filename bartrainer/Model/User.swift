@@ -20,7 +20,7 @@ struct User: Codable {
     var exercise_goal: String
     var gender: String
     var friend: String
-
+    var created_at: String
     var id_facebook: String
     var img_profile: String
     var password: String
