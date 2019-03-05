@@ -31,12 +31,12 @@ struct User: Codable {
             let encoder = JSONEncoder()
             let userJSON = try encoder.encode(currentUser)
             
-            UserDefaults.standard.set(userJSON, forKey: "CURRENT_USER")
+            UserDefaults.standard.set(userJSON, forKey: "USER")
         }
     }
     
     static func load() throws {
-        if let userJSON = UserDefaults.standard.value(forKey: "CURRENT_USER") as? Foundation.Data {
+        if let userJSON = UserDefaults.standard.value(forKey: "USER") as? Foundation.Data {
             let decoder = JSONDecoder()
             
             let user = try decoder.decode(User.self, from: userJSON)

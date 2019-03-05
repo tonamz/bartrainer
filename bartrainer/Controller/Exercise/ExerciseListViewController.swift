@@ -21,10 +21,13 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     
     var selectedCategoryGroup: Category?
     var ExerciseList: [Exercise] = []
+    var ExerciseLevel: [Level] = []
+    var LevelCountList: [LevelCount] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+          print(User.currentUser?.id_user)
         buttonOutlet.layer.cornerRadius = 10
         title = selectedCategoryGroup!.name
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
@@ -50,6 +53,41 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                 print("error")
             }
         }
+        
+        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_level.php").responseData { response in
+            if let data = response.result.value {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    
+                    self.ExerciseLevel = try decoder.decode([Level].self, from: data)
+    
+                    
+                } catch {
+                    print(error.localizedDescription)
+                }
+            } else {
+                print("error")
+            }
+        }
+        
+        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_level_count.php?id_user=1").responseData { response in
+            if let data = response.result.value {
+                
+                do {
+                    let decoder = JSONDecoder()
+                    
+                      self.LevelCountList = try decoder.decode([LevelCount].self, from: data)
+                    
+                    
+                } catch {
+                    print(error.localizedDescription)
+                }
+            } else {
+                print("error")
+            }
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

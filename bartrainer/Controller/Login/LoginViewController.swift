@@ -11,10 +11,15 @@ import Alamofire
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loginBT: UIButton!
+    @IBOutlet weak var facebookBT: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginBT.layer.cornerRadius = 10
+         facebookBT.layer.cornerRadius = 10
+        
         do {
             try User.load()
             if User.currentUser != nil {
@@ -55,8 +60,9 @@ class LoginViewController: UIViewController {
                     
                     if let user = user {
                         User.currentUser = user
-                           print("loginn") 
+                       
                         try User.save()
+                        print(User.currentUser?.id_user)
                         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
                         UIApplication.shared.keyWindow?.rootViewController = vc
                        

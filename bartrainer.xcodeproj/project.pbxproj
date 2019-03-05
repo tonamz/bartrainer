@@ -25,6 +25,8 @@
 		E16CA91121F0F95400D4CEA6 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */; };
 		E16CA91521F10ABB00D4CEA6 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91421F10ABB00D4CEA6 /* Exercise.swift */; };
 		E16CA91721F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91621F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift */; };
+		E185BC09222D824E00EC84D0 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = E185BC08222D824E00EC84D0 /* Level.swift */; };
+		E185BC0B222DA30300EC84D0 /* LevelCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E185BC0A222DA30300EC84D0 /* LevelCount.swift */; };
 		E1A45F2521C2B9A600DF2F13 /* model_cpm.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E1A45F2321C2AB0300DF2F13 /* model_cpm.mlmodel */; };
 		E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DE7B21C570B7006CB2F3 /* ExerciseViewController.swift */; };
 		E1A6DE7E21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DE7D21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift */; };
@@ -91,6 +93,26 @@
 		E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		E16CA91421F10ABB00D4CEA6 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		E16CA91621F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewCell.swift; sourceTree = "<group>"; };
+		E185BBF6222B020500EC84D0 /* Prompt-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-LightItalic.ttf"; path = "../../../../../Library/Fonts/Prompt-LightItalic.ttf"; sourceTree = "<group>"; };
+		E185BBF7222B020500EC84D0 /* Prompt-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-MediumItalic.ttf"; path = "../../../../../Library/Fonts/Prompt-MediumItalic.ttf"; sourceTree = "<group>"; };
+		E185BBF8222B020500EC84D0 /* Prompt-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-SemiBold.ttf"; path = "../../../../../Library/Fonts/Prompt-SemiBold.ttf"; sourceTree = "<group>"; };
+		E185BBF9222B020500EC84D0 /* Prompt-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-Medium.ttf"; path = "../../../../../Library/Fonts/Prompt-Medium.ttf"; sourceTree = "<group>"; };
+		E185BBFA222B020500EC84D0 /* Prompt-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-ExtraBoldItalic.ttf"; path = "../../../../../Library/Fonts/Prompt-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		E185BBFB222B020500EC84D0 /* Prompt-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-Bold.ttf"; path = "../../../../../Library/Fonts/Prompt-Bold.ttf"; sourceTree = "<group>"; };
+		E185BBFC222B020500EC84D0 /* Prompt-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-ExtraBold.ttf"; path = "../../../../../Library/Fonts/Prompt-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E185BBFD222B020500EC84D0 /* Prompt-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-SemiBoldItalic.ttf"; path = "../../../../../Library/Fonts/Prompt-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		E185BBFE222B020500EC84D0 /* Prompt-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-BoldItalic.ttf"; path = "../../../../../Library/Fonts/Prompt-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E185BBFF222B020500EC84D0 /* Prompt-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-Thin.ttf"; path = "../../../../../Library/Fonts/Prompt-Thin.ttf"; sourceTree = "<group>"; };
+		E185BC00222B020500EC84D0 /* Prompt-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-ThinItalic.ttf"; path = "../../../../../Library/Fonts/Prompt-ThinItalic.ttf"; sourceTree = "<group>"; };
+		E185BC01222B020500EC84D0 /* Prompt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-Regular.ttf"; path = "../../../../../Library/Fonts/Prompt-Regular.ttf"; sourceTree = "<group>"; };
+		E185BC02222B020500EC84D0 /* Prompt-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-Light.ttf"; path = "../../../../../Library/Fonts/Prompt-Light.ttf"; sourceTree = "<group>"; };
+		E185BC03222B020500EC84D0 /* Prompt-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-Italic.ttf"; path = "../../../../../Library/Fonts/Prompt-Italic.ttf"; sourceTree = "<group>"; };
+		E185BC04222B020500EC84D0 /* Prompt-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-Black.ttf"; path = "../../../../../Library/Fonts/Prompt-Black.ttf"; sourceTree = "<group>"; };
+		E185BC05222B020500EC84D0 /* Prompt-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-BlackItalic.ttf"; path = "../../../../../Library/Fonts/Prompt-BlackItalic.ttf"; sourceTree = "<group>"; };
+		E185BC06222B020600EC84D0 /* Prompt-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-ExtraLightItalic.ttf"; path = "../../../../../Library/Fonts/Prompt-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		E185BC07222B020600EC84D0 /* Prompt-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Prompt-ExtraLight.ttf"; path = "../../../../../Library/Fonts/Prompt-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E185BC08222D824E00EC84D0 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		E185BC0A222DA30300EC84D0 /* LevelCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCount.swift; sourceTree = "<group>"; };
 		E1A45F2321C2AB0300DF2F13 /* model_cpm.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = model_cpm.mlmodel; path = bartrainer/poseview/model_cpm.mlmodel; sourceTree = SOURCE_ROOT; };
 		E1A6DE7B21C570B7006CB2F3 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		E1A6DE7D21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGetCodeViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +264,8 @@
 				E12A8EE0221AFD4200A00321 /* APIresponse.swift */,
 				E112AF9E221C4C8300AB3340 /* Battle.swift */,
 				E1AA80052220976F00F4EAB6 /* ExerciseWorkout.swift */,
+				E185BC08222D824E00EC84D0 /* Level.swift */,
+				E185BC0A222DA30300EC84D0 /* LevelCount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +295,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E185BBF5222B01EA00EC84D0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E185BC04222B020500EC84D0 /* Prompt-Black.ttf */,
+				E185BC05222B020500EC84D0 /* Prompt-BlackItalic.ttf */,
+				E185BBFB222B020500EC84D0 /* Prompt-Bold.ttf */,
+				E185BBFE222B020500EC84D0 /* Prompt-BoldItalic.ttf */,
+				E185BBFC222B020500EC84D0 /* Prompt-ExtraBold.ttf */,
+				E185BBFA222B020500EC84D0 /* Prompt-ExtraBoldItalic.ttf */,
+				E185BC07222B020600EC84D0 /* Prompt-ExtraLight.ttf */,
+				E185BC06222B020600EC84D0 /* Prompt-ExtraLightItalic.ttf */,
+				E185BC03222B020500EC84D0 /* Prompt-Italic.ttf */,
+				E185BC02222B020500EC84D0 /* Prompt-Light.ttf */,
+				E185BBF6222B020500EC84D0 /* Prompt-LightItalic.ttf */,
+				E185BBF9222B020500EC84D0 /* Prompt-Medium.ttf */,
+				E185BBF7222B020500EC84D0 /* Prompt-MediumItalic.ttf */,
+				E185BC01222B020500EC84D0 /* Prompt-Regular.ttf */,
+				E185BBF8222B020500EC84D0 /* Prompt-SemiBold.ttf */,
+				E185BBFD222B020500EC84D0 /* Prompt-SemiBoldItalic.ttf */,
+				E185BBFF222B020500EC84D0 /* Prompt-Thin.ttf */,
+				E185BC00222B020500EC84D0 /* Prompt-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E1DC04F021BEAC1D00A2A4F9 = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +341,7 @@
 		E1DC04FB21BEAC1D00A2A4F9 /* bartrainer */ = {
 			isa = PBXGroup;
 			children = (
+				E185BBF5222B01EA00EC84D0 /* Fonts */,
 				E1AFA67B2221363F003C81E0 /* bartrainer.entitlements */,
 				E1FEF5F02201CC4300492BE4 /* GIF */,
 				E10DF3C621F0E3510021CE85 /* Model */,
@@ -484,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E185BC0B222DA30300EC84D0 /* LevelCount.swift in Sources */,
 				E152C0BE220D912000DF906F /* Challenge_name.swift in Sources */,
 				E1FEF5D121FB225400492BE4 /* FitnessDetailViewController.swift in Sources */,
 				E1AA8008222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift in Sources */,
@@ -513,6 +564,7 @@
 				E1FEF5F62201FB8E00492BE4 /* ChallengeCollectionViewCell.swift in Sources */,
 				E1AA80062220976F00F4EAB6 /* ExerciseWorkout.swift in Sources */,
 				E1AC805E22199E6500644FAC /* RegisterViewController.swift in Sources */,
+				E185BC09222D824E00EC84D0 /* Level.swift in Sources */,
 				E1A6DE7E21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift in Sources */,
 				E1111A1D21EF2110000D1167 /* CustomNavController.swift in Sources */,
 				E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */,

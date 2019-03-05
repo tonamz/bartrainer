@@ -29,7 +29,9 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
     var selectedCategoryGroup: Category?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+          print(User.currentUser?.id_user)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         self.exerciseCollection.backgroundColor = UIColor(white: 1, alpha: 0)
         self.gifImage.loadGif(name: "hightkneeGIF")
