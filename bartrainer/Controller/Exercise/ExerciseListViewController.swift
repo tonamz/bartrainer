@@ -13,7 +13,9 @@ import AlamofireImage
 class ExerciseListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
   
     
-
+    @IBOutlet weak var levelCountText: UILabel!
+    @IBOutlet weak var levelText: UILabel!
+    
     
     @IBOutlet weak var exerciseListTableView: UITableView!
      @IBOutlet weak var buttonOutlet: UIButton!
@@ -24,10 +26,9 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     var ExerciseLevel: [Level] = []
     var LevelCountList: [LevelCount] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-          print(User.currentUser?.id_user)
+        print(User.currentUser?.id_user as Any)
         buttonOutlet.layer.cornerRadius = 10
         title = selectedCategoryGroup!.name
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
@@ -78,7 +79,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                     let decoder = JSONDecoder()
                     
                       self.LevelCountList = try decoder.decode([LevelCount].self, from: data)
-                    
+                    self.findLevel()
                     
                 } catch {
                     print(error.localizedDescription)
@@ -88,6 +89,38 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
             }
         }
         
+    }
+    
+    func findLevel() {
+        let indexPath = NSIndexPath(row: 0, section: 0)
+        let level_ex = LevelCountList[indexPath.row]
+
+
+        for i in 0..<ExerciseLevel.count {
+              let indexPath = NSIndexPath(row: i, section: 0)
+            var ex_level =  ExerciseLevel[indexPath.row]
+        
+            if(level_ex.level == ex_level.level){
+                if(level_ex.level_count < ex_level.next_level)
+                {
+                    levelCountText.text = (" \(level_ex.level_count)/\(ex_level.next_level) ")
+                    levelText.text = ("Level\(ex_level.level)")
+                      print(ex_level)
+                }else{
+                    ex_level =  ExerciseLevel[indexPath.row+1]
+                    levelCountText.text = ("0/\(ex_level.next_level) ")
+                    levelText.text = ("Level\(ex_level.level)")
+                    print(ex_level)
+                
+                }
+                
+            }
+       
+        }
+        
+     
+        
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
