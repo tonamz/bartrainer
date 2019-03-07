@@ -56,6 +56,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
     var selectedCategoryGroup: Category?
     var ExerciseList: [Exercise] = []
+    var levelExercise: [Level] = []
     
     
     
@@ -90,6 +91,8 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(levelExercise)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
 
         //timer

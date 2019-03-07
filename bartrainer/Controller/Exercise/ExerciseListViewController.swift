@@ -26,6 +26,8 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     var ExerciseLevel: [Level] = []
     var LevelCountList: [LevelCount] = []
     
+    var levelExercise: [Level] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(User.currentUser?.id_user as Any)
@@ -79,7 +81,8 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                     let decoder = JSONDecoder()
                     
                       self.LevelCountList = try decoder.decode([LevelCount].self, from: data)
-                    self.findLevel()
+                    self.levelExercise = [self.findLevel()]
+                        print(self.levelExercise)
                     
                 } catch {
                     print(error.localizedDescription)
@@ -89,11 +92,15 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
             }
         }
         
+        
+      
+        
     }
     
-    func findLevel() {
+    func findLevel() -> Level{
         let indexPath = NSIndexPath(row: 0, section: 0)
         let level_ex = LevelCountList[indexPath.row]
+        let ex_level =  ExerciseLevel[indexPath.row]
 
 
         for i in 0..<ExerciseLevel.count {
@@ -105,20 +112,25 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                 {
                     levelCountText.text = (" \(level_ex.level_count)/\(ex_level.next_level) ")
                     levelText.text = ("Level\(ex_level.level)")
-                      print(ex_level)
+//                      print(ex_level)
+                    
+                     return ex_level
                 }else{
                     ex_level =  ExerciseLevel[indexPath.row+1]
                     levelCountText.text = ("0/\(ex_level.next_level) ")
                     levelText.text = ("Level\(ex_level.level)")
-                    print(ex_level)
+//                    print(ex_level)
+                    
+                    return ex_level
                 
                 }
                 
             }
+            
        
         }
         
-     
+            return ex_level
         
 
     }
@@ -127,6 +139,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         if segue.identifier == "Workout" {
             let vc = segue.destination as! WorkoutsViewController
             vc.selectedCategoryGroup = selectedCategoryGroup
+            vc.levelExercise = levelExercise
             
         }
     }
