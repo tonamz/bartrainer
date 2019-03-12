@@ -13,9 +13,10 @@ import UIKit
 struct ExerciseWorkout: Codable {
 
     
-    var id_workouts: String
+    var id: String
     var id_user: String
     var id_exercise: String
+    var id_category: String
     var category: String
     var level: String
     var reps: String

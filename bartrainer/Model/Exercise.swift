@@ -14,6 +14,8 @@ struct Exercise: Codable {
     var name: String
     var category: String
     var cal: String
+    var persec: String
+    
 
 }
 

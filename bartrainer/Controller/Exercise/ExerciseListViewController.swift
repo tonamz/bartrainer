@@ -27,7 +27,8 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     var ExerciseLevel: [Level] = []
     var LevelCountList: [LevelCount] = []
     
-    var levelExercise: [Level] = []
+//    var levelExercise: [Level] = []
+      var levelExercise: Level?
     
     var leveldo: Double = 0
     var levelnext: Double = 0
@@ -81,9 +82,9 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                                 
                                 self.LevelCountList = try decoder.decode([LevelCount].self, from: data)
                                 if(self.LevelCountList.count>0 && self.ExerciseLevel.count>0){
-                                    self.levelExercise = [self.findLevel()]
+                                    self.levelExercise = self.findLevel()
                                 }else{
-                                    self.levelExercise = [self.setLevelstart()]
+                                    self.levelExercise = self.setLevelstart()
                                 }
                                 
                                 
@@ -157,7 +158,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
 
     }
     
-    func setLevelstart() -> Level {
+    func setLevelstart() -> Level? {
         let indexPathh = NSIndexPath(row: 0, section: 0)
         let ex_level =  ExerciseLevel[indexPathh.row]
         levelText.text = ("Level1")

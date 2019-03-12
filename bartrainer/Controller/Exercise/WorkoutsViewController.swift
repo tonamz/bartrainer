@@ -30,9 +30,13 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
     @IBOutlet weak var tryLabel: UILabel!
     @IBOutlet weak var timer: UILabel!
+    @IBOutlet weak var reps: UILabel!
     
     var timerr:Timer!
-    var countdown:Int = 5
+    var countdown:Int = 0
+    var countdownExercise:Int = 0
+    var timerExercise:Int = 0
+
     var index:Int = 0
     
     var id_ex:Int = 0
@@ -56,8 +60,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
     var selectedCategoryGroup: Category?
     var ExerciseList: [Exercise] = []
-    var levelExercise: [Level] = []
-    
+    var levelExercise: Level?
     
     
     // MARK - 성능 측정 프러퍼티
@@ -91,8 +94,6 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(levelExercise)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
 
         //timer
@@ -113,8 +114,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                     let decoder = JSONDecoder()
                     
                     self.ExerciseList = try decoder.decode([Exercise].self, from: data)
-                    
-                    
+        
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -123,6 +123,15 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             }
         }
         
+
+
+        countdown = Int((levelExercise?.rest)!) ?? 0
+        countdownExercise = Int((levelExercise?.timer)!) ?? 0
+        timerExercise = Int((levelExercise?.timer)!) ?? 0
+        print(countdownExercise)
+                 self.countdownExerciseStart()
+    
+     
         
         
         
@@ -132,29 +141,76 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         
         if countdown == 0 {
             timerr.invalidate()
-            timer.text = "0"
+            timer.text = ""
             self.tryLabel.text = "0"
              CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
 //            self.videoCapture.stop()
              self.videoCapture.start()
- 
+              countdownExercise = Int((levelExercise?.timer)!) ?? 0
+            countdownExerciseStart()
             
-        }else if countdown <= 5 {
-            timer.text = "\(countdown)"
+ 
+        }else  {
             CountdownView.show(countdownFrom: Double(countdown), spin: spin, animation: appearingAnimation, autoHide: autohide,
                                completion: nil)
-        }else  {
-            timer.text = " "
+
         }
     }
     func  countdownStart() {
         timerr = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownAction), userInfo: nil, repeats: true)
-          self.videoCapture.stop()
+        self.videoCapture.stop()
     }
     
     func countdownStop(){
         timerr.invalidate()
-        countdown = 5
+         countdown = Int((levelExercise?.rest)!) ?? 0
+        
+    }
+    @objc func countdownExerciseAction(){
+        countdownExercise -= 1
+        
+        if countdownExercise == 0 {
+             timerr.invalidate()
+            nextExercise()
+            timer.text = ""
+
+            
+        }else {
+            timer.text = "\(countdownExercise)"
+        }
+        
+    }
+    func  countdownExerciseStart() {
+     timerr = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownExerciseAction), userInfo: nil, repeats: true)
+        
+    }
+    func nextExercise()  {
+        
+        print("nextlevel")
+        countdownExercise = Int((levelExercise?.timer)!) ?? 0
+        if (countdown == 0){
+            countdown = Int((levelExercise?.rest)!) ?? 0
+            
+        }
+        countdownStart()
+        if(exerciseloop<ExerciseList.count){
+            
+            
+            exerciseloop+=1
+            scoreCal=0
+            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal, cal: 10)
+            
+            
+        }
+        if(exerciseloop == ExerciseList.count){
+            
+            loadGIF = 0
+            countdownStop()
+            performSegue(withIdentifier: "WorkoutFinish", sender: self)
+            self.videoCapture.stop()
+            
+            
+        }
         
     }
     
@@ -224,19 +280,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             timerCount = moveCalculate.callExercise(idEx: Int(model.id_exercise) ?? 1)
             id_ex = Int((model.id_exercise)) ?? 5
             
-    
-
-            
-          
-            
-            
-//            while index<ExerciseList.count {
-//                let indexPath = NSIndexPath(row: index, section: 0)
-//                let model = ExerciseList[indexPath.row]
-//                timerCount = moveCalculate.callExercise(idEx: Int(model.id_exercise) ?? 1)
-////                index+=1
-//
-//            }
+        
 
             DispatchQueue.main.sync {
                 
@@ -265,52 +309,20 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                 nameExercise.text = model.name
                 
                 if timerCount == 1 {
-//                    if timerr != nil{
-//                        countdownStop()
-//                        countdownStart()
-//
-//                    }else {
-//                        countdownStart()
-//                    }
                     
-              
                     scoreCal += timerCount
                 }
                 if scoreCal != 0{
                        self.tryLabel.text = "\(scoreCal)"
                 }
                 
-                
-                if scoreCal == 5 {
+     
+                let repsExercise =  timerExercise/Int(model.persec)!
+                self.reps.text = "/\(repsExercise)"
+                if scoreCal == repsExercise {
+                            print("scoreCal")
+                    nextExercise()
               
-                    if (countdown == 0){
-                        countdown = 5
-                    }
-                    countdownStart()
-                    if(exerciseloop<ExerciseList.count){
-                      
-
-                        exerciseloop+=1
-                       
-                        scoreCal=0
-                        if(exerciseloop == ExerciseList.count){
-                            
-//                                countdownStop()
-//                               performSegue(withIdentifier: "WorkoutFinish", sender: self)
-//                                self.videoCapture.stop()
-                        }
-                    
-                     
-                    }
-                    if(exerciseloop == ExerciseList.count){
-                         exerciseWorkout(id_user: 1, id_exercise: id_ex, category: selectedCategoryGroup?.name ?? "aa", level: 1, reps: scoreCal, cal: 10)
-                        loadGIF = 0
-                        countdownStop()
-                        performSegue(withIdentifier: "WorkoutFinish", sender: self)
-                        self.videoCapture.stop()
-                        
-              
-                    }
                 
 
                 }
@@ -334,11 +346,12 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     }
     
     
-    func exerciseWorkout( id_user: Int, id_exercise: Int, category: String, level: Int, reps: Int, cal: Int) {
+    func exerciseWorkout( id_user: Int, id_exercise: Int,id_category: Int, category: String, level: Int, reps: Int, cal: Int) {
         
         let param: Parameters = [
             "id_user": id_user,
             "id_exercise": id_exercise,
+            "id_category": id_category,
             "category": category,
              "level": level,
             "reps": reps,
@@ -355,16 +368,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                     let result = try decoder.decode(APIresponse.self, from: data)
                     
                     print(result)
-                    
-                    if result.message == "success" {
-                        
-                    } else {
-                        if result.error == "23000" {
-                            Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสบัตรประชนมีในระบบแล้ว", action: nil)
-                        } else {
-                            Alert.showAlert(vc: self, title: "Error", message: "server ผิดพลาด", action: nil)
-                        }
-                    }
+                
                     
                 } catch {
                     Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)

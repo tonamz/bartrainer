@@ -14,7 +14,7 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
     
     var selectedCategoryGroup: Category?
     var exerciseworkout: [ExerciseWorkout] = []
-        var ExerciseList: [Exercise] = []
+    var ExerciseList: [Exercise] = []
     
 
     
