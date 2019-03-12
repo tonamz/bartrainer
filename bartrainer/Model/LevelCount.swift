@@ -10,9 +10,10 @@ import Foundation
 struct LevelCount: Codable {
     
     
-
+    var id_category: String
     var level: String
     var level_count: String
+
 
     
     

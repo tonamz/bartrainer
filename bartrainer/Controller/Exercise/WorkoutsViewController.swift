@@ -105,10 +105,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         poseView.setUpOutputComponent()
         //            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         
- 
-    
-        
-        
+
        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_category.php?group_id=\(selectedCategoryGroup!.id)").responseData { response in
             if let data = response.result.value {
                 
