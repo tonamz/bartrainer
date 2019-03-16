@@ -11,7 +11,7 @@ import UIKit
 class ChallengeDayCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var bgView: UIView!
-    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
     
     
     
@@ -22,10 +22,13 @@ class ChallengeDayCollectionViewCell: UICollectionViewCell {
         
         let myColor : UIColor = UIColor(red:0.99, green:0.50, blue:0.25, alpha:1.0)
         
+        self.dayLabel.textColor = myColor
         self.bgView.layer.cornerRadius = 24
         self.bgView.layer.borderWidth = 2
         self.bgView.layer.borderColor = myColor.cgColor
         self.contentView.layer.masksToBounds = true
+        
+       
 
   
       

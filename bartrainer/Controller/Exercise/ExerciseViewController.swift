@@ -35,7 +35,7 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         self.exerciseCollection.backgroundColor = UIColor(white: 1, alpha: 0)
         self.gifImage.loadGif(name: "hightkneeGIF")
-        
+
         self.exerciseCollection.dataSource = self
         self.exerciseCollection.delegate = self
         

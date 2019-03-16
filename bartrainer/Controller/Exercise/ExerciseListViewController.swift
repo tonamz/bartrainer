@@ -186,8 +186,27 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseListTableViewCell", for: indexPath) as! ExerciseListTableViewCell
         
         let model = ExerciseList[indexPath.row]
-        cell.iconImageView.image = UIImage(named: "Arms")
+        
+      
+    
+        if (model.id_exercise == "1" ){
+               cell.iconImageView.image = UIImage(named: "ex01")
+        }else  if (model.id_exercise == "2" ){
+            cell.iconImageView.image = UIImage(named: "ex02")
+        }else  if (model.id_exercise == "3" ){
+            cell.iconImageView.image = UIImage(named: "ex03")
+        }else  if (model.id_exercise == "4" ){
+            cell.iconImageView.image = UIImage(named: "ex04")
+        }else  if (model.id_exercise == "5" ){
+            cell.iconImageView.image = UIImage(named: "ex05")
+        }
+        else{
+             cell.iconImageView.image = UIImage(named: "Arms")
+        }
+//         cell.iconImageView.image = UIImage(named: "Arms")
         cell.exerciseLabel.text = model.name
+        
+          i+=1
         
         return cell
     }
