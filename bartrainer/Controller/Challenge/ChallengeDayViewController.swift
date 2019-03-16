@@ -18,7 +18,8 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
     var selectedChallengeGroup: ChallengeName?
     var selectedChallenge: Challenge?
     
-
+    @IBOutlet weak var challengenameLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,8 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
         
         self.challengeDayCollection.dataSource = self
         self.challengeDayCollection.delegate = self
+        
+        challengenameLabel.text = "\(String(describing:selectedChallengeGroup?.name))"
         
 
         
