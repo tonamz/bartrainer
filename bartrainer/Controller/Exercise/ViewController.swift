@@ -204,30 +204,7 @@ class ViewController: UIViewController, VideoCaptureDelegate {
         return n_kpoints
     }
     
-    func squatCalculate(with n_kpoints: [BodyPoint?]) {
-    
-          self.tableData = n_kpoints
-        
-        //            tryLabel.text = "(\(pointText))"
-        //              print(pointText)
-        
-//        if let body_point = tableData[0] {
-//            let pointText: String = "\(String(format: "%.3f", body_point.point.y))"
-//
-//
-//
-//        }
-//        if let body_point = tableData[6] {
-//            let pointText2: String = "\(String(format: "%.3f", body_point.point.y))"
-//
-//
-//        }
-        
-      
-        
-    
-    }
-    
+
  
     
 
@@ -325,15 +302,10 @@ class  movePoint{
     let countPoint: Int = 20
     var keypointsArray: [[BodyPoint?]] = []
     
-    var timerr:Timer!
-    var countdown:Int = 10
-    
     func addKeypoints(keypoints: [BodyPoint?])-> Int {
         keypointsArray.append(keypoints)
         if keypointsArray.count > countPoint {
             keypointsArray.remove(at: 0)
-          
-            
         }
         
         return 0
@@ -364,11 +336,7 @@ class  movePoint{
         }else   if(idEx==17){
             score = calJumpingJack()
         }
-        
-       
-      
-      
-        
+
         return score
     }
     
@@ -398,10 +366,10 @@ class  movePoint{
 //          print("\(String(format: "%.3f",headX)), \(String(format: "%.3f",headY)), \(String(format: "%.3f",shoulder)), \(String(format: "%.3f",leg)), \(String(format: "%.3f",foot))")
         if (headY>0.120&&headY<0.220&&shoulder>0.120&&shoulder<0.220&&leg>0.00&&leg<0.120&&foot<=0&&headX>=0&&headX<=0.5){
         print("Yeahhhhhhhhhh")
-            keypointsArray.removeAll()
+        keypointsArray.removeAll()
 
         return 1
-//            return 1
+            
         }else {return 0}
             
         }

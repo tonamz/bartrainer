@@ -65,13 +65,9 @@ class FitnessDetailViewController: UIViewController {
             let vc = segue.destination as! FitnessGetCodeViewController
             vc.fitnessName = selectedfitness!.name_brand
             vc.fitnessBranch = selectedfitness!.name_branch
-            let vc2 = segue.destination as! FitnessRegisterViewController
-            vc2.fitnessName = selectedfitness!.name_brand
-            vc2.fitnessBranch = selectedfitness!.name_branch
-            vc2.fitnessid = selectedfitness!.id_fitness
+        
 
-        }
-        if segue.identifier == "fitnessRegis" {
+        }else if segue.identifier == "fitnessRegis" {
             let vc2 = segue.destination as! FitnessRegisterViewController
             vc2.fitnessName = selectedfitness!.name_brand
             vc2.fitnessBranch = selectedfitness!.name_branch

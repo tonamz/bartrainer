@@ -201,7 +201,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
             cell.iconImageView.image = UIImage(named: "ex05")
         }
         else{
-             cell.iconImageView.image = UIImage(named: "Arms")
+             cell.iconImageView.image = UIImage(named: "ex02")
         }
 //         cell.iconImageView.image = UIImage(named: "Arms")
         cell.exerciseLabel.text = model.name

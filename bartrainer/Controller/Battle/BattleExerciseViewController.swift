@@ -242,30 +242,27 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                 _ = moveCalculate.addKeypoints(keypoints: n_kpoints)
                 var timerCount: Int = 0
                 
-                 timerCount = moveCalculate.callExercise(idEx: Int(selectedExercise!.id_exercise) ?? 1)
+                timerCount = moveCalculate.callExercise(idEx: Int(selectedExercise!.id_exercise) ?? 1)
 
     
                 DispatchQueue.main.sync {
                     
-             
+                    self.poseView.bodyPoints = n_kpoints
            
                     
                     if timerCount == 1 {
+                        
+                        scoreCal += timerCount
+                        
                         if timerr != nil{
                                 countdownStop()
                                 countdownStart()
                         }else {
                             countdownStart()
                         }
-                            scoreCal += timerCount
-                    }else if timerCount == 5{
-                            performSegue(withIdentifier: "battle_done", sender: self)
+                        
                     }
-                    
-                
-
-                    self.poseView.bodyPoints = n_kpoints
-                
+     
                     if scoreCal != 0 {
                         self.tryLabel.text = "\(scoreCal)"
                     }

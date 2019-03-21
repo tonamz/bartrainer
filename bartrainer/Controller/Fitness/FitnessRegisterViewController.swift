@@ -35,10 +35,10 @@ class FitnessRegisterViewController: UIViewController {
     @IBAction func FitnessRegisterButton(_ sender: Any) {
         
         if  ( nameField != nil && emailField != nil && telephoneField != nil){
-//            sendFitnessRegister(id_fitness: id_fitness,id_user: 1 ,name: nameField.text!, email: emailField.text!, telephone: telephoneField.text!)
-            sendEmailRegister()
-            Alert.showAlert(vc: self, title: "Complete", message: "สมัครสมาชิกเรียบร้อยแล้วค่ะ", action: nil)
-            performSegue(withIdentifier: "fitnessRegisFinish", sender: self)
+            sendFitnessRegister(id_fitness: id_fitness,id_user: 1 ,name: nameField.text!, email: emailField.text!, telephone: telephoneField.text!)
+//            sendEmailRegister()
+//            Alert.showAlert(vc: self, title: "Complete", message: "สมัครเรียบร้อยแล้วค่ะ", action: nil)
+//            performSegue(withIdentifier: "fitnessRegisFinish", sender: self)
             
             
         }else{

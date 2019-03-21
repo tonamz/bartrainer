@@ -28,7 +28,8 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
         self.challengeDayCollection.dataSource = self
         self.challengeDayCollection.delegate = self
         
-        challengenameLabel.text = "\(String(describing:selectedChallengeGroup?.name))"
+        let clName: String = selectedChallengeGroup?.name ?? "aa"
+        challengenameLabel.text = "\(clName)"
         
 
         
