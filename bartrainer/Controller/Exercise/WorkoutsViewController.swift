@@ -54,6 +54,11 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     private var moveCalculate: movePoint = movePoint()
     var scoreCal = 0
     var exerciseloop: Int = 0
+    var calSum: Int = 0
+    var calExercise: Int = 0
+    
+    
+    
     
     var scoreExercise:[Int] = []
  
@@ -145,9 +150,11 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             self.tryLabel.text = "0"
              CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
 //            self.videoCapture.stop()
+                loadGIF = 0
              self.videoCapture.start()
               countdownExercise = Int((levelExercise?.timer)!) ?? 0
-            countdownExerciseStart()
+                countdownExerciseStart()
+    
             
  
         }else  {
@@ -170,8 +177,11 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         countdownExercise -= 1
         
         if countdownExercise == 0 {
-             timerr.invalidate()
-            nextExercise()
+                    timerr.invalidate()
+               print("nextlevel timer")
+                    nextExercise()
+     
+ 
             timer.text = ""
 
             
@@ -186,7 +196,8 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     }
     func nextExercise()  {
         
-        print("nextlevel")
+        
+  
         countdownExercise = Int((levelExercise?.timer)!) ?? 0
         if (countdown == 0){
             countdown = Int((levelExercise?.rest)!) ?? 0
@@ -195,16 +206,24 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         countdownStart()
         if(exerciseloop<ExerciseList.count){
             
+ 
+            calSum = calExercise*scoreCal
             
+            print(scoreCal)
+     
+            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal, cal: calSum)
+            
+              scoreCal=0
             exerciseloop+=1
-            scoreCal=0
-            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal, cal: 10)
+//            gifExercise.animationRepeatCount = 1
+//            loadGIF = 0
             
             
         }
         if(exerciseloop == ExerciseList.count){
             
-            loadGIF = 0
+            
+        
             countdownStop()
             performSegue(withIdentifier: "WorkoutFinish", sender: self)
             self.videoCapture.stop()
@@ -280,6 +299,8 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             timerCount = moveCalculate.callExercise(idEx: Int(model.id_exercise) ?? 1)
             id_ex = Int((model.id_exercise)) ?? 5
             
+            calExercise = Int(model.cal)!
+            
         
 
             DispatchQueue.main.sync {
@@ -289,7 +310,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                         gifExercise.loadGif(name: "squatGIF")
                         
                     }else if model.name == "Lunges"{
-                        gifExercise.loadGif(name: " ")
+                        gifExercise.loadGif(name: "hightkneeGIF")
                     }else if model.name == "Hight knee"{
                         gifExercise.loadGif(name: "hightkneeGIF")
                     }else if model.name == "Side Leg raise"{
@@ -318,12 +339,14 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                 
      
                 let repsExercise =  timerExercise/Int(model.persec)!
+           
                 self.reps.text = "/\(repsExercise)"
                 if scoreCal == repsExercise {
-                            print("scoreCal")
+         
+                               print("nextlevel reps")
                     nextExercise()
-              
-                
+                    
+
 
                 }
                 
@@ -374,7 +397,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                     Alert.showAlert(vc: self, title: "Error", message: error.localizedDescription, action: nil)
                 }
             } else {
-                Alert.showAlert(vc: self, title: "Error", message: "กรุณาลองใหม่อีกครั้ง", action: nil)
+//                Alert.showAlert(vc: self, title: "Error", message: "กรุณาลองใหม่อีกครั้ง", action: nil)
             }
         }
     }

@@ -43,6 +43,8 @@
 		E1DC051221BEB01A00A2A4F9 /* PoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC050F21BEAD2F00A2A4F9 /* PoseView.swift */; };
 		E1DC051321BEB02F00A2A4F9 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC050E21BEAD1100A2A4F9 /* VideoCapture.swift */; };
 		E1DC051421BEB04200A2A4F9 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC051021BEAD5F00A2A4F9 /* Measure.swift */; };
+		E1E9146422452D46006ECF57 /* ChallengeDetailAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E9146322452D46006ECF57 /* ChallengeDetailAllViewController.swift */; };
+		E1E9146622453283006ECF57 /* ChallengeDetailAllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E9146522453283006ECF57 /* ChallengeDetailAllTableViewCell.swift */; };
 		E1EA2460220DF56400A1B079 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA245F220DF56400A1B079 /* ChallengeDetailViewController.swift */; };
 		E1EF4EAA223CEBAA00BEDB1C /* ChallengeCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EF4EA9223CEBAA00BEDB1C /* ChallengeCount.swift */; };
 		E1F76D8021F3608E00D236A9 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76D7F21F3608E00D236A9 /* BattleViewController.swift */; };
@@ -133,6 +135,8 @@
 		E1DC050E21BEAD1100A2A4F9 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		E1DC050F21BEAD2F00A2A4F9 /* PoseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseView.swift; sourceTree = "<group>"; };
 		E1DC051021BEAD5F00A2A4F9 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		E1E9146322452D46006ECF57 /* ChallengeDetailAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailAllViewController.swift; sourceTree = "<group>"; };
+		E1E9146522453283006ECF57 /* ChallengeDetailAllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailAllTableViewCell.swift; sourceTree = "<group>"; };
 		E1EA245F220DF56400A1B079 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
 		E1EF4EA9223CEBAA00BEDB1C /* ChallengeCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCount.swift; sourceTree = "<group>"; };
 		E1F76D7F21F3608E00D236A9 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				E1EA245F220DF56400A1B079 /* ChallengeDetailViewController.swift */,
 				E102DC5B2217214700FC3A7E /* ChallengeWorkoutViewController.swift */,
 				E1040DC4221E948500818A2F /* ChallengeFinishViewController.swift */,
+				E1E9146322452D46006ECF57 /* ChallengeDetailAllViewController.swift */,
+				E1E9146522453283006ECF57 /* ChallengeDetailAllTableViewCell.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 				E102DC5A2214202800FC3A7E /* WorkoutsViewController.swift in Sources */,
 				E1F76D8821F3840E00D236A9 /* BattleListViewController.swift in Sources */,
 				E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */,
+				E1E9146422452D46006ECF57 /* ChallengeDetailAllViewController.swift in Sources */,
 				E1C3676022218AF3001574D9 /* FitnessRegisterViewController.swift in Sources */,
 				E1FEF5C421F8C29F00492BE4 /* BattleFinishViewController.swift in Sources */,
 				E1F76D8021F3608E00D236A9 /* BattleViewController.swift in Sources */,
@@ -579,6 +586,7 @@
 				E1040DC5221E948500818A2F /* ChallengeFinishViewController.swift in Sources */,
 				E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */,
 				E1DC051421BEB04200A2A4F9 /* Measure.swift in Sources */,
+				E1E9146622453283006ECF57 /* ChallengeDetailAllTableViewCell.swift in Sources */,
 				E1FEF5CF21FB196600492BE4 /* FitnessTableViewCell.swift in Sources */,
 				E1A45F2521C2B9A600DF2F13 /* model_cpm.mlmodel in Sources */,
 				E1FEF5D721FCC3EC00492BE4 /* Swift+GIF.swift in Sources */,

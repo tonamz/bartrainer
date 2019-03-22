@@ -17,6 +17,7 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
     var challengeCount: [ChallengeCount] = []
     var selectedChallengeGroup: ChallengeName?
     var selectedChallenge: Challenge?
+    var selectedDay: ChallengeCount?
     
     @IBOutlet weak var challengenameLabel: UILabel!
     
@@ -76,8 +77,14 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Challenge_detail" {
+        if segue.identifier == "Challenge_detail"   {
             let vc = segue.destination as! ChallengeDetailViewController
+            vc.selectedChallengeGroup = selectedChallengeGroup
+            vc.selectedChallenge = selectedChallenge
+            
+            
+        } else if segue.identifier == "ChallengeDetailAll"  {
+            let vc = segue.destination as! ChallengeDetailAllViewController
             vc.selectedChallengeGroup = selectedChallengeGroup
             vc.selectedChallenge = selectedChallenge
             
@@ -93,7 +100,6 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
         let model = challengeGroup[indexPath.row]
         cell.dayLabel.text = model.day
         
-//        var clCount: Int = challengeCount.count
        
         if indexPath.row < challengeCount.count{
             

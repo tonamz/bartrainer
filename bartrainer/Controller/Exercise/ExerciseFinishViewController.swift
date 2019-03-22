@@ -15,6 +15,9 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
     var selectedCategoryGroup: Category?
     var exerciseworkout: [ExerciseWorkout] = []
     var ExerciseList: [Exercise] = []
+    @IBOutlet weak var calLabel: UILabel!
+    
+    var calSum: Int = 0
     
 
     
@@ -84,7 +87,14 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
            let model2 = exerciseworkout[indexPath.row]
             if(model2.id_exercise == model.id_exercise){
                    cell.repsLabel.text = model2.reps
+                    calSum += Int(model2.cal)!
+                    calLabel.text = "\(calSum)"
+                
+              
+       
             }
+            
+            
          
             
             

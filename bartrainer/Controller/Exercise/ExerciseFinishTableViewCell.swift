@@ -12,6 +12,7 @@ class ExerciseFinishTableViewCell: UITableViewCell {
     
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var repsLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
