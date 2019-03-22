@@ -81,6 +81,7 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
             let vc = segue.destination as! ChallengeDetailViewController
             vc.selectedChallengeGroup = selectedChallengeGroup
             vc.selectedChallenge = selectedChallenge
+            vc.selectedDay = selectedDay
             
             
         } else if segue.identifier == "ChallengeDetailAll"  {
@@ -132,6 +133,10 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedChallenge = challengeGroup[indexPath.row]
+        if indexPath.row < challengeCount.count{
+                    selectedDay = challengeCount[indexPath.row]
+        }
+
         performSegue(withIdentifier: "Challenge_detail", sender: self)
         
         

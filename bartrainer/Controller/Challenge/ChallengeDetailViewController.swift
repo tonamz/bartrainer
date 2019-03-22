@@ -15,9 +15,13 @@ class ChallengeDetailViewController: UIViewController {
     @IBOutlet weak var ChallengeDay: UILabel!
     @IBOutlet weak var ChallengeRep: UILabel!
     @IBOutlet weak var detailView: UIView!
+    
     var challengeGroup: [Challenge] = []
     var selectedChallengeGroup: ChallengeName?
     var selectedChallenge: Challenge?
+    var selectedDay: ChallengeCount?
+    
+    @IBOutlet weak var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +46,15 @@ class ChallengeDetailViewController: UIViewController {
         
         ChallengeName.text = selectedChallengeGroup?.name
         ChallengeDay.text = selectedChallenge?.day
-        ChallengeRep.text = "Reps : \(selectedChallenge?.reps ?? "aa" )"
+        if selectedDay != nil {
+            startButton.setTitle("Restart", for: .normal)
+        ChallengeRep.text = "\(selectedDay?.reps ?? "aa") / \(selectedChallenge?.reps ?? "aa" )"
+        }else{
+            startButton.setTitle("Start", for: .normal)
+           ChallengeRep.text = "Reps : \(selectedChallenge?.reps ?? "aa" )"
+            detailView.backgroundColor = UIColor.white
+        }
+
         
     }
     

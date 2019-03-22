@@ -21,6 +21,7 @@ class ChallengeDetailAllViewController: UIViewController,UITableViewDataSource, 
     var challengeCount: [ChallengeCount] = []
     var selectedChallengeGroup: ChallengeName?
     var selectedChallenge: Challenge?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
