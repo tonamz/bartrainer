@@ -11,6 +11,7 @@ import Alamofire
 
 class ChallengeDetailViewController: UIViewController {
 
+    @IBOutlet weak var day: UILabel!
     @IBOutlet weak var ChallengeName: UILabel!
     @IBOutlet weak var ChallengeDay: UILabel!
     @IBOutlet weak var ChallengeRep: UILabel!
@@ -27,22 +28,25 @@ class ChallengeDetailViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         detailView.layer.cornerRadius = 100
+        startButton.layer.cornerRadius = 10
         
-        Alamofire.request("http://tssnp.com/ws_bartrainer/challenge_detail.php?id_challenge=\(selectedChallenge!.id)").responseData { response in
-            if let data = response.result.value {
-                
-                do {
-                    let decoder = JSONDecoder()
-                    
-                    self.challengeGroup = try decoder.decode([Challenge].self, from: data)
-                    
-                } catch {
-                    print(error.localizedDescription)
-                }
-            } else {
-                print("error")
-            }
-        }
+//        Alamofire.request("http://tssnp.com/ws_bartrainer/challenge_detail.php?id_challenge=\(selectedChallenge!.id)").responseData { response in
+//            if let data = response.result.value {
+//
+//                do {
+//                    let decoder = JSONDecoder()
+//
+//                    self.challengeGroup = try decoder.decode([Challenge].self, from: data)
+//
+//                } catch {
+//                    print(error.localizedDescription)
+//                }
+//            } else {
+//                print("error")
+//            }
+//        }
+//
+
         
         ChallengeName.text = selectedChallengeGroup?.name
         ChallengeDay.text = selectedChallenge?.day
@@ -53,6 +57,14 @@ class ChallengeDetailViewController: UIViewController {
             startButton.setTitle("Start", for: .normal)
            ChallengeRep.text = "Reps : \(selectedChallenge?.reps ?? "aa" )"
             detailView.backgroundColor = UIColor.white
+            let myColor : UIColor = UIColor(red:0.99, green:0.50, blue:0.25, alpha:1.0)
+            
+            self.day.textColor = myColor
+            self.ChallengeDay.textColor = myColor
+            self.detailView.layer.borderWidth = 2
+            self.detailView.layer.borderColor = myColor.cgColor
+          
+            
         }
 
         

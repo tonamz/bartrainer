@@ -32,7 +32,6 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
         let clName: String = selectedChallengeGroup?.name ?? "aa"
         challengenameLabel.text = "\(clName)"
         
-
         
         Alamofire.request("http://tssnp.com/ws_bartrainer/challenge_day_count.php?id_challenge=\(selectedChallengeGroup!.id)&&id_user=1").responseData { response in
             if let data = response.result.value {
@@ -135,6 +134,8 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
         selectedChallenge = challengeGroup[indexPath.row]
         if indexPath.row < challengeCount.count{
                     selectedDay = challengeCount[indexPath.row]
+        } else {
+            selectedDay = nil
         }
 
         performSegue(withIdentifier: "Challenge_detail", sender: self)
