@@ -9,6 +9,7 @@ use_frameworks!
 pod "Alamofire", "~> 4.8"
 pod "AlamofireImage", "~> 3.5"
 pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 pod 'FacebookLogin'
 pod 'FacebookCore'
 pod 'Mailgun-In-Swift'

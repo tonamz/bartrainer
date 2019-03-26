@@ -10,6 +10,8 @@ import UIKit
 
 class BattleGroupTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var rankImageview: UIImageView!
     @IBOutlet weak var nameUser: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameEX: UILabel!
@@ -19,7 +21,8 @@ class BattleGroupTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
  
-        
+        self.contentView.layer.masksToBounds = true
+        self.layer.cornerRadius = 10
       profileImageView.layer.cornerRadius = 40
     }
 

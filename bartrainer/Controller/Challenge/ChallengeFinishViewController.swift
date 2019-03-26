@@ -8,10 +8,13 @@
 
 import UIKit
 import Alamofire
+import FBSDKCoreKit
+import FBSDKShareKit
 
 class ChallengeFinishViewController: UIViewController {
 
  
+   
     @IBOutlet weak var ChallengeName: UILabel!
     @IBOutlet weak var ChallengeDay: UILabel!
     @IBOutlet weak var ChallengeRep: UILabel!
@@ -22,6 +25,7 @@ class ChallengeFinishViewController: UIViewController {
     var selectedChallengeGroup: ChallengeName?
     var selectedChallenge: Challenge?
     
+ 
     var scoreCal = 0
     var reps: Int = 0
     
