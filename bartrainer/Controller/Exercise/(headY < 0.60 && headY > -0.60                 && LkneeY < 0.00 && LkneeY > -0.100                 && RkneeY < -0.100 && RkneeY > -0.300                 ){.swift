@@ -390,17 +390,18 @@ class  movePoint{
             
             
             print("\(String(format: "%.3f",LkneeY)) , \(String(format: "%.3f",RkneeY))")
+            
             if (headY < 0.60 && headY > -0.60
-                && RkneeY < -0.100 && RkneeY > -0.300
-                && LkneeY < -0.250 && LkneeY > -0.450
-                 ){
+                && RkneeY < 0.00 && RkneeY > -0.100
+                && LkneeY < -0.100 && LkneeY > -0.300
+                ){
                 
                 print("LLLL")
                 keypointsArray.removeAll()
                 
                 return 1
           
-            } else if (headY < 0.60 && headY > -0.60
+            }  else if (headY < 0.60 && headY > -0.60
                 && LkneeY < 0.00 && LkneeY > -0.100
                 && RkneeY < -0.100 && RkneeY > -0.300
                 ){
@@ -436,9 +437,7 @@ class  movePoint{
                 keypointsArray.removeAll()
                 
                 return 1
-                //            return 1
-            }
-            else
+            }else
             
                 if (RkneeY >= 0 && RkneeY  < 0.100
                 && RfootY >= 0  && RfootY < 0.100
