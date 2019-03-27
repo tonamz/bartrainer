@@ -253,13 +253,13 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
                     if timerCount == 1 {
                         
                         scoreCal += timerCount
-                        
-                        if timerr != nil{
-                                countdownStop()
-                                countdownStart()
-                        }else {
-                            countdownStart()
-                        }
+//                        
+//                        if timerr != nil{
+//                                countdownStop()
+//                                countdownStart()
+//                        }else {
+//                            countdownStart()
+//                        }
                         
                     }
      

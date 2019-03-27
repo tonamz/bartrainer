@@ -17,6 +17,9 @@
 		E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */; };
 		E112AF9F221C4C8300AB3340 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112AF9E221C4C8300AB3340 /* Battle.swift */; };
 		E112AFA1221C5ADA00AB3340 /* BattleGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112AFA0221C5ADA00AB3340 /* BattleGroupTableViewCell.swift */; };
+		E1261031224A87E100392822 /* BattleUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1261030224A87E100392822 /* BattleUserViewController.swift */; };
+		E1261033224A88B500392822 /* BattleUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1261032224A88B500392822 /* BattleUserCollectionViewCell.swift */; };
+		E1261035224A906C00392822 /* BattleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1261034224A906C00392822 /* BattleUser.swift */; };
 		E12A8EDF221A988B00A00321 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EDE221A988B00A00321 /* Alert.swift */; };
 		E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE0221AFD4200A00321 /* APIresponse.swift */; };
 		E12A8EE3221B09BE00A00321 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE2221B09BE00A00321 /* LoginViewController.swift */; };
@@ -88,6 +91,9 @@
 		E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		E112AF9E221C4C8300AB3340 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		E112AFA0221C5ADA00AB3340 /* BattleGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleGroupTableViewCell.swift; sourceTree = "<group>"; };
+		E1261030224A87E100392822 /* BattleUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUserViewController.swift; sourceTree = "<group>"; };
+		E1261032224A88B500392822 /* BattleUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1261034224A906C00392822 /* BattleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUser.swift; sourceTree = "<group>"; };
 		E12A8EDE221A988B00A00321 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E12A8EE0221AFD4200A00321 /* APIresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIresponse.swift; sourceTree = "<group>"; };
 		E12A8EE2221B09BE00A00321 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +261,8 @@
 				E1FEF5C121F77CB200492BE4 /* BattleExerciseViewController.swift */,
 				E1FEF5C321F8C29F00492BE4 /* BattleFinishViewController.swift */,
 				E112AFA0221C5ADA00AB3340 /* BattleGroupTableViewCell.swift */,
+				E1261030224A87E100392822 /* BattleUserViewController.swift */,
+				E1261032224A88B500392822 /* BattleUserCollectionViewCell.swift */,
 			);
 			path = Battle;
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 				E185BC08222D824E00EC84D0 /* Level.swift */,
 				E185BC0A222DA30300EC84D0 /* LevelCount.swift */,
 				E1EF4EA9223CEBAA00BEDB1C /* ChallengeCount.swift */,
+				E1261034224A906C00392822 /* BattleUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -551,6 +560,7 @@
 				E1AA8008222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift in Sources */,
 				E12A8EE3221B09BE00A00321 /* LoginViewController.swift in Sources */,
 				E102DC5822132D9C00FC3A7E /* WorkoutViewController.swift in Sources */,
+				E1261035224A906C00392822 /* BattleUser.swift in Sources */,
 				E1FEF5C721F8F7D300492BE4 /* LoginOldViewController.swift in Sources */,
 				E1FEF5C221F77CB200492BE4 /* BattleExerciseViewController.swift in Sources */,
 				E102DC5C2217214700FC3A7E /* ChallengeWorkoutViewController.swift in Sources */,
@@ -580,6 +590,7 @@
 				E185BC09222D824E00EC84D0 /* Level.swift in Sources */,
 				E1A6DE7E21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift in Sources */,
 				E1111A1D21EF2110000D1167 /* CustomNavController.swift in Sources */,
+				E1261031224A87E100392822 /* BattleUserViewController.swift in Sources */,
 				E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */,
 				E112AF9F221C4C8300AB3340 /* Battle.swift in Sources */,
 				E1EA2460220DF56400A1B079 /* ChallengeDetailViewController.swift in Sources */,
@@ -591,6 +602,7 @@
 				E1E9146622453283006ECF57 /* ChallengeDetailAllTableViewCell.swift in Sources */,
 				E1FEF5CF21FB196600492BE4 /* FitnessTableViewCell.swift in Sources */,
 				E1A45F2521C2B9A600DF2F13 /* model_cpm.mlmodel in Sources */,
+				E1261033224A88B500392822 /* BattleUserCollectionViewCell.swift in Sources */,
 				E1FEF5D721FCC3EC00492BE4 /* Swift+GIF.swift in Sources */,
 				E1FEF5EF2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift in Sources */,
 				E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */,

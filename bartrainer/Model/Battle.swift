@@ -12,6 +12,7 @@ struct Battle: Codable {
     
     var sumreps: String
     var username: String
+    var id_user: String
     var id_battle: String
     var id_exercise: String
     var name_exercise: String

@@ -17,6 +17,8 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
     var user: [User] = []
     var imageUser: [String] = ["userWee","userJune","userPun"]
     var id_user:Int = 0
+    var selectedBattleUser: Battle?
+
     
     @IBAction func startBattleBT(_ sender: Any) {
     }
@@ -91,6 +93,19 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
         }
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "BattleUser" {
+            let vc = segue.destination as! BattleUserViewController
+            vc.selectedBattleUser = selectedBattleUser
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedBattleUser = BattleGroup[indexPath.row]
+        performSegue(withIdentifier: "BattleUser", sender: self)
     }
     
     
