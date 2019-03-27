@@ -40,7 +40,7 @@
 		E1C3676022218AF3001574D9 /* FitnessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */; };
 		E1C367622221B0D8001574D9 /* ShoulderPressGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */; };
 		E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */; };
-		E1DC04FF21BEAC1E00A2A4F9 /* (headY < 0.60 && headY > -0.60                 && LkneeY < 0.00 && LkneeY > -0.100                 && RkneeY < -0.100 && RkneeY > -0.300                 ){.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FE21BEAC1E00A2A4F9 /* (headY < 0.60 && headY > -0.60                 && LkneeY < 0.00 && LkneeY > -0.100                 && RkneeY < -0.100 && RkneeY > -0.300                 ){.swift */; };
+		E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */; };
 		E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DC050021BEAC1E00A2A4F9 /* Main.storyboard */; };
 		E1DC050721BEAC1F00A2A4F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DC050521BEAC1F00A2A4F9 /* LaunchScreen.storyboard */; };
 		E1DC051221BEB01A00A2A4F9 /* PoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC050F21BEAD2F00A2A4F9 /* PoseView.swift */; };
@@ -134,7 +134,7 @@
 		E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ShoulderPressGIF.gif; path = ../../../../../Downloads/ShoulderPressGIF.gif; sourceTree = "<group>"; };
 		E1DC04F921BEAC1D00A2A4F9 /* bartrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bartrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1DC04FE21BEAC1E00A2A4F9 /* (headY < 0.60 && headY > -0.60                 && LkneeY < 0.00 && LkneeY > -0.100                 && RkneeY < -0.100 && RkneeY > -0.300                 ){.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "(headY < 0.60 && headY > -0.60                 && LkneeY < 0.00 && LkneeY > -0.100                 && RkneeY < -0.100 && RkneeY > -0.300                 ){.swift"; sourceTree = "<group>"; };
+		E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1DC050121BEAC1E00A2A4F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1DC050621BEAC1F00A2A4F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1DC050821BEAC1F00A2A4F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 		E10DF3C221F0CFE60021CE85 /* Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				E1DC04FE21BEAC1E00A2A4F9 /* (headY < 0.60 && headY > -0.60                 && LkneeY < 0.00 && LkneeY > -0.100                 && RkneeY < -0.100 && RkneeY > -0.300                 ){.swift */,
+				E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */,
 				E1A6DE7B21C570B7006CB2F3 /* ExerciseViewController.swift */,
 				E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */,
 				E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */,
@@ -597,7 +597,7 @@
 				E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */,
 				E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */,
 				E1040DC5221E948500818A2F /* ChallengeFinishViewController.swift in Sources */,
-				E1DC04FF21BEAC1E00A2A4F9 /* (headY < 0.60 && headY > -0.60                 && LkneeY < 0.00 && LkneeY > -0.100                 && RkneeY < -0.100 && RkneeY > -0.300                 ){.swift in Sources */,
+				E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */,
 				E1DC051421BEB04200A2A4F9 /* Measure.swift in Sources */,
 				E1E9146622453283006ECF57 /* ChallengeDetailAllTableViewCell.swift in Sources */,
 				E1FEF5CF21FB196600492BE4 /* FitnessTableViewCell.swift in Sources */,

@@ -555,25 +555,29 @@ class  movePoint{
         return 0
     }
     func calBicepCurls() -> Int {
-        if keypointsArray.count > 5 {
-            let LsokY = calPointY(6,1,5)
-            let LhandY = calPointY(7,1,5)
-            let RsokY = calPointY(3,1,5)
-            let RhandY = calPointY(4,1,5)
-            let HeadX = calPointX(0,1,5)
+        if keypointsArray.count > 10 {
+            let LsokY = calPointY(6,5,10)
+            let LhandY = calPointY(7,5,10)
+            let RsokY = calPointY(3,5,10)
+            let RhandY = calPointY(4,5,10)
+            let HeadX = calPointX(0,5,10)
             
             print("\(String(format: "%.3f",HeadX)),\(String(format: "%.3f",LhandY)),\(String(format: "%.3f",LsokY)),\(String(format: "%.3f",RhandY)),\(String(format: "%.3f",RsokY))")
             
             
             
-            if (HeadX == 0 && RhandY < 0.300 && RhandY > 0.050 && RsokY < 0.400 && RsokY > 0.100  ){
-                print("LLL")
+            if (HeadX == 0
+                && RhandY < -0.100 && RhandY > -0.350
+                && RsokY < 0.100 && RsokY > -0.100  ){
+                print("RR")
                 keypointsArray.removeAll()
                 return 1
                 
-            } else if (HeadX == 0 && LhandY < 0.300 && LhandY > 0.050 && LsokY < 0.400 && LsokY > 0.100  ){
+            } else if (HeadX == 0
+                && LhandY < -0.100 && LhandY > -0.350
+                && LsokY < 0.100 && LsokY > -0.100  ){
                 
-                print("RRR")
+                print("LL")
                 keypointsArray.removeAll()
                 return 1
                 
