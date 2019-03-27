@@ -37,6 +37,8 @@
 		E1AA8008222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA8007222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift */; };
 		E1AC805E22199E6500644FAC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC805D22199E6500644FAC /* RegisterViewController.swift */; };
 		E1AFA67D2221363F003C81E0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AFA67C2221363F003C81E0 /* HealthKit.framework */; };
+		E1BB2B10224BF05400E67B43 /* backgroud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1BB2B0F224BF05400E67B43 /* backgroud.mp3 */; };
+		E1BB2B12224BFD1800E67B43 /* Backgroud.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E1BB2B11224BF12900E67B43 /* Backgroud.m4a */; };
 		E1C3676022218AF3001574D9 /* FitnessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */; };
 		E1C367622221B0D8001574D9 /* ShoulderPressGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */; };
 		E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */; };
@@ -54,8 +56,7 @@
 		E1F76D8221F3650000D236A9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76D8121F3650000D236A9 /* CustomView.swift */; };
 		E1F76D8621F3760300D236A9 /* BattleListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76D8521F3760300D236A9 /* BattleListCollectionViewCell.swift */; };
 		E1F76D8821F3840E00D236A9 /* BattleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76D8721F3840E00D236A9 /* BattleListViewController.swift */; };
-		E1F99CD82221296700725E76 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1F99CD72221296700725E76 /* background.mp3 */; };
-		E1F99CDA22212DC100725E76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F99CD922212DC100725E76 /* AVFoundation.framework */; };
+		E1F99CDA22212DC100725E76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F99CD922212DC100725E76 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E1F99CDC22212DC900725E76 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F99CDB22212DC900725E76 /* AVKit.framework */; };
 		E1FEF5C221F77CB200492BE4 /* BattleExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5C121F77CB200492BE4 /* BattleExerciseViewController.swift */; };
 		E1FEF5C421F8C29F00492BE4 /* BattleFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5C321F8C29F00492BE4 /* BattleFinishViewController.swift */; };
@@ -130,6 +131,8 @@
 		E1AC805D22199E6500644FAC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E1AFA67B2221363F003C81E0 /* bartrainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bartrainer.entitlements; sourceTree = "<group>"; };
 		E1AFA67C2221363F003C81E0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E1BB2B0F224BF05400E67B43 /* backgroud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroud.mp3; sourceTree = "<group>"; };
+		E1BB2B11224BF12900E67B43 /* Backgroud.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Backgroud.m4a; sourceTree = "<group>"; };
 		E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessRegisterViewController.swift; sourceTree = "<group>"; };
 		E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ShoulderPressGIF.gif; path = ../../../../../Downloads/ShoulderPressGIF.gif; sourceTree = "<group>"; };
 		E1DC04F921BEAC1D00A2A4F9 /* bartrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bartrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +152,6 @@
 		E1F76D8121F3650000D236A9 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		E1F76D8521F3760300D236A9 /* BattleListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleListCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1F76D8721F3840E00D236A9 /* BattleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleListViewController.swift; sourceTree = "<group>"; };
-		E1F99CD72221296700725E76 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		E1F99CD922212DC100725E76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E1F99CDB22212DC900725E76 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		E1FEF5C121F77CB200492BE4 /* BattleExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleExerciseViewController.swift; sourceTree = "<group>"; };
@@ -366,11 +368,12 @@
 				E1111A1B21EEE5E8000D1167 /* Controller */,
 				E1111A1A21EEE5AD000D1167 /* poseview */,
 				E1DC050021BEAC1E00A2A4F9 /* Main.storyboard */,
+				E1BB2B0F224BF05400E67B43 /* backgroud.mp3 */,
+				E1BB2B11224BF12900E67B43 /* Backgroud.m4a */,
 				E1DC050521BEAC1F00A2A4F9 /* LaunchScreen.storyboard */,
 				E1DC050821BEAC1F00A2A4F9 /* Info.plist */,
 				E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */,
 				E1FEF5DA21FCC90700492BE4 /* Assets.xcassets */,
-				E1F99CD72221296700725E76 /* background.mp3 */,
 			);
 			path = bartrainer;
 			sourceTree = "<group>";
@@ -466,14 +469,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BB2B12224BFD1800E67B43 /* Backgroud.m4a in Resources */,
 				E1FEF5DD21FCCC1800492BE4 /* squatGIF.gif in Resources */,
 				E1FEF5EA21FCEA3C00492BE4 /* legraiseGIF.gif in Resources */,
 				E1DC050721BEAC1F00A2A4F9 /* LaunchScreen.storyboard in Resources */,
 				E1FEF5DB21FCC90700492BE4 /* Assets.xcassets in Resources */,
 				E1C367622221B0D8001574D9 /* ShoulderPressGIF.gif in Resources */,
 				E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */,
-				E1F99CD82221296700725E76 /* background.mp3 in Resources */,
 				E1FEF5EB21FCEA3C00492BE4 /* legswingGIF.gif in Resources */,
+				E1BB2B10224BF05400E67B43 /* backgroud.mp3 in Resources */,
 				E1FEF5E321FCE29700492BE4 /* hightkneeGIF.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

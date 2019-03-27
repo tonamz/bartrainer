@@ -329,7 +329,9 @@ class  movePoint{
             score = calShoulderPress()
         }else   if(idEx==7 ){
             score = calBicepCurls()
-        }else   if(idEx==13 || idEx==9 ){
+        }else if(idEx==10){
+            score = calBoxing()
+        }else    if(idEx==13 || idEx==9 ){
             score = calPlank()
         }else   if(idEx==16){
             score = calThruster()
@@ -669,6 +671,46 @@ class  movePoint{
         
 
 
+        
+        return 0
+    }
+  
+    func calBoxing() -> Int {
+        
+        
+        if keypointsArray.count > 6 {
+
+            let LfootX = calPointX(10,1,6)
+            let HeadY = calPointY(0,1,6)
+            let HeadX = calPointX(0,1,6)
+            let LhandX = calPointX(7,1,5)
+            let RhandX = calPointX(4,1,5)
+            
+            
+            print("\(String(format: "%.3f",LhandX)),\(String(format: "%.3f",RhandX))")
+            
+
+            if (LhandX >= 0 && LhandX < 0.100
+                && RhandX  > 0.100 && RhandX < 0.300
+                && LfootX == 0 && HeadY == 0 && HeadX == 0){
+                print("RRR")
+                keypointsArray.removeAll()
+
+                return 1
+            }
+            else if (RhandX >= 0 && RhandX < 0.100
+                    && LhandX  > 0.100 && LhandX < 0.300
+                    && LfootX == 0 && HeadY == 0 && HeadX == 0 ){
+                    print("LLL")
+                    keypointsArray.removeAll()
+                    
+                    return 1
+            }else{ return 0}
+
+        }
+        
+        
+        
         
         return 0
     }

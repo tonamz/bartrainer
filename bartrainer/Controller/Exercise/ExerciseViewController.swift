@@ -10,15 +10,16 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import AVFoundation
-import AVKit
 
 class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
  
 //    var audioPlayer = AVAudioPlayer()
-    
-    var audioPlayer: AVPlayer?
+
+    var audioPlayer: AVAudioPlayer?
     var sound: URL?
+    
+    var player = AVPlayer()
 
     @IBOutlet weak var exerciseCollection: UICollectionView!
         var images = ["Arms","Legs","Abs","Butt"]
@@ -31,6 +32,39 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+   
+        
+        do {
+           if let fileURL = Bundle.main.path(forResource: "Backgroud", ofType: "m4a") {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+            
+            try Service.shared.gmusic = AVAudioPlayer (contentsOf: URL(fileURLWithPath: fileURL))
+            } else {
+                print("No file with specified name exists")
+            }
+        } catch let error {
+            print("Can't play the audio file failed with an error \(error.localizedDescription)")
+        }
+        
+        do{
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+
+//            audioPlayer?.prepareToPlay()
+//            audioPlayer?.play()
+//            audioPlayer?.numberOfLoops = -1
+           
+                          Service.shared.gmusic?.prepareToPlay()
+                          Service.shared.gmusic?.play()
+                          Service.shared.gmusic?.numberOfLoops = -1
+         
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+
+        
           print(User.currentUser?.id_user)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         self.exerciseCollection.backgroundColor = UIColor(white: 1, alpha: 0)
@@ -40,11 +74,11 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         self.exerciseCollection.delegate = self
         
     
-        
-                sound = URL(string: "http://tssnp.com/ws_bartrainer/sounds/backgroud.mp3")
-                let soundItem = AVPlayerItem(url: sound!)
-                audioPlayer = AVPlayer(playerItem: soundItem)
-                audioPlayer?.play()
+//
+//                sound = URL(string: "http://tssnp.com/ws_bartrainer/sounds/backgroud.mp3")
+//                let soundItem = AVPlayerItem(url: sound!)
+//                audioPlayer = AVPlayer(playerItem: soundItem)
+//                audioPlayer?.play()
        
 
         
@@ -72,6 +106,8 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
   
 
     }
+
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ExList" {
@@ -107,3 +143,10 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
 
 
 }
+class Service {
+    
+    static let shared = Service()
+    var gmusic :AVAudioPlayer?
+}
+
+

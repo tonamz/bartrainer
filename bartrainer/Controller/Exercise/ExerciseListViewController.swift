@@ -9,9 +9,12 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import AVFoundation
 
 class ExerciseListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
   
+    
+     var audioPlayer: AVAudioPlayer?
     
     @IBOutlet weak var levelCountText: UILabel!
     @IBOutlet weak var levelText: UILabel!
@@ -37,6 +40,8 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         
         print(User.currentUser?.id_user as Any)
         buttonOutlet.layer.cornerRadius = 10
