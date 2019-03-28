@@ -20,7 +20,9 @@ struct ExerciseWorkout: Codable {
     var category: String
     var level: String
     var reps: String
+    var repsexercise: String
     var cal: String
+    
     
 }
 

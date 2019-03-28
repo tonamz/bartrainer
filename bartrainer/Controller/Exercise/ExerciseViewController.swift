@@ -36,7 +36,7 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         
    
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             self.soundTrainer()
         })
    
@@ -134,6 +134,9 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
             backgroundMusic.shared.audioPlayer?.play()
             backgroundMusic.shared.audioPlayer?.numberOfLoops = -1
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 
 

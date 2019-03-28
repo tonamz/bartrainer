@@ -91,6 +91,7 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
              cell.rankLabel.text = "\(indexPath.row+1)"
             
         }
+        cell.selectionStyle = .none
         
         return cell
     }

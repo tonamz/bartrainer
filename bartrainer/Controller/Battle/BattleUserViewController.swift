@@ -19,13 +19,18 @@ class BattleUserViewController: UIViewController, UICollectionViewDataSource, UI
     
     var selectedBattleUser: Battle?
     var battleUser: [BattleUser] = []
+    @IBOutlet weak var helloButton: UIButton!
     
+    @IBAction func helloPush(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+              self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+        
         print(selectedBattleUser)
-
-       userImageView.layer.cornerRadius = 80
+helloButton.layer.cornerRadius = 10
+       userImageView.layer.cornerRadius = 60
     
        nameuserLabel.text = selectedBattleUser?.username
         

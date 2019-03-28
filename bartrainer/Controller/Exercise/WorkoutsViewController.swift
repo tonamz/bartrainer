@@ -36,6 +36,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     var countdown:Int = 0
     var countdownExercise:Int = 0
     var timerExercise:Int = 0
+    var repsExercise:Int = 0
 
     var index:Int = 0
     
@@ -57,8 +58,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     var calSum: Int = 0
     var calExercise: Int = 0
     
-    
-    
+    var startExercise: Int = 0
     
     var scoreExercise:[Int] = []
  
@@ -105,6 +105,16 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         
+        startExercise = 3
+        
+        timerr = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownStartAction), userInfo: nil, repeats: true)
+
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+            self.soundTrainer(nameSound: "readygo")
+        })
+        
+        
         scoreView.layer.cornerRadius = 10
         videoPreview.layer.cornerRadius = 10
           videoPreview.clipsToBounds = true
@@ -116,9 +126,12 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         CountdownView.shared.spinnerStartColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
         CountdownView.shared.spinnerEndColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
         
-        visionModel = try? VNCoreMLModel(for: EstimationModel().model)
-        setUpCamera()
-        poseView.setUpOutputComponent()
+       
+            visionModel = try? VNCoreMLModel(for: EstimationModel().model)
+            setUpCamera()
+             poseView.setUpOutputComponent()
+        
+
         //            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         
 
@@ -144,8 +157,10 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         countdownExercise = Int((levelExercise?.timer)!) ?? 0
         timerExercise = Int((levelExercise?.timer)!) ?? 0
         print(countdownExercise)
-                 self.countdownExerciseStart()
     
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+               self.countdownExerciseStart()
+        })
      
         
     }
@@ -157,15 +172,18 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         do {
+          
             if let fileURL = Bundle.main.path(forResource: "level1", ofType: "m4a") {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
                 try AVAudioSession.sharedInstance().setActive(true)
                 
-                
-              audioPlayer?.prepareToPlay()
-             audioPlayer?.play()
-             audioPlayer?.numberOfLoops = -1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                    self.audioPlayer?.prepareToPlay()
+                    self.audioPlayer?.play()
+                    self.audioPlayer?.numberOfLoops = -1
+                })
+
             } else {
                 print("No file with specified name exists")
             }
@@ -188,6 +206,25 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         } catch let error {
             print("Can't play the audio file failed with an error \(error.localizedDescription)")
         }
+        
+    }
+    @objc func countdownStartAction(){
+        if startExercise > 0{
+                startExercise -= 1
+        }
+
+    
+        
+        if startExercise == 0 {
+            timerr.invalidate()
+            CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
+            
+        }else {
+            CountdownView.show(countdownFrom: Double(startExercise), spin: spin, animation: appearingAnimation, autoHide: autohide,
+                               completion: nil)
+
+        }
+
         
     }
     @objc func countdownAction(){
@@ -261,7 +298,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     func nextExercise()  {
         
    
-       
+        
 
         if(exerciseloop<ExerciseList.count){
         
@@ -280,7 +317,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             
             print(scoreCal)
 
-            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal, cal: calSum)
+            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal,repsexercise: repsExercise, cal: calSum)
             
             scoreCal=0
             exerciseloop+=1
@@ -370,6 +407,8 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             _ = moveCalculate.addKeypoints(keypoints: n_kpoints)
             var timerCount: Int = 0
             
+            if startExercise == 0 {
+            
             let indexPath = NSIndexPath(row: exerciseloop, section: 0)
             let model = ExerciseList[indexPath.row]
             timerCount = moveCalculate.callExercise(idEx: Int(model.id_exercise) ?? 1)
@@ -414,20 +453,18 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                 }
                 
      
-                let repsExercise =  timerExercise/Int(model.persec)!
+                 repsExercise =  timerExercise/Int(model.persec)!
            
                 self.reps.text = "/\(repsExercise)"
                 if scoreCal == repsExercise {
          
-                               print("nextlevel reps")
+                    print("nextlevel reps")
                     nextExercise()
                     
 
 
                 }
-                
-       
-                
+            
                 self.poseView.bodyPoints = n_kpoints
                 
               
@@ -439,13 +476,15 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
          
                 
             }
+                
+                      }
         }
         
     
     }
     
     
-    func exerciseWorkout( id_user: Int, id_exercise: Int,id_category: Int, category: String, level: Int, reps: Int, cal: Int) {
+    func exerciseWorkout( id_user: Int, id_exercise: Int,id_category: Int, category: String, level: Int, reps: Int,repsexercise: Int, cal: Int) {
         
         let param: Parameters = [
             "id_user": id_user,
@@ -454,6 +493,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             "category": category,
              "level": level,
             "reps": reps,
+            "repsexercise": repsexercise,
             "cal": cal
             
             

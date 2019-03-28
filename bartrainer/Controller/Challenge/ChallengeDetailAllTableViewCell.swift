@@ -17,7 +17,7 @@ class ChallengeDetailAllTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
       
-        bgView.layer.cornerRadius = 80
+        bgView.layer.cornerRadius = 60
         
         let myColor : UIColor = UIColor(red:0.99, green:0.50, blue:0.25, alpha:1.0)
         

@@ -203,21 +203,13 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         
       tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
     
-        if (model.id_exercise == "1" ){
-               cell.iconImageView.image = UIImage(named: "ex01")
-        }else  if (model.id_exercise == "2" ){
-            cell.iconImageView.image = UIImage(named: "ex02")
-        }else  if (model.id_exercise == "3" ){
-            cell.iconImageView.image = UIImage(named: "ex03")
-        }else  if (model.id_exercise == "4" ){
-            cell.iconImageView.image = UIImage(named: "ex04")
-        }else  if (model.id_exercise == "5" ){
-            cell.iconImageView.image = UIImage(named: "ex05")
+        if (Int(model.id_exercise) ?? 0 < 6 ){
+              cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
+        }else{
+                     cell.iconImageView.image = UIImage(named: "ex02")
         }
-        else{
-             cell.iconImageView.image = UIImage(named: "ex02")
-        }
-//         cell.iconImageView.image = UIImage(named: "Arms")
+        
+
         cell.exerciseLabel.text = model.name
         
           i+=1

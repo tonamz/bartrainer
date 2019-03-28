@@ -71,6 +71,11 @@ class BattleListViewController: UIViewController, UICollectionViewDataSource, UI
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exercise_collection", for: indexPath) as! BattleListCollectionViewCell
             let model = ExerciseList[indexPath.row]
             cell.headerLabel.text = model.name
+            if (Int(model.id_exercise) ?? 0 < 6 ){
+                cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
+            }else{
+                cell.iconImageView.image = UIImage(named: "ex02")
+            }
             
             return cell
         }

@@ -52,6 +52,22 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
                     
                     self.exerciseworkout = try decoder.decode([ExerciseWorkout].self, from: data)
 
+                    Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_category.php?group_id=\(self.selectedCategoryGroup!.id)").responseData { response in
+                        if let data = response.result.value {
+                            
+                            do {
+                                let decoder = JSONDecoder()
+                                
+                                self.ExerciseList = try decoder.decode([Exercise].self, from: data)
+                                self.exerciseFinishTableView.reloadData()
+                                
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        } else {
+                            print("error")
+                        }
+                    }
          
                 } catch {
                     print(error.localizedDescription)
@@ -61,22 +77,6 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
             }
         }
         
-        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_category.php?group_id=\(selectedCategoryGroup!.id)").responseData { response in
-            if let data = response.result.value {
-                
-                do {
-                    let decoder = JSONDecoder()
-                    
-                    self.ExerciseList = try decoder.decode([Exercise].self, from: data)
-                   self.exerciseFinishTableView.reloadData()
-                    
-                } catch {
-                    print(error.localizedDescription)
-                }
-            } else {
-                print("error")
-            }
-        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -98,21 +98,17 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
             let indexPath = NSIndexPath(row: i, section: 0)
            let model2 = exerciseworkout[indexPath.row]
             if(model2.id_exercise == model.id_exercise){
-                   cell.repsLabel.text = model2.reps
-                    calSum += Int(model2.cal)!
+                cell.repsLabel.text = model2.reps
+                calSum += Int(model2.cal)!
                 calLabel.text = "Cal : \(calSum)"
-                cell.repsexLabel.text = "\(model2.reps)"
-                
-  
-       
+                cell.repsexLabel.text = "/ \(model2.repsexercise)"
+
             }
-            
-            
-         
-            
-            
+
             i+=1
         }
+        
+          cell.isUserInteractionEnabled = false
         
         
         return cell
