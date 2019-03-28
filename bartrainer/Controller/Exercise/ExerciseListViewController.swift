@@ -48,11 +48,9 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         title = selectedCategoryGroup!.name
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
 //        self.exercisListTableView.backgroundColor = UIColor(white: 1, alpha: 0)
+   
         
-        
-        self.exerciseListTableView.dataSource = self
-        self.exerciseListTableView.delegate = self
-        
+     
         Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_category.php?group_id=\(selectedCategoryGroup!.id)").responseData { response in
             if let data = response.result.value {
                 
@@ -91,6 +89,10 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                                 }else{
                                     self.levelExercise = self.setLevelstart()
                                 }
+                                self.exerciseListTableView.dataSource = self
+                                self.exerciseListTableView.delegate = self
+                                       self.exerciseListTableView.reloadData()
+                           
                                 
                                 
                             } catch {
@@ -112,16 +114,15 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                 print("error")
             }
         }
-        
+
 
         
-        
-      
-        
     }
-    
+ 
+
     override func viewDidDisappear(_ animated: Bool) {
            backgroundMusic.shared.audioPlayer?.pause()
+      
     }
     
     func findLevel() -> Level{
@@ -195,8 +196,12 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseListTableViewCell", for: indexPath) as! ExerciseListTableViewCell
         
         let model = ExerciseList[indexPath.row]
-        
+        let repsExercise =   Int(levelExercise!.timer)!/Int(model.persec)!
+        cell.repsLabel.text = "\(repsExercise)"
       
+        cell.isUserInteractionEnabled = false
+        
+      tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
     
         if (model.id_exercise == "1" ){
                cell.iconImageView.image = UIImage(named: "ex01")

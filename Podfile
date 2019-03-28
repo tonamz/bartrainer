@@ -15,8 +15,7 @@ pod 'FacebookCore'
 pod 'Mailgun-In-Swift'
 pod 'CountdownView'
 pod 'TextFieldEffects'
-
-
+pod 'FontAwesome.swift'
 
 
 end

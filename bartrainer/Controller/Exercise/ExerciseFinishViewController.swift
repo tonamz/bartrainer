@@ -20,9 +20,11 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
     var calSum: Int = 0
     
 
+
     @IBOutlet weak var comfirmBTN: UIButton!
     
-     @IBOutlet weak var categoryName: UILabel!
+
+    @IBOutlet weak var categoryName: UILabel!
          @IBOutlet weak var buttonOutlet: UIButton!
     
     @IBOutlet weak var exerciseFinishTableView: UITableView!
@@ -32,6 +34,10 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
         super.viewDidLoad()
                 self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         comfirmBTN.layer.cornerRadius = 10
+   
+//
+//     backgroundMusic.shared.audioPlayer?.play()
+        
         categoryName.text = selectedCategoryGroup?.name
              buttonOutlet.layer.cornerRadius = 10
         
@@ -73,6 +79,11 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        backgroundMusic.shared.audioPlayer?.pause()
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ExerciseList.count
     }
@@ -89,9 +100,10 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
             if(model2.id_exercise == model.id_exercise){
                    cell.repsLabel.text = model2.reps
                     calSum += Int(model2.cal)!
-                    calLabel.text = "\(calSum)"
+                calLabel.text = "Cal : \(calSum)"
+                cell.repsexLabel.text = "\(model2.reps)"
                 
-              
+  
        
             }
             

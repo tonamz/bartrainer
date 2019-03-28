@@ -36,7 +36,7 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         
    
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
             self.soundTrainer()
         })
    

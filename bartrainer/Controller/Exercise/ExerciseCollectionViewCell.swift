@@ -14,6 +14,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var repsLabel: UILabel!
     
     
     override func awakeFromNib() {

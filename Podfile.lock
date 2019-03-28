@@ -23,6 +23,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.40.0):
     - FBSDKCoreKit
+  - FontAwesome.swift (1.5.0)
   - Mailgun-In-Swift (1.0.0):
     - Alamofire
     - ObjectMapper
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - FacebookLogin
   - FBSDKLoginKit
   - FBSDKShareKit
+  - FontAwesome.swift
   - Mailgun-In-Swift
   - TextFieldEffects
 
@@ -51,6 +53,7 @@ SPEC REPOS:
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
+    - FontAwesome.swift
     - Mailgun-In-Swift
     - ObjectMapper
     - TextFieldEffects
@@ -65,10 +68,11 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
   FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   FBSDKShareKit: 0e45916f4150da485928ae2a17ca021950b194f5
+  FontAwesome.swift: 55291c7a334ffacf9b62793d27c14014ec09a11b
   Mailgun-In-Swift: 9a969ec1bbb19d00dc518fedf0c0493f968463f2
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: 423860cb68d4d1b0648910897e2ca952eed1fc9a
+PODFILE CHECKSUM: 857f508ee8454847510892963cfdcbdbcc5d7c3e
 
 COCOAPODS: 1.5.3

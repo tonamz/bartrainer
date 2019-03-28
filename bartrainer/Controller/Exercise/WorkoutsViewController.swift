@@ -70,6 +70,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
      var audioPlayer: AVAudioPlayer?
     var audioPlayerTrainer: AVAudioPlayer?
     
+    @IBOutlet weak var scoreView: UIView!
     
     // MARK - 성능 측정 프러퍼티
     private let 👨‍🔧 = 📏()
@@ -103,6 +104,12 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+        
+        scoreView.layer.cornerRadius = 10
+        videoPreview.layer.cornerRadius = 10
+          videoPreview.clipsToBounds = true
+        
+        navigationItem.hidesBackButton = true
 
         //timer
         CountdownView.shared.backgroundViewColor = UIColor.red.withAlphaComponent(0.3)
@@ -140,6 +147,11 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
                  self.countdownExerciseStart()
     
      
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+            audioPlayerTrainer?.stop()
         
     }
     
@@ -182,12 +194,13 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         countdown -= 1
         
         if countdown == 0 {
+                    loadGIF = 0
             timerr.invalidate()
             timer.text = ""
             self.tryLabel.text = "0"
              CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
 //            self.videoCapture.stop()
-                loadGIF = 0
+            
              self.videoCapture.start()
               countdownExercise = Int((levelExercise?.timer)!) ?? 0
                 countdownExerciseStart()
@@ -200,6 +213,8 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         
         if countdown == 3{
             soundTrainer(nameSound: "321")
+        }else   if countdown == 0{
+            soundTrainer(nameSound: "go")
         }
     }
     func  countdownStart() {
@@ -216,10 +231,12 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         countdownExercise -= 1
         
         if countdownExercise == 0 {
+        
             timerr.invalidate()
             print("nextlevel timer")
             nextExercise()
             timer.text = ""
+            
 
         }else {
             timer.text = "\(countdownExercise)"
@@ -234,9 +251,6 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             soundTrainer(nameSound: "closer")
         }else  if countdownExercise == 10{
             soundTrainer(nameSound: "again")
-        }else  if countdownExercise == 13{
-            soundTrainer(nameSound: "go")
-            
         }
         
     }
@@ -246,41 +260,52 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     }
     func nextExercise()  {
         
-        
-  
-  
+   
+       
+
         if(exerciseloop<ExerciseList.count){
+        
+            
+            if( countdownExercise != 0 ){
+            timerr.invalidate()
+            }
+            if (countdown == 0){
+                countdown = Int((levelExercise?.rest)!) ?? 0
+            }
+            countdownStart()
+            countdownExercise = Int((levelExercise?.timer)!) ?? 0
             
  
             calSum = calExercise*scoreCal
             
             print(scoreCal)
-//
-//            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal, cal: calSum)
+
+            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal, cal: calSum)
             
             scoreCal=0
             exerciseloop+=1
+        
             
             
         }
-        
-        countdownExercise = Int((levelExercise?.timer)!) ?? 0
-        if (countdown == 0){
-            countdown = Int((levelExercise?.rest)!) ?? 0
-            
-        }
-        countdownStart()
-        
         if(exerciseloop == ExerciseList.count){
             
             
-        
-            countdownStop()
-            performSegue(withIdentifier: "WorkoutFinish", sender: self)
+            if( countdown != 0 ){
+                     countdownStop()
+            }
+            timerr.invalidate()
             self.videoCapture.stop()
-            
+            performSegue(withIdentifier: "WorkoutFinish", sender: self)
+    
+    
             
         }
+        
+ 
+ 
+
+        
         
     }
     
