@@ -13,6 +13,7 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
    
     @IBOutlet weak var challengeDayCollection: UICollectionView!
     
+    @IBOutlet weak var buttonOutlet: UIButton!
     var challengeGroup: [Challenge] = []
     var challengeCount: [ChallengeCount] = []
     var selectedChallengeGroup: ChallengeName?
@@ -24,6 +25,7 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonOutlet.layer.cornerRadius = 10
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         
         self.challengeDayCollection.dataSource = self

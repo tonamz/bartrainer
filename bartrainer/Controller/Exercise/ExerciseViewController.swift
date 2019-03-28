@@ -17,6 +17,8 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
 //    var audioPlayer = AVAudioPlayer()
 
     var audioPlayer: AVAudioPlayer?
+    var audioPlayerTrainer: AVAudioPlayer?
+    
     var sound: URL?
     
     var player = AVPlayer()
@@ -34,12 +36,23 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         
    
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+            self.soundTrainer()
+        })
+   
         do {
-           if let fileURL = Bundle.main.path(forResource: "Backgroud", ofType: "m4a") {
+            if let fileURL = Bundle.main.path(forResource: "Backgroud", ofType: "m4a") {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
-            
-            try Service.shared.gmusic = AVAudioPlayer (contentsOf: URL(fileURLWithPath: fileURL))
+                
+                try backgroundMusic.shared.audioPlayer = AVAudioPlayer (contentsOf: URL(fileURLWithPath: fileURL))
+                
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                try AVAudioSession.sharedInstance().setActive(true)
+                
+                
+                backgroundMusic.shared.audioPlayer?.prepareToPlay()
+                backgroundMusic.shared.audioPlayer?.play()
+                backgroundMusic.shared.audioPlayer?.numberOfLoops = -1
             } else {
                 print("No file with specified name exists")
             }
@@ -47,22 +60,9 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
             print("Can't play the audio file failed with an error \(error.localizedDescription)")
         }
         
-        do{
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-
-//            audioPlayer?.prepareToPlay()
-//            audioPlayer?.play()
-//            audioPlayer?.numberOfLoops = -1
-           
-                          Service.shared.gmusic?.prepareToPlay()
-                          Service.shared.gmusic?.play()
-                          Service.shared.gmusic?.numberOfLoops = -1
-         
-        }catch{
-            print(error.localizedDescription)
-        }
         
+        
+
 
         
           print(User.currentUser?.id_user)
@@ -106,6 +106,35 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
   
 
     }
+    func soundTrainer(){
+        
+        
+        do {
+            let number = Int.random(in: 1 ..< 4)
+            if let fileURL = Bundle.main.path(forResource: "hello\(number)", ofType: "m4a") {
+                audioPlayerTrainer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+                
+                audioPlayerTrainer?.setVolume(10, fadeDuration: 0)
+                audioPlayerTrainer?.play()
+                
+            } else {
+                print("No file with specified name exists")
+            }
+        } catch let error {
+            print("Can't play the audio file failed with an error \(error.localizedDescription)")
+        }
+    }
+    
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if    backgroundMusic.shared.audioPlayer?.isPlaying == false{
+            
+            backgroundMusic.shared.audioPlayer?.prepareToPlay()
+            backgroundMusic.shared.audioPlayer?.play()
+            backgroundMusic.shared.audioPlayer?.numberOfLoops = -1
+        }
+    }
 
 
     
@@ -143,10 +172,10 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
 
 
 }
-class Service {
+class backgroundMusic {
     
-    static let shared = Service()
-    var gmusic :AVAudioPlayer?
+    static let shared = backgroundMusic()
+    var audioPlayer :AVAudioPlayer?
 }
 
 

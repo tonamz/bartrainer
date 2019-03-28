@@ -13,7 +13,7 @@ import CoreMedia
 import Alamofire
 import AlamofireImage
 import CountdownView
-
+import AVFoundation
 
 class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
@@ -66,6 +66,9 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     var selectedCategoryGroup: Category?
     var ExerciseList: [Exercise] = []
     var levelExercise: Level?
+    
+     var audioPlayer: AVAudioPlayer?
+    var audioPlayerTrainer: AVAudioPlayer?
     
     
     // MARK - 성능 측정 프러퍼티
@@ -138,7 +141,41 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
      
         
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        do {
+            if let fileURL = Bundle.main.path(forResource: "level1", ofType: "m4a") {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                try AVAudioSession.sharedInstance().setActive(true)
+                
+                
+              audioPlayer?.prepareToPlay()
+             audioPlayer?.play()
+             audioPlayer?.numberOfLoops = -1
+            } else {
+                print("No file with specified name exists")
+            }
+        } catch let error {
+            print("Can't play the audio file failed with an error \(error.localizedDescription)")
+        }
+    }
+    
+    func soundTrainer(nameSound:String)  {
+        do {
+            if let fileURL = Bundle.main.path(forResource: nameSound, ofType: "m4a") {
+                audioPlayerTrainer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
+                
+                audioPlayerTrainer?.setVolume(10, fadeDuration: 0)
+                audioPlayerTrainer?.play()
+            
+            } else {
+                print("No file with specified name exists")
+            }
+        } catch let error {
+            print("Can't play the audio file failed with an error \(error.localizedDescription)")
+        }
         
     }
     @objc func countdownAction(){
@@ -154,13 +191,15 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
              self.videoCapture.start()
               countdownExercise = Int((levelExercise?.timer)!) ?? 0
                 countdownExerciseStart()
-    
-            
- 
+
         }else  {
             CountdownView.show(countdownFrom: Double(countdown), spin: spin, animation: appearingAnimation, autoHide: autohide,
                                completion: nil)
 
+        }
+        
+        if countdown == 3{
+            soundTrainer(nameSound: "321")
         }
     }
     func  countdownStart() {
@@ -177,16 +216,27 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         countdownExercise -= 1
         
         if countdownExercise == 0 {
-                    timerr.invalidate()
-               print("nextlevel timer")
-                    nextExercise()
-     
- 
+            timerr.invalidate()
+            print("nextlevel timer")
+            nextExercise()
             timer.text = ""
 
-            
         }else {
             timer.text = "\(countdownExercise)"
+        }
+        
+        
+        if countdownExercise == 1{
+            soundTrainer(nameSound: "rest")
+        }else if countdownExercise == 3{
+            soundTrainer(nameSound: "last")
+        }else if countdownExercise == 6{
+            soundTrainer(nameSound: "closer")
+        }else  if countdownExercise == 10{
+            soundTrainer(nameSound: "again")
+        }else  if countdownExercise == 13{
+            soundTrainer(nameSound: "go")
+            
         }
         
     }
@@ -198,28 +248,29 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         
         
   
-        countdownExercise = Int((levelExercise?.timer)!) ?? 0
-        if (countdown == 0){
-            countdown = Int((levelExercise?.rest)!) ?? 0
-            
-        }
-        countdownStart()
+  
         if(exerciseloop<ExerciseList.count){
             
  
             calSum = calExercise*scoreCal
             
             print(scoreCal)
-     
-            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal, cal: calSum)
+//
+//            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal, cal: calSum)
             
-              scoreCal=0
+            scoreCal=0
             exerciseloop+=1
-//            gifExercise.animationRepeatCount = 1
-//            loadGIF = 0
             
             
         }
+        
+        countdownExercise = Int((levelExercise?.timer)!) ?? 0
+        if (countdown == 0){
+            countdown = Int((levelExercise?.rest)!) ?? 0
+            
+        }
+        countdownStart()
+        
         if(exerciseloop == ExerciseList.count){
             
             

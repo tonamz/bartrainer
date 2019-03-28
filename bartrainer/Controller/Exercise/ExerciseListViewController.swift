@@ -120,6 +120,10 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+           backgroundMusic.shared.audioPlayer?.pause()
+    }
+    
     func findLevel() -> Level{
 
         let indexPathh = NSIndexPath(row: 0, section: 0)

@@ -20,6 +20,7 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
     var calSum: Int = 0
     
 
+    @IBOutlet weak var comfirmBTN: UIButton!
     
      @IBOutlet weak var categoryName: UILabel!
          @IBOutlet weak var buttonOutlet: UIButton!
@@ -30,7 +31,7 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
     
         super.viewDidLoad()
                 self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-        
+        comfirmBTN.layer.cornerRadius = 10
         categoryName.text = selectedCategoryGroup?.name
              buttonOutlet.layer.cornerRadius = 10
         

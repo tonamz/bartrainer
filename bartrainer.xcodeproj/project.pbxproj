@@ -13,6 +13,37 @@
 		E102DC5C2217214700FC3A7E /* ChallengeWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E102DC5B2217214700FC3A7E /* ChallengeWorkoutViewController.swift */; };
 		E1040DC5221E948500818A2F /* ChallengeFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1040DC4221E948500818A2F /* ChallengeFinishViewController.swift */; };
 		E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10DF3C721F0E39A0021CE85 /* Category.swift */; };
+		E10EAE30224CB82B005DB9E6 /* Prompt-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BC04222B020500EC84D0 /* Prompt-Black.ttf */; };
+		E10EAE31224CB82B005DB9E6 /* Prompt-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BC05222B020500EC84D0 /* Prompt-BlackItalic.ttf */; };
+		E10EAE32224CB82B005DB9E6 /* Prompt-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBFB222B020500EC84D0 /* Prompt-Bold.ttf */; };
+		E10EAE33224CB82B005DB9E6 /* Prompt-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBFE222B020500EC84D0 /* Prompt-BoldItalic.ttf */; };
+		E10EAE34224CB82B005DB9E6 /* Prompt-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBFC222B020500EC84D0 /* Prompt-ExtraBold.ttf */; };
+		E10EAE35224CB82B005DB9E6 /* Prompt-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBFA222B020500EC84D0 /* Prompt-ExtraBoldItalic.ttf */; };
+		E10EAE36224CB82B005DB9E6 /* Prompt-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BC07222B020600EC84D0 /* Prompt-ExtraLight.ttf */; };
+		E10EAE37224CB82B005DB9E6 /* Prompt-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BC06222B020600EC84D0 /* Prompt-ExtraLightItalic.ttf */; };
+		E10EAE38224CB82B005DB9E6 /* Prompt-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BC03222B020500EC84D0 /* Prompt-Italic.ttf */; };
+		E10EAE39224CB82B005DB9E6 /* Prompt-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BC02222B020500EC84D0 /* Prompt-Light.ttf */; };
+		E10EAE3A224CB82B005DB9E6 /* Prompt-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBF6222B020500EC84D0 /* Prompt-LightItalic.ttf */; };
+		E10EAE3B224CB82B005DB9E6 /* Prompt-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBF9222B020500EC84D0 /* Prompt-Medium.ttf */; };
+		E10EAE3C224CB82B005DB9E6 /* Prompt-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBF7222B020500EC84D0 /* Prompt-MediumItalic.ttf */; };
+		E10EAE3D224CB82B005DB9E6 /* Prompt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BC01222B020500EC84D0 /* Prompt-Regular.ttf */; };
+		E10EAE3E224CB82B005DB9E6 /* Prompt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBF8222B020500EC84D0 /* Prompt-SemiBold.ttf */; };
+		E10EAE3F224CB82B005DB9E6 /* Prompt-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBFD222B020500EC84D0 /* Prompt-SemiBoldItalic.ttf */; };
+		E10EAE40224CB82B005DB9E6 /* Prompt-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BBFF222B020500EC84D0 /* Prompt-Thin.ttf */; };
+		E10EAE41224CB82B005DB9E6 /* Prompt-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E185BC00222B020500EC84D0 /* Prompt-ThinItalic.ttf */; };
+		E10EAE43224CD6C2005DB9E6 /* level1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE42224CD6C2005DB9E6 /* level1.m4a */; };
+		E10EAE4E224CED4F005DB9E6 /* readygo.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE45224CED4E005DB9E6 /* readygo.m4a */; };
+		E10EAE4F224CED4F005DB9E6 /* closer.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE46224CED4E005DB9E6 /* closer.m4a */; };
+		E10EAE50224CED4F005DB9E6 /* last.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE47224CED4E005DB9E6 /* last.m4a */; };
+		E10EAE51224CED4F005DB9E6 /* go.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE48224CED4E005DB9E6 /* go.m4a */; };
+		E10EAE52224CED4F005DB9E6 /* 321.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE49224CED4E005DB9E6 /* 321.m4a */; };
+		E10EAE53224CED4F005DB9E6 /* again.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE4A224CED4E005DB9E6 /* again.m4a */; };
+		E10EAE54224CED4F005DB9E6 /* leftright.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE4B224CED4E005DB9E6 /* leftright.m4a */; };
+		E10EAE55224CED4F005DB9E6 /* rest.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE4C224CED4E005DB9E6 /* rest.m4a */; };
+		E10EAE56224CED4F005DB9E6 /* updown.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE4D224CED4E005DB9E6 /* updown.m4a */; };
+		E10EAE60224CF96B005DB9E6 /* hello1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE5D224CF96B005DB9E6 /* hello1.m4a */; };
+		E10EAE61224CF96B005DB9E6 /* hello3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE5E224CF96B005DB9E6 /* hello3.m4a */; };
+		E10EAE62224CF96B005DB9E6 /* hello2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E10EAE5F224CF96B005DB9E6 /* hello2.m4a */; };
 		E1111A1D21EF2110000D1167 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A1C21EF2110000D1167 /* CustomNavController.swift */; };
 		E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */; };
 		E112AF9F221C4C8300AB3340 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112AF9E221C4C8300AB3340 /* Battle.swift */; };
@@ -88,6 +119,19 @@
 		E102DC5B2217214700FC3A7E /* ChallengeWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeWorkoutViewController.swift; sourceTree = "<group>"; };
 		E1040DC4221E948500818A2F /* ChallengeFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeFinishViewController.swift; sourceTree = "<group>"; };
 		E10DF3C721F0E39A0021CE85 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E10EAE42224CD6C2005DB9E6 /* level1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = level1.m4a; path = ../../../../Downloads/level1.m4a; sourceTree = "<group>"; };
+		E10EAE45224CED4E005DB9E6 /* readygo.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = readygo.m4a; sourceTree = "<group>"; };
+		E10EAE46224CED4E005DB9E6 /* closer.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = closer.m4a; sourceTree = "<group>"; };
+		E10EAE47224CED4E005DB9E6 /* last.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = last.m4a; sourceTree = "<group>"; };
+		E10EAE48224CED4E005DB9E6 /* go.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = go.m4a; sourceTree = "<group>"; };
+		E10EAE49224CED4E005DB9E6 /* 321.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 321.m4a; sourceTree = "<group>"; };
+		E10EAE4A224CED4E005DB9E6 /* again.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = again.m4a; sourceTree = "<group>"; };
+		E10EAE4B224CED4E005DB9E6 /* leftright.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = leftright.m4a; sourceTree = "<group>"; };
+		E10EAE4C224CED4E005DB9E6 /* rest.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rest.m4a; sourceTree = "<group>"; };
+		E10EAE4D224CED4E005DB9E6 /* updown.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = updown.m4a; sourceTree = "<group>"; };
+		E10EAE5D224CF96B005DB9E6 /* hello1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hello1.m4a; sourceTree = "<group>"; };
+		E10EAE5E224CF96B005DB9E6 /* hello3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hello3.m4a; sourceTree = "<group>"; };
+		E10EAE5F224CF96B005DB9E6 /* hello2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hello2.m4a; sourceTree = "<group>"; };
 		E1111A1C21EF2110000D1167 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		E112AF9E221C4C8300AB3340 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
@@ -290,6 +334,26 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E10EAE44224CED4E005DB9E6 /* trainer_sound */ = {
+			isa = PBXGroup;
+			children = (
+				E10EAE45224CED4E005DB9E6 /* readygo.m4a */,
+				E10EAE46224CED4E005DB9E6 /* closer.m4a */,
+				E10EAE47224CED4E005DB9E6 /* last.m4a */,
+				E10EAE48224CED4E005DB9E6 /* go.m4a */,
+				E10EAE49224CED4E005DB9E6 /* 321.m4a */,
+				E10EAE5D224CF96B005DB9E6 /* hello1.m4a */,
+				E10EAE5F224CF96B005DB9E6 /* hello2.m4a */,
+				E10EAE5E224CF96B005DB9E6 /* hello3.m4a */,
+				E10EAE4A224CED4E005DB9E6 /* again.m4a */,
+				E10EAE4B224CED4E005DB9E6 /* leftright.m4a */,
+				E10EAE4C224CED4E005DB9E6 /* rest.m4a */,
+				E10EAE4D224CED4E005DB9E6 /* updown.m4a */,
+			);
+			name = trainer_sound;
+			path = ../../../../Downloads/trainer_sound;
+			sourceTree = "<group>";
+		};
 		E1111A1A21EEE5AD000D1167 /* poseview */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +432,8 @@
 				E1111A1B21EEE5E8000D1167 /* Controller */,
 				E1111A1A21EEE5AD000D1167 /* poseview */,
 				E1DC050021BEAC1E00A2A4F9 /* Main.storyboard */,
+				E10EAE44224CED4E005DB9E6 /* trainer_sound */,
+				E10EAE42224CD6C2005DB9E6 /* level1.m4a */,
 				E1BB2B0F224BF05400E67B43 /* backgroud.mp3 */,
 				E1BB2B11224BF12900E67B43 /* Backgroud.m4a */,
 				E1DC050521BEAC1F00A2A4F9 /* LaunchScreen.storyboard */,
@@ -469,11 +535,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10EAE35224CB82B005DB9E6 /* Prompt-ExtraBoldItalic.ttf in Resources */,
 				E1BB2B12224BFD1800E67B43 /* Backgroud.m4a in Resources */,
+				E10EAE40224CB82B005DB9E6 /* Prompt-Thin.ttf in Resources */,
+				E10EAE3C224CB82B005DB9E6 /* Prompt-MediumItalic.ttf in Resources */,
 				E1FEF5DD21FCCC1800492BE4 /* squatGIF.gif in Resources */,
+				E10EAE56224CED4F005DB9E6 /* updown.m4a in Resources */,
+				E10EAE41224CB82B005DB9E6 /* Prompt-ThinItalic.ttf in Resources */,
+				E10EAE38224CB82B005DB9E6 /* Prompt-Italic.ttf in Resources */,
 				E1FEF5EA21FCEA3C00492BE4 /* legraiseGIF.gif in Resources */,
+				E10EAE3B224CB82B005DB9E6 /* Prompt-Medium.ttf in Resources */,
+				E10EAE37224CB82B005DB9E6 /* Prompt-ExtraLightItalic.ttf in Resources */,
+				E10EAE36224CB82B005DB9E6 /* Prompt-ExtraLight.ttf in Resources */,
+				E10EAE52224CED4F005DB9E6 /* 321.m4a in Resources */,
+				E10EAE62224CF96B005DB9E6 /* hello2.m4a in Resources */,
+				E10EAE60224CF96B005DB9E6 /* hello1.m4a in Resources */,
+				E10EAE3A224CB82B005DB9E6 /* Prompt-LightItalic.ttf in Resources */,
+				E10EAE50224CED4F005DB9E6 /* last.m4a in Resources */,
+				E10EAE51224CED4F005DB9E6 /* go.m4a in Resources */,
+				E10EAE61224CF96B005DB9E6 /* hello3.m4a in Resources */,
 				E1DC050721BEAC1F00A2A4F9 /* LaunchScreen.storyboard in Resources */,
+				E10EAE3E224CB82B005DB9E6 /* Prompt-SemiBold.ttf in Resources */,
+				E10EAE31224CB82B005DB9E6 /* Prompt-BlackItalic.ttf in Resources */,
+				E10EAE3F224CB82B005DB9E6 /* Prompt-SemiBoldItalic.ttf in Resources */,
+				E10EAE32224CB82B005DB9E6 /* Prompt-Bold.ttf in Resources */,
+				E10EAE34224CB82B005DB9E6 /* Prompt-ExtraBold.ttf in Resources */,
+				E10EAE39224CB82B005DB9E6 /* Prompt-Light.ttf in Resources */,
+				E10EAE3D224CB82B005DB9E6 /* Prompt-Regular.ttf in Resources */,
+				E10EAE55224CED4F005DB9E6 /* rest.m4a in Resources */,
+				E10EAE4F224CED4F005DB9E6 /* closer.m4a in Resources */,
 				E1FEF5DB21FCC90700492BE4 /* Assets.xcassets in Resources */,
+				E10EAE53224CED4F005DB9E6 /* again.m4a in Resources */,
+				E10EAE33224CB82B005DB9E6 /* Prompt-BoldItalic.ttf in Resources */,
+				E10EAE30224CB82B005DB9E6 /* Prompt-Black.ttf in Resources */,
+				E10EAE43224CD6C2005DB9E6 /* level1.m4a in Resources */,
+				E10EAE4E224CED4F005DB9E6 /* readygo.m4a in Resources */,
+				E10EAE54224CED4F005DB9E6 /* leftright.m4a in Resources */,
 				E1C367622221B0D8001574D9 /* ShoulderPressGIF.gif in Resources */,
 				E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */,
 				E1FEF5EB21FCEA3C00492BE4 /* legswingGIF.gif in Resources */,
