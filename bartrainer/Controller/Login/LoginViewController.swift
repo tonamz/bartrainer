@@ -10,15 +10,19 @@ import UIKit
 import Alamofire
 
 class LoginViewController: UIViewController {
-
+  
     @IBOutlet weak var loginBT: UIButton!
     @IBOutlet weak var facebookBT: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
         loginBT.layer.cornerRadius = 10
-         facebookBT.layer.cornerRadius = 10
+        facebookBT.layer.cornerRadius = 10
+        
+     
         
         do {
             try User.load()

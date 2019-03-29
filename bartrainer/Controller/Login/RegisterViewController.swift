@@ -10,7 +10,8 @@ import UIKit
 import Alamofire
 
 class RegisterViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-
+    
+  @IBOutlet weak var registerBT: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -23,11 +24,17 @@ class RegisterViewController: UIViewController ,UIImagePickerControllerDelegate,
         super.viewDidLoad()
         
         imagePicker.delegate = self
-        
+        registerBT.layer.cornerRadius = 10
+      
         profileImage.layer.cornerRadius = 59
         profileImage.layer.borderWidth = 2
         profileImage.layer.borderColor = #colorLiteral(red: 1, green: 0.7843137255, blue: 0.4431372549, alpha: 1)
+        
+         self.hideKeyboardWhenTappedAround()
+        
+           self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
 
+        
 
     }
     
@@ -103,7 +110,7 @@ class RegisterViewController: UIViewController ,UIImagePickerControllerDelegate,
                     print(result)
 
                     if result.message == "success" {
-                        Alert.showAlert(vc: self, title: "ลงทะเบียนสำเร็จ", message: nil, action: {
+                        Alert.showAlert(vc: self, title: "register success", message: nil, action: {
 //                            self.navigationController?.popViewController(animated: true)
                         })
                         
@@ -111,7 +118,7 @@ class RegisterViewController: UIViewController ,UIImagePickerControllerDelegate,
                         UIApplication.shared.keyWindow?.rootViewController = vc
                     } else {
                         if result.error == "23000" {
-                            Alert.showAlert(vc: self, title: "Error", message: "email หรือ รหัสบัตรประชนมีในระบบแล้ว", action: nil)
+                            Alert.showAlert(vc: self, title: "Error", message: "user have used", action: nil)
                         } else {
                             Alert.showAlert(vc: self, title: "Error", message: "server ผิดพลาด", action: nil)
                         }
@@ -128,5 +135,17 @@ class RegisterViewController: UIViewController ,UIImagePickerControllerDelegate,
                         print(error)
             }
         }
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

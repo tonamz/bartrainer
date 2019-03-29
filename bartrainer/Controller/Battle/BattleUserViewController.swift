@@ -21,6 +21,8 @@ class BattleUserViewController: UIViewController, UICollectionViewDataSource, UI
     var battleUser: [BattleUser] = []
     @IBOutlet weak var helloButton: UIButton!
     
+    
+    
     @IBAction func helloPush(_ sender: Any) {
     }
     override func viewDidLoad() {
@@ -29,9 +31,9 @@ class BattleUserViewController: UIViewController, UICollectionViewDataSource, UI
               self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         
         print(selectedBattleUser)
-helloButton.layer.cornerRadius = 10
+        helloButton.layer.cornerRadius = 10
        userImageView.layer.cornerRadius = 60
-    
+        userImageView.af_setImage(withURL: URL(string: "https://tssnp.com/ws_bartrainer/images/\(selectedBattleUser!.img_profile)")!)
        nameuserLabel.text = selectedBattleUser?.username
         
         self.battleUserCollection.dataSource = self

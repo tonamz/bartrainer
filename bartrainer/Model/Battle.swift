@@ -18,6 +18,7 @@ struct Battle: Codable {
     var name_exercise: String
     var reps: String
     var cal: String
+    var img_profile: String
     
     
 }

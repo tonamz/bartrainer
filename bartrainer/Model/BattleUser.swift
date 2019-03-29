@@ -20,5 +20,7 @@ struct BattleUser: Codable {
     var sumreps: String
 
 
+
+
 }
 

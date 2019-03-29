@@ -25,6 +25,7 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
     @IBOutlet weak var buttonOutlet: UIButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         buttonOutlet.layer.cornerRadius = 10
@@ -34,6 +35,7 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
         
 //        BattleGroupTableView.backgroundColor = UIColor.red
         
+       
         BattleGroupTableView.layer.masksToBounds = true
         BattleGroupTableView.layer.shadowColor = UIColor.lightGray.cgColor
         BattleGroupTableView.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -76,10 +78,13 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "BattleGroupTableViewCell", for: indexPath) as! BattleGroupTableViewCell
         
         let model = BattleGroup[indexPath.row]
-        cell.profileImageView.image = UIImage(named: "\(imageUser[1])")
+//        cell.profileImageView.image = UIImage(named: "\(imageUser[1])")
         cell.nameEX.text = "battle score"
         cell.nameUser.text = "\(model.username)"
        cell.scoreBattle.text = "\(model.sumreps)"
+//        cell.profileImageView.af_setImage(withURL: URL(string: "\(User.currentUser?.id_user)")!)
+        cell.profileImageView.af_setImage(withURL: URL(string: "https://tssnp.com/ws_bartrainer/images/\(model.img_profile)")!)
+
         
         if(indexPath.row < 3){
             cell.rankImageview.image = UIImage(named:"rank0\(indexPath.row+1)")

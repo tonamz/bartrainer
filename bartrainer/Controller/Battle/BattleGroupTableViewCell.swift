@@ -23,7 +23,7 @@ class BattleGroupTableViewCell: UITableViewCell {
  
         self.contentView.layer.masksToBounds = true
         self.layer.cornerRadius = 10
-      profileImageView.layer.cornerRadius = 40
+      profileImageView.layer.cornerRadius = 35
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

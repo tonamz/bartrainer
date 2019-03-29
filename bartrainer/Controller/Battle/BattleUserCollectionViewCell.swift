@@ -12,6 +12,7 @@ class BattleUserCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var nameExLabel: UILabel!
     @IBOutlet weak var repsLabel: UILabel!
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()

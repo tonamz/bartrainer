@@ -60,6 +60,13 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "challenge_collection", for: indexPath) as! ChallengeCollectionViewCell
         let model = challengeGroup[indexPath.row]
         cell.headerLabel.text = model.name
+        if model.id_exercise == "1" {
+            cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
+            
+        }else{
+              cell.iconImageView.image = UIImage(named: "ex02")
+        }
+      
         
         return cell
     }
