@@ -35,7 +35,7 @@ class ChallengeDayViewController: UIViewController , UICollectionViewDataSource,
         challengenameLabel.text = "\(clName)"
         
         
-        Alamofire.request("http://tssnp.com/ws_bartrainer/challenge_day_count.php?id_challenge=\(selectedChallengeGroup!.id)&&id_user=\(Int(User.currentUser?.id_user ?? "0"))").responseData { response in
+        Alamofire.request("http://tssnp.com/ws_bartrainer/challenge_day_count.php?id_challenge=\(selectedChallengeGroup!.id)&&id_user=\(User.currentUser?.id_user ?? "1")").responseData { response in
             if let data = response.result.value {
         
                 do {

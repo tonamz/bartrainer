@@ -60,6 +60,8 @@
 		E12B11B8224E905B00F6B07A /* FitnessCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11B7224E905B00F6B07A /* FitnessCouponViewController.swift */; };
 		E12B11BA224E909700F6B07A /* FitnessCouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11B9224E909700F6B07A /* FitnessCouponTableViewCell.swift */; };
 		E12B11BC224E939200F6B07A /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11BB224E939200F6B07A /* Coupon.swift */; };
+		E12B11BE224E9F1F00F6B07A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11BD224E9F1F00F6B07A /* StatisticsViewController.swift */; };
+		E12B11C0224EACBB00F6B07A /* StatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11BF224EACBB00F6B07A /* StatisticsCollectionViewCell.swift */; };
 		E14DDDD8221FD31B008E7F5E /* ExerciseFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */; };
 		E152C0BE220D912000DF906F /* Challenge_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152C0BD220D912000DF906F /* Challenge_name.swift */; };
 		E164F490224DF133004FEF13 /* pre-motion.gif in Resources */ = {isa = PBXBuildFile; fileRef = E164F48F224DF133004FEF13 /* pre-motion.gif */; };
@@ -157,6 +159,8 @@
 		E12B11B7224E905B00F6B07A /* FitnessCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCouponViewController.swift; sourceTree = "<group>"; };
 		E12B11B9224E909700F6B07A /* FitnessCouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCouponTableViewCell.swift; sourceTree = "<group>"; };
 		E12B11BB224E939200F6B07A /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		E12B11BD224E9F1F00F6B07A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		E12B11BF224EACBB00F6B07A /* StatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFinishViewController.swift; sourceTree = "<group>"; };
 		E152C0BD220D912000DF906F /* Challenge_name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge_name.swift; sourceTree = "<group>"; };
 		E164F48F224DF133004FEF13 /* pre-motion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "pre-motion.gif"; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 				E10DF3C421F0D0010021CE85 /* Challenge */,
 				E1111A1C21EF2110000D1167 /* CustomNavController.swift */,
 				E1F76D8121F3650000D236A9 /* CustomView.swift */,
+				E12B11BD224E9F1F00F6B07A /* StatisticsViewController.swift */,
+				E12B11BF224EACBB00F6B07A /* StatisticsCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -718,6 +724,7 @@
 				E1FEF5C921F98A1F00492BE4 /* User.swift in Sources */,
 				E12A8EDF221A988B00A00321 /* Alert.swift in Sources */,
 				E1FEF5CD21FB163600492BE4 /* Fitness.swift in Sources */,
+				E12B11C0224EACBB00F6B07A /* StatisticsCollectionViewCell.swift in Sources */,
 				E1F76D8221F3650000D236A9 /* CustomView.swift in Sources */,
 				E1FEF5ED2201A27900492BE4 /* ChallengeDayViewController.swift in Sources */,
 				E16CA91721F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift in Sources */,
@@ -731,6 +738,7 @@
 				E1261031224A87E100392822 /* BattleUserViewController.swift in Sources */,
 				E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */,
 				E112AF9F221C4C8300AB3340 /* Battle.swift in Sources */,
+				E12B11BE224E9F1F00F6B07A /* StatisticsViewController.swift in Sources */,
 				E1EA2460220DF56400A1B079 /* ChallengeDetailViewController.swift in Sources */,
 				E1A6DE7C21C570B7006CB2F3 /* ExerciseViewController.swift in Sources */,
 				E10DF3C821F0E39A0021CE85 /* Category.swift in Sources */,
