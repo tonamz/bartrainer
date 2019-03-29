@@ -13,6 +13,7 @@ import Mailgun_In_Swift
 
 class FitnessRegisterViewController: UIViewController {
     
+    @IBOutlet weak var confirmBTN: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var telephoneField: UITextField!
@@ -27,15 +28,18 @@ class FitnessRegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+            confirmBTN.layer.cornerRadius = 10
+        
         id_fitness = Int((fitnessid)) ?? 5
-        registerHead.text = "Register at \(fitnessName) \(fitnessBranch) "
-        // Do any additional setup after loading the view.
+        registerHead.text = "\(fitnessName) \(fitnessBranch) "
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
     }
     
     @IBAction func FitnessRegisterButton(_ sender: Any) {
         
         if  ( nameField != nil && emailField != nil && telephoneField != nil){
-            sendFitnessRegister(id_fitness: id_fitness,id_user: 1 ,name: nameField.text!, email: emailField.text!, telephone: telephoneField.text!)
+            sendFitnessRegister(id_fitness: id_fitness,id_user: Int(User.currentUser!.id_user) ?? 0,name: nameField.text!, email: emailField.text!, telephone: telephoneField.text!)
 //            sendEmailRegister()
 //            Alert.showAlert(vc: self, title: "Complete", message: "สมัครเรียบร้อยแล้วค่ะ", action: nil)
 //            performSegue(withIdentifier: "fitnessRegisFinish", sender: self)

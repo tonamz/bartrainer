@@ -19,20 +19,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+//        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        
+        do {
+            try User.load()
+            if User.currentUser != nil {
+                print("login")
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            }
+        } catch {
+            print(error)
+        }
+
         
         return true
     }
     
+    
     func applicationWillResignActive(_ application: UIApplication) {
-        FBSDKAppEvents.activateApp()
+//        FBSDKAppEvents.activateApp()
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+//        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        return false
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+              backgroundMusic.shared.audioPlayer?.pause()
         
     }
     
@@ -45,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        
+           backgroundMusic.shared.audioPlayer?.pause()
     }
  
 

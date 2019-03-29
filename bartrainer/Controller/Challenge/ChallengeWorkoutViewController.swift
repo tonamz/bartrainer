@@ -153,7 +153,7 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
         if countdown == 0 {
             timerr.invalidate()
             timer.text = "0"
-            challengeWorkout(id_challenge: id_ch ,id_user: 1,id_exercise: id_ex,reps: scoreCal,cal: 10)
+            challengeWorkout(id_challenge: id_ch ,id_user: Int(User.currentUser!.id_user) ?? 0,id_exercise: id_ex,reps: scoreCal,cal: 10)
 //            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
 //            UIApplication.shared.keyWindow?.rootViewController = vc
               CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)

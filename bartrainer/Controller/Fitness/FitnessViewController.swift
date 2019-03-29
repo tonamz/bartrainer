@@ -67,6 +67,8 @@ class FitnessViewController: UIViewController ,UITableViewDataSource, UITableVie
         cell.fitnessImageView.image = UIImage(named: "fitness-\( model.id_fitness)")
         cell.fitnessLabel.text = model.name_brand
         cell.branchLabel.text = model.name_branch
+
+        cell.selectionStyle = .none
         
         return cell
     }

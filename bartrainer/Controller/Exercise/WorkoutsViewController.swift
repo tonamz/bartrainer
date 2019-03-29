@@ -102,9 +102,11 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     // MARK: - 라이프사이클 메소드
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         
+             backgroundMusic.shared.audioPlayer?.pause()
         startExercise = 3
         
         timerr = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownStartAction), userInfo: nil, repeats: true)
@@ -217,11 +219,11 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         
         if startExercise == 0 {
             timerr.invalidate()
-            CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
+//            CountdownView.hide(animation: disappearingAnimation, options: (duration: 0.5, delay: 0.2), completion: nil)
             
         }else {
-            CountdownView.show(countdownFrom: Double(startExercise), spin: spin, animation: appearingAnimation, autoHide: autohide,
-                               completion: nil)
+//            CountdownView.show(countdownFrom: Double(startExercise), spin: spin, animation: appearingAnimation, autoHide: autohide,
+//                               completion: nil)
 
         }
 
@@ -317,7 +319,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             
             print(scoreCal)
 
-            exerciseWorkout(id_user: 1, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal,repsexercise: repsExercise, cal: calSum)
+            exerciseWorkout(id_user: Int(User.currentUser!.id_user) ?? 0, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: scoreCal,repsexercise: repsExercise, cal: calSum)
             
             scoreCal=0
             exerciseloop+=1

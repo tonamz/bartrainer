@@ -23,18 +23,27 @@ class LoginViewController: UIViewController {
         facebookBT.layer.cornerRadius = 10
         
      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         
         do {
             try User.load()
             if User.currentUser != nil {
-                print(User.currentUser?.id_user)
+                print("loggginnnnnn -- \(User.currentUser?.id_user)")
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
                 UIApplication.shared.keyWindow?.rootViewController = vc
+                     performSegue(withIdentifier: "Main", sender: self)
             }
         } catch {
             print(error)
         }
     }
+    
+    
+   
     
     @IBAction func loginButton(_ sender: Any) {
         if usernameField.text == "" {

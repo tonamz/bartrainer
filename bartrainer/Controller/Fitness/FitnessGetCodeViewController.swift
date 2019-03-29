@@ -16,8 +16,12 @@ class FitnessGetCodeViewController: UIViewController {
     var fitnessName: String = ""
     var fitnessBranch: String = ""
     var code: String = ""
+    @IBOutlet weak var getcodeBTN: UIButton!
     
     @IBOutlet weak var randomCode: UILabel!
+    
+    var selectedfitness: Fitness?
+    var selectedcoupon: Coupon?
     
     
     @IBAction func getCoupon(_ sender: UIButton) {
@@ -54,7 +58,8 @@ class FitnessGetCodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg-code.png")!)
+               getcodeBTN.layer.cornerRadius = 10
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg-code.png")!)
         print("aaaaaaaa:\(fitnessBranch)")
 
         // Do any additional setup after loading the view.

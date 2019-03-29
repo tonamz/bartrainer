@@ -9,25 +9,36 @@
 import UIKit
 import Alamofire
 
-class FitnessDetailViewController: UIViewController {
+class FitnessDetailViewController: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate{
     
-
+    @IBOutlet weak var customView: UIView!
+    @IBOutlet weak var headView: UIView!
     @IBOutlet weak var fitnessLabel: UILabel!
     @IBOutlet weak var branchLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var fitnessImageView: UIImageView!
      @IBOutlet weak var getcodeBT: UIButton!
-    @IBOutlet weak var regisfitnessBT: UIButton!
+
+    
+       @IBOutlet weak var iconmachineCollection: UICollectionView!
     
     
     var selectedfitness: Fitness?
     var FitnessDetail: [Fitness] = []
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-              getcodeBT.layer.cornerRadius = 10
-        regisfitnessBT.layer.cornerRadius = 10
+ 
+        getcodeBT.layer.cornerRadius = 40
+
+        
+        customView.clipsToBounds = true
+
+        self.iconmachineCollection.dataSource = self
+        self.iconmachineCollection.delegate = self
 
         title = selectedfitness!.name_brand
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
@@ -61,30 +72,35 @@ class FitnessDetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fitnessCode"  {
-            let vc = segue.destination as! FitnessGetCodeViewController
-            vc.fitnessName = selectedfitness!.name_brand
-            vc.fitnessBranch = selectedfitness!.name_branch
+        if segue.identifier == "fitnessCoupon"  {
+            let vc = segue.destination as! FitnessCouponViewController
+            vc.selectedfitness = selectedfitness
         
 
-        }else if segue.identifier == "fitnessRegis" {
-            let vc2 = segue.destination as! FitnessRegisterViewController
-            vc2.fitnessName = selectedfitness!.name_brand
-            vc2.fitnessBranch = selectedfitness!.name_branch
-            vc2.fitnessid = selectedfitness!.id_fitness
-            
+        
         }
+//        else if segue.identifier == "fitnessRegis" {
+//            let vc2 = segue.destination as! FitnessRegisterViewController
+//            vc2.fitnessName = selectedfitness!.name_brand
+//            vc2.fitnessBranch = selectedfitness!.name_branch
+//            vc2.fitnessid = selectedfitness!.id_fitness
+//            
+//        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 11
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FitnessDetailCollectionViewCell", for: indexPath) as! FitnessDetailCollectionViewCell
+        let number = indexPath.row + 36
+        cell.bgView.image = UIImage(named: "Asset \(number)")
+        
+        return cell
+        
+    }
+    
 
 }

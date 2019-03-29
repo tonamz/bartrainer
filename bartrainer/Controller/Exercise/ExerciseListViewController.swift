@@ -77,7 +77,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
                     self.ExerciseLevel = try decoder.decode([Level].self, from: data)
             
                     
-                    Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_level_count.php?id_user=1&id_category=\(self.selectedCategoryGroup!.id)").responseData { response in
+                    Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_level_count.php?id_user=\(User.currentUser?.id_user ?? "1")&id_category=\(self.selectedCategoryGroup!.id)").responseData { response in
                         if let data = response.result.value {
                             
                             do {
@@ -121,7 +121,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
  
 
     override func viewDidDisappear(_ animated: Bool) {
-           backgroundMusic.shared.audioPlayer?.pause()
+//           backgroundMusic.shared.audioPlayer?.pause()
       
     }
     

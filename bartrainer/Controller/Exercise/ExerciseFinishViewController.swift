@@ -39,18 +39,21 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
 //     backgroundMusic.shared.audioPlayer?.play()
         
         categoryName.text = selectedCategoryGroup?.name
-             buttonOutlet.layer.cornerRadius = 10
+        buttonOutlet.layer.cornerRadius = 10
         
         self.exerciseFinishTableView.dataSource = self
         self.exerciseFinishTableView.delegate = self
+        
+        navigationItem.hidesBackButton = true
 
-        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_workout_user.php?id_user=1").responseData { response in
+        Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_workout_user.php?id_user=\(User.currentUser?.id_user ?? "1")").responseData { response in
             if let data = response.result.value {
                 
                 do {
                     let decoder = JSONDecoder()
                     
                     self.exerciseworkout = try decoder.decode([ExerciseWorkout].self, from: data)
+                    self.exerciseFinishTableView.reloadData()
 
                     Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_category.php?group_id=\(self.selectedCategoryGroup!.id)").responseData { response in
                         if let data = response.result.value {
@@ -81,6 +84,7 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
     
     override func viewDidDisappear(_ animated: Bool) {
         backgroundMusic.shared.audioPlayer?.pause()
+        calSum = 0
         
     }
     
@@ -102,7 +106,8 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
                 calSum += Int(model2.cal)!
                 calLabel.text = "Cal : \(calSum)"
                 cell.repsexLabel.text = "/ \(model2.repsexercise)"
-
+                
+                print(calSum)
             }
 
             i+=1

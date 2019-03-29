@@ -57,8 +57,14 @@
 		E12A8EDF221A988B00A00321 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EDE221A988B00A00321 /* Alert.swift */; };
 		E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE0221AFD4200A00321 /* APIresponse.swift */; };
 		E12A8EE3221B09BE00A00321 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12A8EE2221B09BE00A00321 /* LoginViewController.swift */; };
+		E12B11B8224E905B00F6B07A /* FitnessCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11B7224E905B00F6B07A /* FitnessCouponViewController.swift */; };
+		E12B11BA224E909700F6B07A /* FitnessCouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11B9224E909700F6B07A /* FitnessCouponTableViewCell.swift */; };
+		E12B11BC224E939200F6B07A /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11BB224E939200F6B07A /* Coupon.swift */; };
 		E14DDDD8221FD31B008E7F5E /* ExerciseFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */; };
 		E152C0BE220D912000DF906F /* Challenge_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152C0BD220D912000DF906F /* Challenge_name.swift */; };
+		E164F490224DF133004FEF13 /* pre-motion.gif in Resources */ = {isa = PBXBuildFile; fileRef = E164F48F224DF133004FEF13 /* pre-motion.gif */; };
+		E164F492224DF15C004FEF13 /* BeforeWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164F491224DF15C004FEF13 /* BeforeWorkoutsViewController.swift */; };
+		E164F494224DFA64004FEF13 /* FitnessDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E164F493224DFA64004FEF13 /* FitnessDetailCollectionViewCell.swift */; };
 		E16CA91121F0F95400D4CEA6 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */; };
 		E16CA91521F10ABB00D4CEA6 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91421F10ABB00D4CEA6 /* Exercise.swift */; };
 		E16CA91721F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CA91621F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift */; };
@@ -148,8 +154,14 @@
 		E12A8EDE221A988B00A00321 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E12A8EE0221AFD4200A00321 /* APIresponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIresponse.swift; sourceTree = "<group>"; };
 		E12A8EE2221B09BE00A00321 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E12B11B7224E905B00F6B07A /* FitnessCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCouponViewController.swift; sourceTree = "<group>"; };
+		E12B11B9224E909700F6B07A /* FitnessCouponTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessCouponTableViewCell.swift; sourceTree = "<group>"; };
+		E12B11BB224E939200F6B07A /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFinishViewController.swift; sourceTree = "<group>"; };
 		E152C0BD220D912000DF906F /* Challenge_name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge_name.swift; sourceTree = "<group>"; };
+		E164F48F224DF133004FEF13 /* pre-motion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "pre-motion.gif"; sourceTree = "<group>"; };
+		E164F491224DF15C004FEF13 /* BeforeWorkoutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeWorkoutsViewController.swift; sourceTree = "<group>"; };
+		E164F493224DFA64004FEF13 /* FitnessDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		E16CA91021F0F95400D4CEA6 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
 		E16CA91421F10ABB00D4CEA6 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		E16CA91621F10EDE00D4CEA6 /* ExerciseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewCell.swift; sourceTree = "<group>"; };
@@ -272,6 +284,7 @@
 				E102DC592214202800FC3A7E /* WorkoutsViewController.swift */,
 				E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */,
 				E1AA8007222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift */,
+				E164F491224DF15C004FEF13 /* BeforeWorkoutsViewController.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -284,6 +297,9 @@
 				E1FEF5CE21FB196600492BE4 /* FitnessTableViewCell.swift */,
 				E1FEF5D021FB225400492BE4 /* FitnessDetailViewController.swift */,
 				E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */,
+				E164F493224DFA64004FEF13 /* FitnessDetailCollectionViewCell.swift */,
+				E12B11B7224E905B00F6B07A /* FitnessCouponViewController.swift */,
+				E12B11B9224E909700F6B07A /* FitnessCouponTableViewCell.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -336,6 +352,7 @@
 				E185BC0A222DA30300EC84D0 /* LevelCount.swift */,
 				E1EF4EA9223CEBAA00BEDB1C /* ChallengeCount.swift */,
 				E1261034224A906C00392822 /* BattleUser.swift */,
+				E12B11BB224E939200F6B07A /* Coupon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				E1FEF5D621FCC3EC00492BE4 /* Swift+GIF.swift */,
+				E164F48F224DF133004FEF13 /* pre-motion.gif */,
 				E1FEF5DC21FCCC1700492BE4 /* squatGIF.gif */,
 				E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */,
 				E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */,
@@ -558,6 +576,7 @@
 				E10EAE37224CB82B005DB9E6 /* Prompt-ExtraLightItalic.ttf in Resources */,
 				E10EAE36224CB82B005DB9E6 /* Prompt-ExtraLight.ttf in Resources */,
 				E10EAE52224CED4F005DB9E6 /* 321.m4a in Resources */,
+				E164F490224DF133004FEF13 /* pre-motion.gif in Resources */,
 				E10EAE62224CF96B005DB9E6 /* hello2.m4a in Resources */,
 				E10EAE60224CF96B005DB9E6 /* hello1.m4a in Resources */,
 				E10EAE3A224CB82B005DB9E6 /* Prompt-LightItalic.ttf in Resources */,
@@ -685,13 +704,17 @@
 				E102DC5A2214202800FC3A7E /* WorkoutsViewController.swift in Sources */,
 				E1F76D8821F3840E00D236A9 /* BattleListViewController.swift in Sources */,
 				E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */,
+				E12B11BA224E909700F6B07A /* FitnessCouponTableViewCell.swift in Sources */,
 				E1E9146422452D46006ECF57 /* ChallengeDetailAllViewController.swift in Sources */,
 				E1C3676022218AF3001574D9 /* FitnessRegisterViewController.swift in Sources */,
 				E1FEF5C421F8C29F00492BE4 /* BattleFinishViewController.swift in Sources */,
 				E1F76D8021F3608E00D236A9 /* BattleViewController.swift in Sources */,
 				E1FEF5CB21FB13C800492BE4 /* FitnessViewController.swift in Sources */,
+				E12B11B8224E905B00F6B07A /* FitnessCouponViewController.swift in Sources */,
+				E164F492224DF15C004FEF13 /* BeforeWorkoutsViewController.swift in Sources */,
 				E1FEF5F42201ED3B00492BE4 /* ChallengeViewController.swift in Sources */,
 				E1F76D8621F3760300D236A9 /* BattleListCollectionViewCell.swift in Sources */,
+				E164F494224DFA64004FEF13 /* FitnessDetailCollectionViewCell.swift in Sources */,
 				E1FEF5C921F98A1F00492BE4 /* User.swift in Sources */,
 				E12A8EDF221A988B00A00321 /* Alert.swift in Sources */,
 				E1FEF5CD21FB163600492BE4 /* Fitness.swift in Sources */,
@@ -718,6 +741,7 @@
 				E1FEF5CF21FB196600492BE4 /* FitnessTableViewCell.swift in Sources */,
 				E1A45F2521C2B9A600DF2F13 /* model_cpm.mlmodel in Sources */,
 				E1261033224A88B500392822 /* BattleUserCollectionViewCell.swift in Sources */,
+				E12B11BC224E939200F6B07A /* Coupon.swift in Sources */,
 				E1FEF5D721FCC3EC00492BE4 /* Swift+GIF.swift in Sources */,
 				E1FEF5EF2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift in Sources */,
 				E12A8EE1221AFD4200A00321 /* APIresponse.swift in Sources */,
