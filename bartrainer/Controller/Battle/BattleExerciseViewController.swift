@@ -145,6 +145,11 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
             
   
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.videoCapture.stop()
+    
+    }
     @objc func countdownAction(){
         countdown -= 1
         

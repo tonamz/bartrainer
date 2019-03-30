@@ -331,8 +331,10 @@ class  movePoint{
             score = calBicepCurls()
         }else if(idEx==10){
             score = calBoxing()
+        }else if(idEx==8){
+            score = calTricep()
         }else if(idEx==9){
-            score = calShoulderReise()
+            score = calShoulderRaise()
         }else    if(idEx==13 ){
             score = calPlank()
         }else   if(idEx==16){
@@ -386,10 +388,10 @@ class  movePoint{
     
     func calLunge()-> Int{
         if keypointsArray.count > 18 {
-            let headY = calPointY(0,1,18)
+            let headY = calPointY(0,8,18)
 //            let headX = calPointY(0,1,18)
-            let RkneeY = calPointY(12,1,18)
-            let LkneeY = calPointY(9,1,18)
+            let RkneeY = calPointY(12,8,18)
+            let LkneeY = calPointY(9,8,18)
   
             
             
@@ -715,19 +717,19 @@ class  movePoint{
         return 0
     }
     
-    func calShoulderReise() -> Int {
-        if keypointsArray.count > 6 {
-            let LhandX = calPointX(7,1,6)
-            let RhandX = calPointX(4,1,6)
-            let LhandY = calPointY(7,1,6)
-            let RhandY = calPointY(4,1,6)
+    func calShoulderRaise() -> Int {
+        if keypointsArray.count > 8 {
+            let LhandX = calPointX(7,1,8)
+            let RhandX = calPointX(4,1,8)
+            let LhandY = calPointY(7,1,8)
+            let RhandY = calPointY(4,1,8)
             
             print("\(String(format: "%.3f",LhandX)),\(String(format: "%.3f",LhandY)),\(String(format: "%.3f",RhandX)),\(String(format: "%.3f",RhandY))")
             
-                            if (LhandX > 0.100 && LhandX < 0.300
-                                && LhandY  > 0.200 && LhandY < 0.400
-                                 && RhandX  > 0.100 && RhandX < 0.300
-                                 && RhandY  > 0.200 && RhandY < 0.400){
+                            if (LhandX > 0.100 && LhandX < 0.400
+                                && LhandY  > 0.200 && LhandY < 0.600
+                                 && RhandX  > 0.100 && RhandX < 0.400
+                                 && RhandY  > 0.200 && RhandY < 0.600){
                                 print("Yeahhhhhhhhhh")
                                 keypointsArray.removeAll()
             
@@ -736,6 +738,43 @@ class  movePoint{
                             else { return 0}
             
         
+        }
+        return 0
+        
+    }
+    
+    func calTricep() -> Int {
+        if keypointsArray.count > 10 {
+            let RhandY = calPointY(3,4,10)
+            let RsokY = calPointY(4,4,10)
+            let LhandY = calPointY(6,4,10)
+            let LsokY = calPointY(7,4,10)
+            let HeadX = calPointX(0,4,10)
+
+            
+            print("\(String(format: "%.3f",RhandY)),\(String(format: "%.3f",RsokY))")
+            
+            if (RhandY > 0.00 && RhandY < 0.150
+                && RsokY  > 0.150 && RsokY < 0.300
+                && HeadX  > 0.00 && HeadX < 0.050
+             ){
+                print("Yeahhhhhhhhhh")
+                keypointsArray.removeAll()
+                
+                return 1
+            }else
+                if (LhandY > 0.00 && LhandY < 0.150
+                    && LsokY  > 0.150 && LsokY < 0.300
+                    && HeadX  > 0.00 && HeadX < 0.050
+                    ){
+                    print("Yeahhhhhhhhhh")
+                    keypointsArray.removeAll()
+                    
+                    return 1
+                }
+            else { return 0}
+            
+            
         }
         return 0
         

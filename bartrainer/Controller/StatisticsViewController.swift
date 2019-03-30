@@ -63,7 +63,7 @@ class StatisticsViewController: UIViewController ,UICollectionViewDataSource, UI
         
                     self.calsum = utf8Text
                     let calsum = String(utf8Text.filter { !" \n\t\r".contains($0) })
-                        print("Data: \(calsum)")
+                    print("Data: \(calsum)")
                     self.calLebel.text = "\(calsum)"
                 } catch {
                     print(error.localizedDescription)

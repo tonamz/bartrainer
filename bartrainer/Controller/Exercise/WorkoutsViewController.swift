@@ -169,6 +169,8 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
             audioPlayerTrainer?.stop()
+              self.videoCapture.stop()
+        
         
     }
     

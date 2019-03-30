@@ -26,12 +26,12 @@
                   moduleName = "bartrainer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/methira/Desktop/senior_code/bartrainer/bartrainer/Controller/Fitness/FitnessDetailViewController.swift"
-                  timestampString = "575609127.872962"
+                  timestampString = "575611334.964826"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "bartrainer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/methira/Desktop/senior_code/bartrainer/bartrainer/Controller/Fitness/FitnessDetailViewController.swift"
-                  timestampString = "575609127.874685"
+                  timestampString = "575611334.9665869"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "57">
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -56,12 +56,12 @@
                   moduleName = "bartrainer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/methira/Desktop/senior_code/bartrainer/bartrainer/Controller/Fitness/FitnessDetailViewController.swift"
-                  timestampString = "575609127.876681"
+                  timestampString = "575611334.968107"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -71,12 +71,12 @@
                   moduleName = "bartrainer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/methira/Desktop/senior_code/bartrainer/bartrainer/Controller/Fitness/FitnessDetailViewController.swift"
-                  timestampString = "575609127.878709"
+                  timestampString = "575611334.970009"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "50">
+                  offsetFromSymbolStart = "56">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -86,12 +86,12 @@
                   moduleName = "bartrainer"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/methira/Desktop/senior_code/bartrainer/bartrainer/Controller/Fitness/FitnessDetailViewController.swift"
-                  timestampString = "575609127.8803999"
+                  timestampString = "575611334.971813"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
