@@ -54,7 +54,7 @@ class ChallengeFinishViewController: UIViewController {
         
         ChallengeName.text = selectedChallengeGroup?.name
         ChallengeDay.text = "Day \(selectedChallenge?.day ?? "aa")"
-        ChallengeRep.text = "\(scoreCal) / \(selectedChallenge?.reps ?? "aa")"
+        ChallengeRep.text = "\(scoreCal)/\(selectedChallenge?.reps ?? "aa")"
         
         if(scoreCal < reps){
             completeLabel.text = "Try Again"

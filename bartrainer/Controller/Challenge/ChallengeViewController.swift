@@ -63,8 +63,11 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
         if model.id_exercise == "1" {
             cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
             
+        }else  if model.id_exercise == "2" {
+            cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
+            
         }else{
-              cell.iconImageView.image = UIImage(named: "ex02")
+              cell.iconImageView.image = UIImage(named: "ex19")
         }
       
         

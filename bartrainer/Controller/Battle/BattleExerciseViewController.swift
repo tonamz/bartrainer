@@ -29,6 +29,8 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
         @IBOutlet weak var tryLabel: UILabel!
         @IBOutlet weak var timer: UILabel!
     
+    
+    
         var timerr:Timer!
         var countdown:Int = 10
         

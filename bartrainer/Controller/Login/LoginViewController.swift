@@ -33,9 +33,11 @@ class LoginViewController: UIViewController {
             try User.load()
             if User.currentUser != nil {
                 print("loggginnnnnn -- \(User.currentUser?.id_user)")
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
-                UIApplication.shared.keyWindow?.rootViewController = vc
+//                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+//                UIApplication.shared.keyWindow?.rootViewController = vc
                      performSegue(withIdentifier: "Main", sender: self)
+//
+//                     performSegue(withIdentifier: "ExList", sender: self)
             }
         } catch {
             print(error)

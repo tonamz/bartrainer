@@ -21,17 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        
-        do {
-            try User.load()
-            if User.currentUser != nil {
-                print("login")
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
-                UIApplication.shared.keyWindow?.rootViewController = vc
-            }
-        } catch {
-            print(error)
-        }
+    
 
         
         return true
@@ -57,6 +47,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        
+        do {
+            try User.load()
+            if User.currentUser != nil {
+                print("login")
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            }
+        } catch {
+            print(error)
+        }
         
     }
     

@@ -24,7 +24,7 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var poseView: PoseView!
     @IBOutlet weak var gifExercise: UIImageView!
-    
+     @IBOutlet weak var  scoreView: UIView!
     
     @IBOutlet weak var tryLabel: UILabel!
     @IBOutlet weak var timer: UILabel!
@@ -128,6 +128,11 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
         poseView.setUpOutputComponent()
         //            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         self.title = selectedChallengeGroup!.name
+        
+        scoreView.layer.cornerRadius = 10
+        videoPreview.layer.cornerRadius = 10
+        videoPreview.clipsToBounds = true
+        
         
         
         Alamofire.request("http://tssnp.com/ws_bartrainer/challenge_detail.php?id_challenge=\(selectedChallenge!.id)").responseData { response in

@@ -106,7 +106,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         
-             backgroundMusic.shared.audioPlayer?.pause()
+        backgroundMusic.shared.audioPlayer?.pause()
         startExercise = 3
         
         timerr = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownStartAction), userInfo: nil, repeats: true)
@@ -119,7 +119,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
         
         scoreView.layer.cornerRadius = 10
         videoPreview.layer.cornerRadius = 10
-          videoPreview.clipsToBounds = true
+        videoPreview.clipsToBounds = true
         
         navigationItem.hidesBackButton = true
 
@@ -170,6 +170,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     override func viewDidDisappear(_ animated: Bool) {
             audioPlayerTrainer?.stop()
               self.videoCapture.stop()
+           self.audioPlayer?.stop()
 
         
         
