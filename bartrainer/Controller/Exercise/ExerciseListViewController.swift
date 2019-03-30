@@ -203,7 +203,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         
       tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
     
-        if (Int(model.id_exercise) ?? 0 < 6 ){
+        if (Int(model.id_exercise) ?? 0 < 11 ){
               cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
         }else{
                      cell.iconImageView.image = UIImage(named: "ex02")

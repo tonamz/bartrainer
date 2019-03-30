@@ -11,6 +11,15 @@ import Alamofire
 
 class StatisticsViewController: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate{
 
+    @IBAction func logout(_ sender: Any) {
+        User.delete()
+        
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+        
+        UIApplication.shared.keyWindow?.rootViewController = vc
+    }
+    @IBOutlet weak var logoutBTN: UIButton!
     
     var calsum:String?
     @IBOutlet weak var bgView: UIView!
@@ -34,6 +43,7 @@ class StatisticsViewController: UIViewController ,UICollectionViewDataSource, UI
         self.bgView.layer.borderWidth = 2
         self.bgView.layer.borderColor = myColor.cgColor
 
+        logoutBTN.layer.cornerRadius = 10
         
 
     }

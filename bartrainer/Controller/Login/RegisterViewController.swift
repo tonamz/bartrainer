@@ -12,6 +12,7 @@ import Alamofire
 class RegisterViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
   @IBOutlet weak var registerBT: UIButton!
+      @IBOutlet weak var profileimgBT: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -59,6 +60,9 @@ class RegisterViewController: UIViewController ,UIImagePickerControllerDelegate,
         actionSheet.addAction(cancelAction)
         
         present(actionSheet, animated: true, completion: nil)
+        profileimgBT.setImage(UIImage(named: ""), for: .normal)
+        
+        
         
     }
     

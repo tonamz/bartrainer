@@ -44,6 +44,11 @@ struct User: Codable {
             User.currentUser = user
         }
     }
+    
+    public static func delete() {
+        UserDefaults.standard.removeObject(forKey: "USER")
+        User.currentUser = nil
+    }
 
     
 }

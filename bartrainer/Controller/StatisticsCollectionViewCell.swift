@@ -15,11 +15,11 @@ class StatisticsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
           super.awakeFromNib()
-    bgView.layer.cornerRadius = 24
+    bgView.layer.cornerRadius = 20
     
     let myColor : UIColor = UIColor(red:0.99, green:0.50, blue:0.25, alpha:1.0)
     
-    self.bgView.layer.cornerRadius = 35
+    self.bgView.layer.cornerRadius = 20
     self.bgView.layer.borderWidth = 2
     self.bgView.layer.borderColor = myColor.cgColor
     self.contentView.layer.masksToBounds = true
