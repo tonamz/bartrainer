@@ -170,6 +170,7 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
     override func viewDidDisappear(_ animated: Bool) {
             audioPlayerTrainer?.stop()
               self.videoCapture.stop()
+
         
         
     }
@@ -425,22 +426,23 @@ class WorkoutsViewController: UIViewController , VideoCaptureDelegate {
             DispatchQueue.main.sync {
                 
                 if (loadGIF == 0){
-                    if model.name == "Squat"{
-                        gifExercise.loadGif(name: "squatGIF")
-                        
-                    }else if model.name == "Lunges"{
-                        gifExercise.loadGif(name: "hightkneeGIF")
-                    }else if model.name == "Hight knee"{
-                        gifExercise.loadGif(name: "hightkneeGIF")
-                    }else if model.name == "Side Leg raise"{
-                        gifExercise.loadGif(name: "legraiseGIF")
-                    }else if model.name == "Leg swing"{
-                        gifExercise.loadGif(name: "legswingGIF")
-                    }else if model.name == "Shoulder press"{
-                        gifExercise.loadGif(name: "ShoulderPressGIF")
-                    }else{
-                        gifExercise.loadGif(name: " ")
-                    }
+//                    if model.name == "Squat"{
+//                        gifExercise.loadGif(name: "squatGIF")
+//
+//                    }else if model.name == "Lunges"{
+//                        gifExercise.loadGif(name: "hightkneeGIF")
+//                    }else if model.name == "Hight knee"{
+//                        gifExercise.loadGif(name: "hightkneeGIF")
+//                    }else if model.name == "Side Leg raise"{
+//                        gifExercise.loadGif(name: "legraiseGIF")
+//                    }else if model.name == "Leg swing"{
+//                        gifExercise.loadGif(name: "legswingGIF")
+//                    }else if model.name == "Shoulder press"{
+//                        gifExercise.loadGif(name: "ShoulderPressGIF")
+//                    }else{
+//                        gifExercise.loadGif(name: " ")
+//                    }
+                    gifExercise.loadGif(name: "\(model.id_exercise)")
                     
                     loadGIF += 1
                 }

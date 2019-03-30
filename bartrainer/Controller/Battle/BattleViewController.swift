@@ -68,6 +68,12 @@ class BattleViewController: UIViewController,UITableViewDataSource, UITableViewD
    
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationItem.leftItemsSupplementBackButton = true
+    
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return BattleGroup.count

@@ -38,6 +38,8 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
 //
 //     backgroundMusic.shared.audioPlayer?.play()
         
+                self.tabBarController?.tabBar.isHidden = false
+        
         categoryName.text = selectedCategoryGroup?.name
         buttonOutlet.layer.cornerRadius = 10
         

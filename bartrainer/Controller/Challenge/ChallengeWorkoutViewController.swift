@@ -104,19 +104,20 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
         
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-        if selectedChallenge!.id_exercise == "1"{
-            gifExercise.loadGif(name: "squatGIF")
-        }else if selectedChallenge!.id_exercise == "2"{
-            gifExercise.loadGif(name: " ")
-        }else if selectedChallenge!.id_exercise == "3"{
-            gifExercise.loadGif(name: "hightkneeGIF")
-        }else if selectedChallenge!.id_exercise == "4"{
-            gifExercise.loadGif(name: "legraiseGIF")
-        }else if selectedChallenge!.id_exercise == "5"{
-            gifExercise.loadGif(name: "legswingGIF")
-        }else{
-            gifExercise.loadGif(name: " ")
-        }
+//        if selectedChallenge!.id_exercise == "1"{
+//            gifExercise.loadGif(name: "squatGIF")
+//        }else if selectedChallenge!.id_exercise == "2"{
+//            gifExercise.loadGif(name: " ")
+//        }else if selectedChallenge!.id_exercise == "3"{
+//            gifExercise.loadGif(name: "hightkneeGIF")
+//        }else if selectedChallenge!.id_exercise == "4"{
+//            gifExercise.loadGif(name: "legraiseGIF")
+//        }else if selectedChallenge!.id_exercise == "5"{
+//            gifExercise.loadGif(name: "legswingGIF")
+//        }else{
+//            gifExercise.loadGif(name: " ")
+//        }
+        gifExercise.loadGif(name: "\(selectedChallenge!.id_exercise)")
         
         id_ex = Int((selectedChallenge?.id_exercise)!) ?? 5
         id_ch = Int((selectedChallengeGroup?.id)!) ?? 5
@@ -149,6 +150,7 @@ class ChallengeWorkoutViewController: UIViewController, VideoCaptureDelegate {
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.videoCapture.stop()
+  
         
     }
     @objc func countdownAction(){

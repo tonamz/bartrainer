@@ -68,7 +68,7 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         print("user : \(User.currentUser?.id_user)")
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
         self.exerciseCollection.backgroundColor = UIColor(white: 1, alpha: 0)
-        self.gifImage.loadGif(name: "hightkneeGIF")
+        self.gifImage.loadGif(name: "1")
 
         self.exerciseCollection.dataSource = self
         self.exerciseCollection.delegate = self
@@ -133,10 +133,13 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
             backgroundMusic.shared.audioPlayer?.prepareToPlay()
             backgroundMusic.shared.audioPlayer?.play()
             backgroundMusic.shared.audioPlayer?.numberOfLoops = -1
+                    self.tabBarController?.tabBar.isHidden = false
+            
         }
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        
     }
 
 

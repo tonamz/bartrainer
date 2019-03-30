@@ -51,6 +51,14 @@
 		E1111A2121EFB4EB000D1167 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */; };
 		E112AF9F221C4C8300AB3340 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112AF9E221C4C8300AB3340 /* Battle.swift */; };
 		E112AFA1221C5ADA00AB3340 /* BattleGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112AFA0221C5ADA00AB3340 /* BattleGroupTableViewCell.swift */; };
+		E1244079224F3C060080A064 /* 7.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1244075224F3C040080A064 /* 7.gif */; };
+		E124407A224F3C060080A064 /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1244076224F3C040080A064 /* 5.gif */; };
+		E124407C224F3C060080A064 /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1244078224F3C060080A064 /* 4.gif */; };
+		E1244084224F44870080A064 /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1244083224F44860080A064 /* 2.gif */; };
+		E1244089224F543E0080A064 /* 8.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1244085224F543C0080A064 /* 8.gif */; };
+		E124408A224F543E0080A064 /* 9.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1244086224F543D0080A064 /* 9.gif */; };
+		E124408B224F543E0080A064 /* 6.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1244087224F543D0080A064 /* 6.gif */; };
+		E124408C224F543E0080A064 /* 10.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1244088224F543E0080A064 /* 10.gif */; };
 		E1261031224A87E100392822 /* BattleUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1261030224A87E100392822 /* BattleUserViewController.swift */; };
 		E1261033224A88B500392822 /* BattleUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1261032224A88B500392822 /* BattleUserCollectionViewCell.swift */; };
 		E1261035224A906C00392822 /* BattleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1261034224A906C00392822 /* BattleUser.swift */; };
@@ -82,7 +90,6 @@
 		E1BB2B10224BF05400E67B43 /* backgroud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1BB2B0F224BF05400E67B43 /* backgroud.mp3 */; };
 		E1BB2B12224BFD1800E67B43 /* Backgroud.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E1BB2B11224BF12900E67B43 /* Backgroud.m4a */; };
 		E1C3676022218AF3001574D9 /* FitnessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */; };
-		E1C367622221B0D8001574D9 /* ShoulderPressGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */; };
 		E1DC04FD21BEAC1D00A2A4F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */; };
 		E1DC04FF21BEAC1E00A2A4F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */; };
 		E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1DC050021BEAC1E00A2A4F9 /* Main.storyboard */; };
@@ -110,10 +117,8 @@
 		E1FEF5D121FB225400492BE4 /* FitnessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5D021FB225400492BE4 /* FitnessDetailViewController.swift */; };
 		E1FEF5D721FCC3EC00492BE4 /* Swift+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5D621FCC3EC00492BE4 /* Swift+GIF.swift */; };
 		E1FEF5DB21FCC90700492BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5DA21FCC90700492BE4 /* Assets.xcassets */; };
-		E1FEF5DD21FCCC1800492BE4 /* squatGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5DC21FCCC1700492BE4 /* squatGIF.gif */; };
-		E1FEF5E321FCE29700492BE4 /* hightkneeGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */; };
-		E1FEF5EA21FCEA3C00492BE4 /* legraiseGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */; };
-		E1FEF5EB21FCEA3C00492BE4 /* legswingGIF.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */; };
+		E1FEF5DD21FCCC1800492BE4 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5DC21FCCC1700492BE4 /* 1.gif */; };
+		E1FEF5E321FCE29700492BE4 /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1FEF5E221FCE29700492BE4 /* 3.gif */; };
 		E1FEF5ED2201A27900492BE4 /* ChallengeDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5EC2201A27900492BE4 /* ChallengeDayViewController.swift */; };
 		E1FEF5EF2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5EE2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift */; };
 		E1FEF5F22201CC8D00492BE4 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FEF5F12201CC8D00492BE4 /* Challenge.swift */; };
@@ -150,6 +155,14 @@
 		E1111A2021EFB4EB000D1167 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		E112AF9E221C4C8300AB3340 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		E112AFA0221C5ADA00AB3340 /* BattleGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleGroupTableViewCell.swift; sourceTree = "<group>"; };
+		E1244075224F3C040080A064 /* 7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 7.gif; sourceTree = "<group>"; };
+		E1244076224F3C040080A064 /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
+		E1244078224F3C060080A064 /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		E1244083224F44860080A064 /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		E1244085224F543C0080A064 /* 8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 8.gif; sourceTree = "<group>"; };
+		E1244086224F543D0080A064 /* 9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 9.gif; sourceTree = "<group>"; };
+		E1244087224F543D0080A064 /* 6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 6.gif; sourceTree = "<group>"; };
+		E1244088224F543E0080A064 /* 10.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 10.gif; sourceTree = "<group>"; };
 		E1261030224A87E100392822 /* BattleUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUserViewController.swift; sourceTree = "<group>"; };
 		E1261032224A88B500392822 /* BattleUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUserCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1261034224A906C00392822 /* BattleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUser.swift; sourceTree = "<group>"; };
@@ -200,7 +213,6 @@
 		E1BB2B0F224BF05400E67B43 /* backgroud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroud.mp3; sourceTree = "<group>"; };
 		E1BB2B11224BF12900E67B43 /* Backgroud.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Backgroud.m4a; sourceTree = "<group>"; };
 		E1C3675F22218AF3001574D9 /* FitnessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessRegisterViewController.swift; sourceTree = "<group>"; };
-		E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ShoulderPressGIF.gif; path = ../../../../../Downloads/ShoulderPressGIF.gif; sourceTree = "<group>"; };
 		E1DC04F921BEAC1D00A2A4F9 /* bartrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bartrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DC04FC21BEAC1D00A2A4F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1DC04FE21BEAC1E00A2A4F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -230,10 +242,8 @@
 		E1FEF5D021FB225400492BE4 /* FitnessDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessDetailViewController.swift; sourceTree = "<group>"; };
 		E1FEF5D621FCC3EC00492BE4 /* Swift+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+GIF.swift"; sourceTree = "<group>"; };
 		E1FEF5DA21FCC90700492BE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		E1FEF5DC21FCCC1700492BE4 /* squatGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = squatGIF.gif; sourceTree = "<group>"; };
-		E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hightkneeGIF.gif; sourceTree = "<group>"; };
-		E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = legraiseGIF.gif; sourceTree = "<group>"; };
-		E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = legswingGIF.gif; sourceTree = "<group>"; };
+		E1FEF5DC21FCCC1700492BE4 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		E1FEF5E221FCE29700492BE4 /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
 		E1FEF5EC2201A27900492BE4 /* ChallengeDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDayViewController.swift; sourceTree = "<group>"; };
 		E1FEF5EE2201CB2000492BE4 /* ChallengeDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1FEF5F12201CC8D00492BE4 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
@@ -491,11 +501,16 @@
 			children = (
 				E1FEF5D621FCC3EC00492BE4 /* Swift+GIF.swift */,
 				E164F48F224DF133004FEF13 /* pre-motion.gif */,
-				E1FEF5DC21FCCC1700492BE4 /* squatGIF.gif */,
-				E1FEF5E221FCE29700492BE4 /* hightkneeGIF.gif */,
-				E1FEF5E821FCEA3B00492BE4 /* legraiseGIF.gif */,
-				E1FEF5E921FCEA3C00492BE4 /* legswingGIF.gif */,
-				E1C367612221B0D8001574D9 /* ShoulderPressGIF.gif */,
+				E1FEF5DC21FCCC1700492BE4 /* 1.gif */,
+				E1244078224F3C060080A064 /* 4.gif */,
+				E1244087224F543D0080A064 /* 6.gif */,
+				E1244085224F543C0080A064 /* 8.gif */,
+				E1244086224F543D0080A064 /* 9.gif */,
+				E1244088224F543E0080A064 /* 10.gif */,
+				E1244083224F44860080A064 /* 2.gif */,
+				E1244076224F3C040080A064 /* 5.gif */,
+				E1244075224F3C040080A064 /* 7.gif */,
+				E1FEF5E221FCE29700492BE4 /* 3.gif */,
 			);
 			path = GIF;
 			sourceTree = "<group>";
@@ -569,27 +584,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				E10EAE35224CB82B005DB9E6 /* Prompt-ExtraBoldItalic.ttf in Resources */,
+				E124407C224F3C060080A064 /* 4.gif in Resources */,
 				E1BB2B12224BFD1800E67B43 /* Backgroud.m4a in Resources */,
 				E10EAE40224CB82B005DB9E6 /* Prompt-Thin.ttf in Resources */,
 				E10EAE3C224CB82B005DB9E6 /* Prompt-MediumItalic.ttf in Resources */,
-				E1FEF5DD21FCCC1800492BE4 /* squatGIF.gif in Resources */,
+				E1FEF5DD21FCCC1800492BE4 /* 1.gif in Resources */,
 				E10EAE56224CED4F005DB9E6 /* updown.m4a in Resources */,
 				E10EAE67224D1E9F005DB9E6 /* fa-solid-900.ttf in Resources */,
 				E10EAE41224CB82B005DB9E6 /* Prompt-ThinItalic.ttf in Resources */,
 				E10EAE38224CB82B005DB9E6 /* Prompt-Italic.ttf in Resources */,
-				E1FEF5EA21FCEA3C00492BE4 /* legraiseGIF.gif in Resources */,
+				E1244079224F3C060080A064 /* 7.gif in Resources */,
 				E10EAE3B224CB82B005DB9E6 /* Prompt-Medium.ttf in Resources */,
 				E10EAE37224CB82B005DB9E6 /* Prompt-ExtraLightItalic.ttf in Resources */,
 				E10EAE36224CB82B005DB9E6 /* Prompt-ExtraLight.ttf in Resources */,
 				E10EAE52224CED4F005DB9E6 /* 321.m4a in Resources */,
 				E164F490224DF133004FEF13 /* pre-motion.gif in Resources */,
+				E1244089224F543E0080A064 /* 8.gif in Resources */,
 				E10EAE62224CF96B005DB9E6 /* hello2.m4a in Resources */,
+				E124408A224F543E0080A064 /* 9.gif in Resources */,
 				E10EAE60224CF96B005DB9E6 /* hello1.m4a in Resources */,
 				E10EAE3A224CB82B005DB9E6 /* Prompt-LightItalic.ttf in Resources */,
 				E10EAE50224CED4F005DB9E6 /* last.m4a in Resources */,
 				E10EAE51224CED4F005DB9E6 /* go.m4a in Resources */,
 				E10EAE61224CF96B005DB9E6 /* hello3.m4a in Resources */,
 				E1DC050721BEAC1F00A2A4F9 /* LaunchScreen.storyboard in Resources */,
+				E124407A224F3C060080A064 /* 5.gif in Resources */,
 				E10EAE68224D1E9F005DB9E6 /* fa-regular-400.ttf in Resources */,
 				E10EAE3E224CB82B005DB9E6 /* Prompt-SemiBold.ttf in Resources */,
 				E10EAE31224CB82B005DB9E6 /* Prompt-BlackItalic.ttf in Resources */,
@@ -599,6 +618,7 @@
 				E10EAE39224CB82B005DB9E6 /* Prompt-Light.ttf in Resources */,
 				E10EAE3D224CB82B005DB9E6 /* Prompt-Regular.ttf in Resources */,
 				E10EAE55224CED4F005DB9E6 /* rest.m4a in Resources */,
+				E1244084224F44870080A064 /* 2.gif in Resources */,
 				E10EAE4F224CED4F005DB9E6 /* closer.m4a in Resources */,
 				E1FEF5DB21FCC90700492BE4 /* Assets.xcassets in Resources */,
 				E10EAE53224CED4F005DB9E6 /* again.m4a in Resources */,
@@ -607,12 +627,12 @@
 				E10EAE43224CD6C2005DB9E6 /* level1.m4a in Resources */,
 				E10EAE4E224CED4F005DB9E6 /* readygo.m4a in Resources */,
 				E10EAE54224CED4F005DB9E6 /* leftright.m4a in Resources */,
-				E1C367622221B0D8001574D9 /* ShoulderPressGIF.gif in Resources */,
 				E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */,
-				E1FEF5EB21FCEA3C00492BE4 /* legswingGIF.gif in Resources */,
+				E124408C224F543E0080A064 /* 10.gif in Resources */,
 				E1BB2B10224BF05400E67B43 /* backgroud.mp3 in Resources */,
 				E10EAE66224D1E9F005DB9E6 /* fa-brands-400.ttf in Resources */,
-				E1FEF5E321FCE29700492BE4 /* hightkneeGIF.gif in Resources */,
+				E124408B224F543E0080A064 /* 6.gif in Resources */,
+				E1FEF5E321FCE29700492BE4 /* 3.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

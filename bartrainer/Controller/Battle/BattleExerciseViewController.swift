@@ -24,7 +24,7 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
         @IBOutlet weak var videoPreview: UIView!
         @IBOutlet weak var poseView: PoseView!
         @IBOutlet weak var gifExercise: UIImageView!
-    
+        @IBOutlet weak var scoreView: UIView!
         
         @IBOutlet weak var tryLabel: UILabel!
         @IBOutlet weak var timer: UILabel!
@@ -98,25 +98,31 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
             CountdownView.shared.spinnerStartColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
             CountdownView.shared.spinnerEndColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
             
+            scoreView.layer.cornerRadius = 10
+            videoPreview.layer.cornerRadius = 10
+            videoPreview.clipsToBounds = true
+            
             
              self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-            if selectedExercise!.name == "Squat"{
-                gifExercise.loadGif(name: "squatGIF")
-            }else if selectedExercise!.name == "Lunges"{
-                  gifExercise.loadGif(name: " ")
-            }else if selectedExercise!.name == "Hight knee"{
-                    gifExercise.loadGif(name: "hightkneeGIF")
-            }else if selectedExercise!.name == "Side Leg raise"{
-                    gifExercise.loadGif(name: "legraiseGIF")
-            }else if selectedExercise!.name == "Leg swing"{
-                    gifExercise.loadGif(name: "legswingGIF")
-            }else if selectedExercise!.name == "Shoulder press"{
-                gifExercise.loadGif(name: "ShoulderPressGIF")
-            }else{
-                  gifExercise.loadGif(name: " ")
-            }
-            
+//            if selectedExercise!.name == "Squat"{
+//                gifExercise.loadGif(name: "squatGIF")
+//            }else if selectedExercise!.name == "Lunges"{
+//                  gifExercise.loadGif(name: " ")
+//            }else if selectedExercise!.name == "Hight knee"{
+//                    gifExercise.loadGif(name: "hightkneeGIF")
+//            }else if selectedExercise!.name == "Side Leg raise"{
+//                    gifExercise.loadGif(name: "legraiseGIF")
+//            }else if selectedExercise!.name == "Leg swing"{
+//                    gifExercise.loadGif(name: "legswingGIF")
+//            }else if selectedExercise!.name == "Shoulder press"{
+//                gifExercise.loadGif(name: "ShoulderPressGIF")
+//            }else{
+//                  gifExercise.loadGif(name: " ")
+//            }
+//
             id_ex = Int((selectedExercise?.id_exercise)!) ?? 5
+            
+            gifExercise.loadGif(name: "\(id_ex)")
             
          
             visionModel = try? VNCoreMLModel(for: EstimationModel().model)
@@ -148,6 +154,8 @@ class BattleExerciseViewController: UIViewController, VideoCaptureDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         self.videoCapture.stop()
+  
+
     
     }
     @objc func countdownAction(){

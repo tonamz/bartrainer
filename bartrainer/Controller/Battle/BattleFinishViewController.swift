@@ -10,10 +10,9 @@ import UIKit
 
 class BattleFinishViewController: UIViewController {
     @IBAction func confirmBTAction(_ sender: Any) {
-        self.dismiss(animated: false, completion: {});
-        self.navigationController?.popViewController(animated: false);
+//        self.dismiss(animated: false, completion: {});
+//        self.navigationController?.popViewController(animated: false);
 
-        
     }
     
     var scoreCal = 0
@@ -27,6 +26,9 @@ class BattleFinishViewController: UIViewController {
         scoreText.layer.cornerRadius = 100
         scoreText.text = "\(scoreCal)"
         confirmBT.layer.cornerRadius = 10
+        self.tabBarController?.tabBar.isHidden = false
+        
+        
         
         
         
