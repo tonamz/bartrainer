@@ -61,10 +61,10 @@ class ChallengeViewController: UIViewController, UICollectionViewDataSource, UIC
         let model = challengeGroup[indexPath.row]
         cell.headerLabel.text = model.name
         if model.id_exercise == "1" {
-            cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
+            cell.iconImageView.image = UIImage(named: "ex\(model.id_exercise)")
             
         }else  if model.id_exercise == "2" {
-            cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
+            cell.iconImageView.image = UIImage(named: "ex\(model.id_exercise)")
             
         }else{
               cell.iconImageView.image = UIImage(named: "ex19")

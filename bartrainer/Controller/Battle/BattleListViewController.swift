@@ -72,7 +72,7 @@ class BattleListViewController: UIViewController, UICollectionViewDataSource, UI
             let model = ExerciseList[indexPath.row]
             cell.headerLabel.text = model.name
             if (Int(model.id_exercise) ?? 0 < 11){
-                cell.iconImageView.image = UIImage(named: "ex0\(model.id_exercise)")
+                cell.iconImageView.image = UIImage(named: "ex\(model.id_exercise)")
             }else{
                 cell.iconImageView.image = UIImage(named: "ex19")
             }

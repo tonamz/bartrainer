@@ -13,7 +13,8 @@ import AVFoundation
 
 class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
- 
+
+    
 //    var audioPlayer = AVAudioPlayer()
 
     var audioPlayer: AVAudioPlayer?
@@ -34,6 +35,8 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+
         
    
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
@@ -158,9 +161,15 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exercise_collection", for: indexPath) as! ExerciseCollectionViewCell
-            let model = categoryGroup[indexPath.row]
+        var model = categoryGroup[indexPath.row]
         cell.iconImageView.image = UIImage(named: model.name)
           cell.headerLabel.text = model.name
+        
+        if Int(model.id)! == 2 {
+            cell.arLabel.isHidden = true
+        } else{
+            cell.arLabel.isHidden =  false
+        }
         
         
         return cell

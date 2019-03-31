@@ -13,6 +13,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var arLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
 
     
@@ -21,6 +22,7 @@ class ExerciseCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         bgView.layer.cornerRadius = 10
+        arLabel.layer.cornerRadius = 3
         
         self.bgView.layer.cornerRadius = 10
         self.bgView.layer.borderWidth = 2
