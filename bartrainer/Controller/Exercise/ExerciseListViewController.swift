@@ -186,6 +186,12 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
             vc.levelExercise = levelExercise
             
         }
+        if segue.identifier == "WorkoutNoAR" {
+            let vc = segue.destination as! WorkoutNoARViewController
+            vc.selectedCategoryGroup = selectedCategoryGroup
+            vc.levelExercise = levelExercise
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -237,7 +243,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
 //        }))
 //
        
-        self.performSegue(withIdentifier: " WorkoutNoAR", sender: self)
+        self.performSegue(withIdentifier: "WorkoutNoAR", sender: self)
         
         
 //        self.present(alert, animated: true, completion: nil)

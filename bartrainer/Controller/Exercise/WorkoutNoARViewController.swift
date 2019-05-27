@@ -79,10 +79,7 @@ class WorkoutNoARViewController: UIViewController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
                         self.soundTrainer(nameSound: "readygo")
                     })
-                    
-                    
-                 
-                    
+
                     navigationItem.hidesBackButton = true
                     
                     //timer
@@ -91,12 +88,7 @@ class WorkoutNoARViewController: UIViewController {
                     CountdownView.shared.spinnerEndColor = UIColor(red:1, green:0, blue:0, alpha:0.8).cgColor
                     
                     
-                  
-                    
-                    
-                    //            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
-                    
-                    
+            
                     Alamofire.request("http://tssnp.com/ws_bartrainer/exercise_category.php?group_id=\(selectedCategoryGroup!.id)").responseData { response in
                         if let data = response.result.value {
                             
@@ -104,6 +96,7 @@ class WorkoutNoARViewController: UIViewController {
                                 let decoder = JSONDecoder()
                                 
                                 self.ExerciseList = try decoder.decode([Exercise].self, from: data)
+                                print(self.ExerciseList)
                                 
                             } catch {
                                 print(error.localizedDescription)
