@@ -37,6 +37,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     var levelnext: Double = 0
     
     var i: Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -217,5 +218,33 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         return cell
     }
     
+    @IBAction func startaction(_ sender: Any) {
+        
+//        let alert = UIAlertController(title:"Prepare for exercise ", message: "Place the phone at least 150 cm away from the body.", preferredStyle: UIAlertController.Style.alert)
+//
+//        let saveAction = UIAlertAction(title: "Prepare for exercise", style: .default, handler: nil)
+//
+//
+//
+//        saveAction.setValue(UIImage(named: "motion")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), forKey: "image")
+//        alert.addAction(saveAction)
+//
+//
+//        alert.addAction(UIAlertAction(title: "Start", style: UIAlertAction.Style.default, handler: { alertAction in
+//            alert.dismiss(animated: true, completion: nil)
+//            self.performSegue(withIdentifier: "Workout", sender: self)
+//
+//        }))
+//
+       
+        self.performSegue(withIdentifier: " WorkoutNoAR", sender: self)
+        
+        
+//        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
 
 }
+
+

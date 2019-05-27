@@ -12,6 +12,10 @@ import Alamofire
 class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate{
 
     
+    @IBAction func buttonback(_ sender: Any) {
+        
+         self.performSegue(withIdentifier: "backtoexercise", sender: self)
+    }
     var selectedCategoryGroup: Category?
     var exerciseworkout: [ExerciseWorkout] = []
     var ExerciseList: [Exercise] = []

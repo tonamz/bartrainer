@@ -179,11 +179,12 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         selectedCategoryGroup = categoryGroup[indexPath.row]
         performSegue(withIdentifier: "ExList", sender: self)
         
+
         
     }
-    
-    
-    
+        
+        
+  
 
 
 }

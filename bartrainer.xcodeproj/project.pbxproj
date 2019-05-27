@@ -85,6 +85,7 @@
 		E1A6DE7E21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A6DE7D21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift */; };
 		E1AA80062220976F00F4EAB6 /* ExerciseWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA80052220976F00F4EAB6 /* ExerciseWorkout.swift */; };
 		E1AA8008222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AA8007222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift */; };
+		E1AB632D22509CD0004F930D /* WorkoutNoARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB632C22509CD0004F930D /* WorkoutNoARViewController.swift */; };
 		E1AC805E22199E6500644FAC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC805D22199E6500644FAC /* RegisterViewController.swift */; };
 		E1AFA67D2221363F003C81E0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1AFA67C2221363F003C81E0 /* HealthKit.framework */; };
 		E1BB2B10224BF05400E67B43 /* backgroud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E1BB2B0F224BF05400E67B43 /* backgroud.mp3 */; };
@@ -207,6 +208,7 @@
 		E1A6DE7D21C57B7D006CB2F3 /* FitnessGetCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessGetCodeViewController.swift; sourceTree = "<group>"; };
 		E1AA80052220976F00F4EAB6 /* ExerciseWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseWorkout.swift; sourceTree = "<group>"; };
 		E1AA8007222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFinishTableViewCell.swift; sourceTree = "<group>"; };
+		E1AB632C22509CD0004F930D /* WorkoutNoARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutNoARViewController.swift; sourceTree = "<group>"; };
 		E1AC805D22199E6500644FAC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E1AFA67B2221363F003C81E0 /* bartrainer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bartrainer.entitlements; sourceTree = "<group>"; };
 		E1AFA67C2221363F003C81E0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -299,6 +301,7 @@
 				E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */,
 				E1AA8007222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift */,
 				E164F491224DF15C004FEF13 /* BeforeWorkoutsViewController.swift */,
+				E1AB632C22509CD0004F930D /* WorkoutNoARViewController.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				E152C0BE220D912000DF906F /* Challenge_name.swift in Sources */,
 				E1FEF5D121FB225400492BE4 /* FitnessDetailViewController.swift in Sources */,
 				E1AA8008222099EC00F4EAB6 /* ExerciseFinishTableViewCell.swift in Sources */,
+				E1AB632D22509CD0004F930D /* WorkoutNoARViewController.swift in Sources */,
 				E12A8EE3221B09BE00A00321 /* LoginViewController.swift in Sources */,
 				E102DC5822132D9C00FC3A7E /* WorkoutViewController.swift in Sources */,
 				E1261035224A906C00392822 /* BattleUser.swift in Sources */,
