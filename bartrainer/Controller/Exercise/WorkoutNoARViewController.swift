@@ -22,7 +22,6 @@ class WorkoutNoARViewController: UIViewController {
     @IBOutlet weak var nameExercise: UILabel!
     @IBOutlet weak var gifExercise: UIImageView!
     
-    @IBOutlet weak var exerciseName: UILabel!
     @IBOutlet weak var timer: UILabel!
 
     
@@ -97,6 +96,11 @@ class WorkoutNoARViewController: UIViewController {
                                 
                                 self.ExerciseList = try decoder.decode([Exercise].self, from: data)
                                 print(self.ExerciseList)
+                                
+                                let indexPath = NSIndexPath(row: self.exerciseloop, section: 0)
+                                let model = self.ExerciseList[indexPath.row]
+                                self.nameExercise.text = model.name
+                                self.gifExercise.loadGif(name: "\(model.id_exercise)")
                                 
                             } catch {
                                 print(error.localizedDescription)
@@ -190,6 +194,7 @@ class WorkoutNoARViewController: UIViewController {
                     
                     if countdown == 0 {
                         loadGIF = 0
+  
                         timerr.invalidate()
                         timer.text = ""
                       
@@ -215,6 +220,8 @@ class WorkoutNoARViewController: UIViewController {
                 func  countdownStart() {
                     timerr = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownAction), userInfo: nil, repeats: true)
    
+                    
+                    
                 }
                 
                 func countdownStop(){
@@ -255,6 +262,8 @@ class WorkoutNoARViewController: UIViewController {
                 }
                 func nextExercise()  {
                     
+                
+                    
                     if(exerciseloop<ExerciseList.count){
                         if( countdownExercise != 0 ){
                             timerr.invalidate()
@@ -270,10 +279,13 @@ class WorkoutNoARViewController: UIViewController {
                         
                         print(scoreCal)
                         
-                        exerciseWorkout(id_user: Int(User.currentUser!.id_user) ?? 0, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: repsExercise,repsexercise: repsExercise, cal: calSum)
-                        
+//                        exerciseWorkout(id_user: Int(User.currentUser!.id_user) ?? 0, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: repsExercise,repsexercise: repsExercise, cal: calSum)
+
+//                        exerciseWorkout(id_user: 0, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: 0,repsexercise: 0, cal: 0)
+
                         scoreCal=0
                         exerciseloop+=1
+                  
                         
                         
                         
@@ -288,6 +300,15 @@ class WorkoutNoARViewController: UIViewController {
                         performSegue(withIdentifier: "WorkoutFinish", sender: self)
 
                     }
+                    let indexPath = NSIndexPath(row: self.exerciseloop, section: 0)
+                    let model = self.ExerciseList[indexPath.row]
+                    self.nameExercise.text = model.name
+                    
+                    gifExercise.loadGif(name: "\(model.id_exercise)")
+                    
+                    
+    
+                    
                 }
                 
                 
