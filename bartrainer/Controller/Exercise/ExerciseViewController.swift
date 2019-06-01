@@ -36,6 +36,15 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         
         super.viewDidLoad()
         
+        
+        if (User.currentUser?.id_user==nil){
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+            self.present(nextViewController, animated:true, completion:nil)
+        }
+
+        
 
         
    

@@ -265,6 +265,9 @@ class WorkoutNoARViewController: UIViewController {
                 
                     
                     if(exerciseloop<ExerciseList.count){
+                        
+              
+                        
                         if( countdownExercise != 0 ){
                             timerr.invalidate()
                         }
@@ -281,10 +284,20 @@ class WorkoutNoARViewController: UIViewController {
                         
 //                        exerciseWorkout(id_user: Int(User.currentUser!.id_user) ?? 0, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: repsExercise,repsexercise: repsExercise, cal: calSum)
 
-//                        exerciseWorkout(id_user: 0, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: 0,repsexercise: 0, cal: 0)
+                        exerciseWorkout(id_user: 3, id_exercise: 3, id_category: 3,category: "3", level: 3, reps: 3,repsexercise: 3, cal: 3)
 
                         scoreCal=0
                         exerciseloop+=1
+                        
+                        if(exerciseloop<ExerciseList.count){
+                        
+                            let indexPath = NSIndexPath(row: self.exerciseloop, section: 0)
+                            let model = self.ExerciseList[indexPath.row]
+                            self.nameExercise.text = model.name
+                            gifExercise.loadGif(name: "\(model.id_exercise)")
+                        }
+                        
+                   
                   
                         
                         
@@ -300,11 +313,7 @@ class WorkoutNoARViewController: UIViewController {
                         performSegue(withIdentifier: "WorkoutFinish", sender: self)
 
                     }
-                    let indexPath = NSIndexPath(row: self.exerciseloop, section: 0)
-                    let model = self.ExerciseList[indexPath.row]
-                    self.nameExercise.text = model.name
-                    
-                    gifExercise.loadGif(name: "\(model.id_exercise)")
+       
                     
                     
     
