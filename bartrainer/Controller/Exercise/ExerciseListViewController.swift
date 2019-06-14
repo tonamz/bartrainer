@@ -210,11 +210,13 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
         
       tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
     
-        if (Int(model.id_exercise) ?? 0 < 11 ){
-              cell.iconImageView.image = UIImage(named: "ex\(model.id_exercise)")
-        }else{
-                     cell.iconImageView.image = UIImage(named: "ex19")
-        }
+//        if (Int(model.id_exercise) ?? 0 < 11 ){
+//              cell.iconImageView.image = UIImage(named: "ex\(model.id_exercise)")
+//        }else{
+//                     cell.iconImageView.image = UIImage(named: "ex19")
+//        }
+//        
+           cell.iconImageView.image = UIImage(named: "ex\(model.id_exercise)")
         
 
         cell.exerciseLabel.text = model.name
@@ -226,24 +228,34 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource, UITabl
     
     @IBAction func startaction(_ sender: Any) {
         
-//        let alert = UIAlertController(title:"Prepare for exercise ", message: "Place the phone at least 150 cm away from the body.", preferredStyle: UIAlertController.Style.alert)
+
+        if selectedCategoryGroup?.id == "1" || selectedCategoryGroup?.id == "3"{
+     
+//                    let alert = UIAlertController(title:"Prepare for exercise ", message: "Place the phone at least 150 cm away from the body.", preferredStyle: UIAlertController.Style.alert)
 //
-//        let saveAction = UIAlertAction(title: "Prepare for exercise", style: .default, handler: nil)
-//
-//
-//
-//        saveAction.setValue(UIImage(named: "motion")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), forKey: "image")
-//        alert.addAction(saveAction)
+//                    let saveAction = UIAlertAction(title: "Prepare for exercise", style: .default, handler: nil)
 //
 //
-//        alert.addAction(UIAlertAction(title: "Start", style: UIAlertAction.Style.default, handler: { alertAction in
-//            alert.dismiss(animated: true, completion: nil)
-//            self.performSegue(withIdentifier: "Workout", sender: self)
 //
-//        }))
+//                    saveAction.setValue(UIImage(named: "motion")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), forKey: "image")
+//                    alert.addAction(saveAction)
 //
+//
+//                    alert.addAction(UIAlertAction(title: "Start", style: UIAlertAction.Style.default, handler: { alertAction in
+//                        alert.dismiss(animated: true, completion: nil)
+//                        self.performSegue(withIdentifier: "Workout", sender: self)
+//
+//                    }))
+                self.performSegue(withIdentifier: "Workout", sender: self)
+            
+        }else{
+                   self.performSegue(withIdentifier: "WorkoutNoAR", sender: self)
+        }
+            
+        
+
        
-        self.performSegue(withIdentifier: "WorkoutNoAR", sender: self)
+ 
         
         
 //        self.present(alert, animated: true, completion: nil)

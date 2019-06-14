@@ -39,7 +39,7 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         
         if (User.currentUser?.id_user==nil){
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            
+
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Login") as! LoginViewController
             self.present(nextViewController, animated:true, completion:nil)
         }
@@ -151,8 +151,9 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        
+
     }
+    
 
 
     
@@ -174,7 +175,7 @@ class ExerciseViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.iconImageView.image = UIImage(named: model.name)
           cell.headerLabel.text = model.name
         
-        if Int(model.id)! == 2 {
+        if Int(model.id)! == 2 || Int(model.id)! == 4{
             cell.arLabel.isHidden = true
         } else{
             cell.arLabel.isHidden =  false

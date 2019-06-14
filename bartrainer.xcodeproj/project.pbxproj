@@ -70,6 +70,16 @@
 		E12B11BC224E939200F6B07A /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11BB224E939200F6B07A /* Coupon.swift */; };
 		E12B11BE224E9F1F00F6B07A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11BD224E9F1F00F6B07A /* StatisticsViewController.swift */; };
 		E12B11C0224EACBB00F6B07A /* StatisticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B11BF224EACBB00F6B07A /* StatisticsCollectionViewCell.swift */; };
+		E13D689522B0136800DDEB94 /* 19.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D688B22B0136700DDEB94 /* 19.gif */; };
+		E13D689622B0136800DDEB94 /* 11.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D688C22B0136700DDEB94 /* 11.gif */; };
+		E13D689722B0136800DDEB94 /* 14.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D688D22B0136700DDEB94 /* 14.gif */; };
+		E13D689822B0136800DDEB94 /* 16.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D688E22B0136700DDEB94 /* 16.gif */; };
+		E13D689922B0136800DDEB94 /* 13.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D688F22B0136700DDEB94 /* 13.gif */; };
+		E13D689A22B0136800DDEB94 /* 15.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D689022B0136700DDEB94 /* 15.gif */; };
+		E13D689B22B0136800DDEB94 /* 12.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D689122B0136700DDEB94 /* 12.gif */; };
+		E13D689C22B0136800DDEB94 /* 18.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D689222B0136800DDEB94 /* 18.gif */; };
+		E13D689D22B0136800DDEB94 /* 17.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D689322B0136800DDEB94 /* 17.gif */; };
+		E13D689E22B0136800DDEB94 /* 20.gif in Resources */ = {isa = PBXBuildFile; fileRef = E13D689422B0136800DDEB94 /* 20.gif */; };
 		E14DDDD8221FD31B008E7F5E /* ExerciseFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */; };
 		E152C0BE220D912000DF906F /* Challenge_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152C0BD220D912000DF906F /* Challenge_name.swift */; };
 		E164F490224DF133004FEF13 /* pre-motion.gif in Resources */ = {isa = PBXBuildFile; fileRef = E164F48F224DF133004FEF13 /* pre-motion.gif */; };
@@ -175,6 +185,16 @@
 		E12B11BB224E939200F6B07A /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		E12B11BD224E9F1F00F6B07A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		E12B11BF224EACBB00F6B07A /* StatisticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCollectionViewCell.swift; sourceTree = "<group>"; };
+		E13D688B22B0136700DDEB94 /* 19.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 19.gif; sourceTree = "<group>"; };
+		E13D688C22B0136700DDEB94 /* 11.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 11.gif; sourceTree = "<group>"; };
+		E13D688D22B0136700DDEB94 /* 14.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 14.gif; sourceTree = "<group>"; };
+		E13D688E22B0136700DDEB94 /* 16.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 16.gif; sourceTree = "<group>"; };
+		E13D688F22B0136700DDEB94 /* 13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 13.gif; sourceTree = "<group>"; };
+		E13D689022B0136700DDEB94 /* 15.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 15.gif; sourceTree = "<group>"; };
+		E13D689122B0136700DDEB94 /* 12.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 12.gif; sourceTree = "<group>"; };
+		E13D689222B0136800DDEB94 /* 18.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 18.gif; sourceTree = "<group>"; };
+		E13D689322B0136800DDEB94 /* 17.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 17.gif; sourceTree = "<group>"; };
+		E13D689422B0136800DDEB94 /* 20.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 20.gif; sourceTree = "<group>"; };
 		E14DDDD7221FD31B008E7F5E /* ExerciseFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFinishViewController.swift; sourceTree = "<group>"; };
 		E152C0BD220D912000DF906F /* Challenge_name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge_name.swift; sourceTree = "<group>"; };
 		E164F48F224DF133004FEF13 /* pre-motion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "pre-motion.gif"; sourceTree = "<group>"; };
@@ -504,6 +524,16 @@
 			children = (
 				E1FEF5D621FCC3EC00492BE4 /* Swift+GIF.swift */,
 				E164F48F224DF133004FEF13 /* pre-motion.gif */,
+				E13D688C22B0136700DDEB94 /* 11.gif */,
+				E13D689122B0136700DDEB94 /* 12.gif */,
+				E13D688F22B0136700DDEB94 /* 13.gif */,
+				E13D688D22B0136700DDEB94 /* 14.gif */,
+				E13D689022B0136700DDEB94 /* 15.gif */,
+				E13D688E22B0136700DDEB94 /* 16.gif */,
+				E13D689322B0136800DDEB94 /* 17.gif */,
+				E13D689222B0136800DDEB94 /* 18.gif */,
+				E13D688B22B0136700DDEB94 /* 19.gif */,
+				E13D689422B0136800DDEB94 /* 20.gif */,
 				E1FEF5DC21FCCC1700492BE4 /* 1.gif */,
 				E1244078224F3C060080A064 /* 4.gif */,
 				E1244087224F543D0080A064 /* 6.gif */,
@@ -586,10 +616,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13D689622B0136800DDEB94 /* 11.gif in Resources */,
 				E10EAE35224CB82B005DB9E6 /* Prompt-ExtraBoldItalic.ttf in Resources */,
 				E124407C224F3C060080A064 /* 4.gif in Resources */,
 				E1BB2B12224BFD1800E67B43 /* Backgroud.m4a in Resources */,
 				E10EAE40224CB82B005DB9E6 /* Prompt-Thin.ttf in Resources */,
+				E13D689922B0136800DDEB94 /* 13.gif in Resources */,
 				E10EAE3C224CB82B005DB9E6 /* Prompt-MediumItalic.ttf in Resources */,
 				E1FEF5DD21FCCC1800492BE4 /* 1.gif in Resources */,
 				E10EAE56224CED4F005DB9E6 /* updown.m4a in Resources */,
@@ -600,17 +632,21 @@
 				E10EAE3B224CB82B005DB9E6 /* Prompt-Medium.ttf in Resources */,
 				E10EAE37224CB82B005DB9E6 /* Prompt-ExtraLightItalic.ttf in Resources */,
 				E10EAE36224CB82B005DB9E6 /* Prompt-ExtraLight.ttf in Resources */,
+				E13D689A22B0136800DDEB94 /* 15.gif in Resources */,
 				E10EAE52224CED4F005DB9E6 /* 321.m4a in Resources */,
 				E164F490224DF133004FEF13 /* pre-motion.gif in Resources */,
 				E1244089224F543E0080A064 /* 8.gif in Resources */,
+				E13D689E22B0136800DDEB94 /* 20.gif in Resources */,
 				E10EAE62224CF96B005DB9E6 /* hello2.m4a in Resources */,
 				E124408A224F543E0080A064 /* 9.gif in Resources */,
+				E13D689522B0136800DDEB94 /* 19.gif in Resources */,
 				E10EAE60224CF96B005DB9E6 /* hello1.m4a in Resources */,
 				E10EAE3A224CB82B005DB9E6 /* Prompt-LightItalic.ttf in Resources */,
 				E10EAE50224CED4F005DB9E6 /* last.m4a in Resources */,
 				E10EAE51224CED4F005DB9E6 /* go.m4a in Resources */,
 				E10EAE61224CF96B005DB9E6 /* hello3.m4a in Resources */,
 				E1DC050721BEAC1F00A2A4F9 /* LaunchScreen.storyboard in Resources */,
+				E13D689B22B0136800DDEB94 /* 12.gif in Resources */,
 				E124407A224F3C060080A064 /* 5.gif in Resources */,
 				E10EAE68224D1E9F005DB9E6 /* fa-regular-400.ttf in Resources */,
 				E10EAE3E224CB82B005DB9E6 /* Prompt-SemiBold.ttf in Resources */,
@@ -621,7 +657,10 @@
 				E10EAE39224CB82B005DB9E6 /* Prompt-Light.ttf in Resources */,
 				E10EAE3D224CB82B005DB9E6 /* Prompt-Regular.ttf in Resources */,
 				E10EAE55224CED4F005DB9E6 /* rest.m4a in Resources */,
+				E13D689822B0136800DDEB94 /* 16.gif in Resources */,
+				E13D689D22B0136800DDEB94 /* 17.gif in Resources */,
 				E1244084224F44870080A064 /* 2.gif in Resources */,
+				E13D689722B0136800DDEB94 /* 14.gif in Resources */,
 				E10EAE4F224CED4F005DB9E6 /* closer.m4a in Resources */,
 				E1FEF5DB21FCC90700492BE4 /* Assets.xcassets in Resources */,
 				E10EAE53224CED4F005DB9E6 /* again.m4a in Resources */,
@@ -630,6 +669,7 @@
 				E10EAE43224CD6C2005DB9E6 /* level1.m4a in Resources */,
 				E10EAE4E224CED4F005DB9E6 /* readygo.m4a in Resources */,
 				E10EAE54224CED4F005DB9E6 /* leftright.m4a in Resources */,
+				E13D689C22B0136800DDEB94 /* 18.gif in Resources */,
 				E1DC050221BEAC1E00A2A4F9 /* Main.storyboard in Resources */,
 				E124408C224F543E0080A064 /* 10.gif in Resources */,
 				E1BB2B10224BF05400E67B43 /* backgroud.mp3 in Resources */,

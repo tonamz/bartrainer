@@ -14,7 +14,13 @@ class ExerciseFinishViewController: UIViewController ,UITableViewDataSource, UIT
     
     @IBAction func buttonback(_ sender: Any) {
         
-         self.performSegue(withIdentifier: "backtoexercise", sender: self)
+
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+        UIApplication.shared.keyWindow?.rootViewController = vc
+
+        
+        
     }
     var selectedCategoryGroup: Category?
     var exerciseworkout: [ExerciseWorkout] = []

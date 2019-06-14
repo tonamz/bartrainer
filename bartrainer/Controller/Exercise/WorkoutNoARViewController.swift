@@ -100,6 +100,9 @@ class WorkoutNoARViewController: UIViewController {
                                 let indexPath = NSIndexPath(row: self.exerciseloop, section: 0)
                                 let model = self.ExerciseList[indexPath.row]
                                 self.nameExercise.text = model.name
+                                self.repsExercise =  self.timerExercise/Int(model.persec)!
+                                self.calSum = self.calExercise*self.repsExercise
+                                self.id_ex = Int((model.id_exercise)) ?? 5
                                 self.gifExercise.loadGif(name: "\(model.id_exercise)")
                                 
                             } catch {
@@ -284,16 +287,21 @@ class WorkoutNoARViewController: UIViewController {
                         
 //                        exerciseWorkout(id_user: Int(User.currentUser!.id_user) ?? 0, id_exercise: id_ex, id_category: Int((selectedCategoryGroup?.id)!) ?? 0,category: selectedCategoryGroup?.name ?? "aa", level: Int((levelExercise?.level)!) ?? 0, reps: repsExercise,repsexercise: repsExercise, cal: calSum)
 
-                        exerciseWorkout(id_user: 3, id_exercise: 3, id_category: 3,category: "3", level: 3, reps: 3,repsexercise: 3, cal: 3)
+                        exerciseWorkout(id_user: Int(User.currentUser!.id_user) ?? 0, id_exercise: id_ex, id_category: 3,category: "3", level: 3, reps: repsExercise,repsexercise: repsExercise, cal: calSum)
 
                         scoreCal=0
                         exerciseloop+=1
                         
                         if(exerciseloop<ExerciseList.count){
+                            
+                            
                         
                             let indexPath = NSIndexPath(row: self.exerciseloop, section: 0)
                             let model = self.ExerciseList[indexPath.row]
                             self.nameExercise.text = model.name
+                            repsExercise =  timerExercise/Int(model.persec)!
+                            calSum = calExercise*repsExercise
+                            id_ex = Int((model.id_exercise)) ?? 5
                             gifExercise.loadGif(name: "\(model.id_exercise)")
                         }
                         
